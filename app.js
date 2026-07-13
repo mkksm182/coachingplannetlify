@@ -5,7 +5,8 @@ const structuredWorkouts=(window.STRUCTURED_WORKOUTS||[]).map(x=>({...x,date:new
 const STORAGE_KEY='op_coach_center_logs_v2';
 const PREF_KEY='op_coach_center_prefs_v2';
 const INTERVALS_KEY='op_coach_center_intervals_v1';
-let logs=loadLogs(); let prefs=loadPrefs(); let intervalsData=loadIntervalsData(); let intervalsSyncing=false; let currentView='dashboard';
+const INTERVALS_ACTIVITIES_KEY='op_coach_center_intervals_activities_v1';
+let logs=loadLogs(); let prefs=loadPrefs(); let intervalsData=loadIntervalsData(); let standaloneActivities=loadStandaloneActivities(); let intervalsSyncing=false; let currentView='dashboard';
 let calDate=new Date(); if(items.length){calDate=new Date(items[0].dateISO+'T12:00:00')}
 
 function loadLogs(){try{return JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}')}catch(e){return {}}}
@@ -14,6 +15,8 @@ function loadPrefs(){try{return JSON.parse(localStorage.getItem(PREF_KEY)||'{}')
 function savePrefs(){localStorage.setItem(PREF_KEY,JSON.stringify(prefs))}
 
 function loadIntervalsData(){try{return JSON.parse(localStorage.getItem(INTERVALS_KEY)||'null')}catch(e){return null}}
+function loadStandaloneActivities(){try{return JSON.parse(localStorage.getItem(INTERVALS_ACTIVITIES_KEY)||'{}')}catch(e){return {}}}
+function saveStandaloneActivities(){localStorage.setItem(INTERVALS_ACTIVITIES_KEY,JSON.stringify(standaloneActivities||{}))}
 function saveIntervalsData(data){intervalsData=data;localStorage.setItem(INTERVALS_KEY,JSON.stringify(data||null)); return autoFillLogsFromIntervals(data)}
 function intervalsSnapshot(){return intervalsData?.snapshot||intervalsData||null}
 function hoursAgo(iso){if(!iso)return '—';const h=(Date.now()-new Date(iso).getTime())/36e5; if(h<1)return Math.max(1,Math.round(h*60))+' min temu'; if(h<48)return Math.round(h)+' h temu'; return Math.round(h/24)+' dni temu'}
@@ -34,13 +37,14 @@ function intervalsPanel(){
   const snap=intervalsSnapshot();
   if(!snap)return `<div class="section-title"><div><h3>Intervals.icu live sync</h3><p>Połączone przez Netlify Functions. Dane będą pobierane 3× dziennie i ręcznie na klik.</p></div><button class="btn primary" data-intervals-sync onclick="syncIntervals(true)">Synchronizuj teraz</button></div><div class="card"><p style="color:var(--muted);line-height:1.6">Brak pobranego snapshotu. Po wdrożeniu na Netlify ustaw zmienną <code>INTERVALS_API_KEY</code>, a potem kliknij synchronizację.</p></div>`;
   const t=snap.totals||{}, l7=snap.last7||{}, l30=snap.last30||{}, w=snap.wellness||{};
+  const standalone=Object.values(standaloneActivities).sort((a,b)=>String(b.startDateLocal||b.date).localeCompare(String(a.startDateLocal||a.date))).slice(0,5);
   return `<div class="section-title"><div><h3>Intervals.icu live sync</h3><p>Ostatnia synchronizacja: ${esc(hoursAgo(snap.syncedAt))} • ostatnia aktywność: ${esc(t.lastActivityDate||'—')}</p></div><button class="btn primary" data-intervals-sync onclick="syncIntervals(true)">Synchronizuj teraz</button></div>
   <div class="grid cols-4">
     ${metric('Aktywności 7 dni',l7.count||0,`${(l7.hours||0).toFixed?l7.hours.toFixed(1):l7.hours||0} h • ${l7.km||0} km`)}
     ${metric('Load 7 dni',l7.load||0,'z Intervals.icu')}
     ${metric('Aktywności 30 dni',l30.count||0,`${l30.hours||0} h • ${l30.km||0} km`)}
     ${metric('Sen / HRV',`${w.avgSleep||'—'} / ${w.avgHRV||'—'}`,'średnia wellness 14 dni')}
-  </div>`
+  </div>${standalone.length?`<div class="card"><h3 style="margin-top:0">Aktywności poza planem / do przypisania</h3><table class="table"><thead><tr><th>Data</th><th>Typ</th><th>Nazwa</th><th>Status</th></tr></thead><tbody>${standalone.map(a=>`<tr><td>${esc(a.date||'')}</td><td>${esc(a.sport||'')}</td><td>${esc(a.name||'')}</td><td>${esc(a.status||'Poza planem')}</td></tr>`).join('')}</tbody></table></div>`:''}`
 }
 function intervalsCoachPanel(){
   const snap=intervalsSnapshot(); if(!snap)return '<div class="card"><h3>Intervals.icu</h3><p style="color:var(--muted)">Brak danych live. Zsynchronizuj po wdrożeniu na Netlify.</p></div>';
@@ -53,109 +57,16 @@ function extractIntervalsActivities(data){
   const arr = snap.activities || snap.recentActivities || snap.activity || [];
   return Array.isArray(arr) ? arr : [];
 }
-function normTypeText(v){return String(v||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')}
-function planSport(it){
-  const t=normTypeText([it.discipline,it.description,it.intensity,it.Typ].join(' '));
-  if(/wolne|odpoczynek|regern|regeneracja/.test(t) && !/basen|plyw|swim|tacx|rower|bike|bieg|run/.test(t)) return 'rest';
-  if(/basen|plyw|kraul|open water|swim/.test(t)) return 'swim';
-  if(/tacx|rower|bike|ride|ftp|wat|sweet spot|z1|z2|z3/.test(t)) return 'ride';
-  if(/silown|sila|prehab|core|mobiliz|strength|gym/.test(t)) return 'strength';
-  if(/bieg|run|tempo|interwal|rytmy|long run|maraton|t2|podbieg|kros|easy/.test(t)) return 'run';
-  return 'other';
-}
-function activitySport(a){
-  const t=normTypeText([a.type,a.sport,a.activity_type,a.name,a.title].join(' '));
-  if(/swim|plyw|basen|openwater/.test(t)) return 'swim';
-  if(/ride|bike|bicycle|cycling|virtualride|virtual ride|tacx|rower/.test(t)) return 'ride';
-  if(/run|running|bieg|treadmill/.test(t)) return 'run';
-  if(/strength|weight|gym|silown|sila|cardio/.test(t)) return 'strength';
-  if(/walk|hike|spacer/.test(t)) return 'other';
-  return 'other';
-}
-function activityIso(a){return String(a.date || a.start_date_local || a.start_date || a.startTime || '').slice(0,10)}
-function activityMinutes(a){
-  const h=Number(a.hours); if(Number.isFinite(h)&&h>0) return Math.round(h*60);
-  const sec=Number(a.moving_time||a.elapsed_time||a.duration||a.time||a.total_timer_time); if(Number.isFinite(sec)&&sec>0) return Math.round(sec>600?sec/60:sec);
-  const min=Number(a.minutes||a.min); return Number.isFinite(min)?Math.round(min):0;
-}
-function activityKm(a){
-  const km=Number(a.km||a.distance_km); if(Number.isFinite(km)&&km>0) return Math.round(km*100)/100;
-  const d=Number(a.distance||a.Distance); if(Number.isFinite(d)&&d>0) return Math.round((d>1000?d/1000:d)*100)/100;
-  return 0;
-}
-function parsePlannedMinutes(it){
-  const direct=Number(it.plannedMinutes || it['Czas min']); if(Number.isFinite(direct)&&direct>0) return direct;
-  const txt=normTypeText([it.description,it.discipline].join(' ')).replace(',', '.');
-  let m=txt.match(/(\d+(?:\.\d+)?)\s*(?:h|godz)/); if(m) return Math.round(Number(m[1])*60);
-  m=txt.match(/(\d+)\s*(?:min|m)\b/); if(m) return Number(m[1]);
-  return 0;
-}
-function parsePlannedKm(it){
-  const direct=Number(it.plannedKm || it['Dystans km']); if(Number.isFinite(direct)&&direct>0) return direct;
-  const txt=normTypeText([it.description,it.discipline].join(' ')).replace(',', '.');
-  const nums=[...txt.matchAll(/(\d+(?:\.\d+)?)\s*km/g)].map(x=>Number(x[1])).filter(Boolean);
-  return nums.length ? Math.max(...nums) : 0;
-}
-function activitySummary(a){
-  const bits=[];
-  const name=a.name||a.title||a.type||'aktywność'; bits.push(name);
-  const hr=a.avg_hr||a.average_heartrate||a.average_hr; if(hr) bits.push(`HR ${Math.round(Number(hr))}`);
-  const pw=a.avg_watts||a.average_watts; if(pw) bits.push(`${Math.round(Number(pw))} W`);
-  const load=a.load||a.icu_training_load||a.training_load||a.tss; if(load) bits.push(`load ${Math.round(Number(load))}`);
-  const cal=a.calories; if(cal) bits.push(`${Math.round(Number(cal))} kcal`);
-  return bits.join(' • ');
-}
-function combineActivities(acts){
-  const minutes=acts.reduce((s,a)=>s+activityMinutes(a),0);
-  const km=acts.reduce((s,a)=>s+activityKm(a),0);
-  const ids=acts.map(a=>String(a.id||a.name||a.start_date_local||'')).filter(Boolean);
-  const notes=acts.map(activitySummary).filter(Boolean).join(' | ');
-  return {minutes,km,ids,notes,first:acts[0]||{}};
-}
-function updateLogFromActivity(it, acts){
-  if(!it || !acts?.length) return false;
-  const c=combineActivities(acts);
-  const old=logs[it.id]||{};
-  const oldIds=String(old.autoActivityIds||'');
-  const newIds=c.ids.join(',');
-  const plannedMin=parsePlannedMinutes(it), plannedKm=parsePlannedKm(it);
-  let done=100;
-  if(plannedMin>0 && c.minutes>0) done=Math.round(Math.min(130, Math.max(0, c.minutes/plannedMin*100)));
-  else if(plannedKm>0 && c.km>0) done=Math.round(Math.min(130, Math.max(0, c.km/plannedKm*100)));
-  const next={...old};
-  next.time = c.minutes ? String(c.minutes) : (old.time || '');
-  next.km = c.km ? String(Math.round(c.km*10)/10) : (old.km || '');
-  next.done = String(done || old.done || 100);
-  next.status = old.status && old.status !== 'OK' && !old.autoSource ? old.status : 'OK';
-  next.autoSource='Intervals.icu';
-  next.autoMatchedAt=new Date().toISOString();
-  next.autoActivityIds=newIds;
-  const prefix='Intervals auto:';
-  const manualNotes = old.notes && !String(old.notes).includes(prefix) ? old.notes : '';
-  next.notes = [manualNotes, `${prefix} ${c.notes}`].filter(Boolean).join('\n');
-  next.updated = next.updated || new Date().toISOString();
-  if(oldIds===newIds && old.autoSource==='Intervals.icu' && String(old.time||'')===String(next.time||'') && String(old.km||'')===String(next.km||'')) return false;
-  logs[it.id]=next;
-  return true;
-}
 function autoFillLogsFromIntervals(data){
   try{
-    const activities=extractIntervalsActivities(data).filter(a=>activityIso(a));
-    if(!activities.length || !items?.length) return 0;
-    const byKey={};
-    activities.forEach(a=>{const key=activityIso(a)+'|'+activitySport(a); (byKey[key]||(byKey[key]=[])).push(a)});
-    let changed=0;
-    Object.keys(byKey).forEach(key=>{
-      const [date,sport]=key.split('|'); if(sport==='rest') return;
-      const candidates=items.filter(it=>it.dateISO===date && planSport(it)===sport && !isRest(it));
-      if(!candidates.length) return;
-      const acts=byKey[key].slice().sort((a,b)=>String(a.start_date_local||a.date||'').localeCompare(String(b.start_date_local||b.date||'')));
-      const cands=candidates.slice().sort((a,b)=>parsePlannedMinutes(b)-parsePlannedMinutes(a));
-      if(cands.length===1){ if(updateLogFromActivity(cands[0], acts)) changed++; return; }
-      cands.forEach((it,idx)=>{ const a=acts[idx] ? [acts[idx]] : []; if(a.length && updateLogFromActivity(it,a)) changed++; });
-    });
-    if(changed){localStorage.setItem(STORAGE_KEY,JSON.stringify(logs)); localStorage.setItem('op_last_autofill_count',String(changed));}
-    return changed;
+    const snap=data?.snapshot||data||{};
+    const engine=window.IntervalsAutofillEngine;
+    if(!engine)throw new Error('Brak silnika IntervalsAutofillEngine');
+    const result=engine.sync({items,structuredWorkouts,activities:extractIntervalsActivities(data),events:Array.isArray(snap.events)?snap.events:[],logs,standalone:standaloneActivities});
+    logs=result.logs; standaloneActivities=result.standalone;
+    localStorage.setItem(STORAGE_KEY,JSON.stringify(logs)); saveStandaloneActivities();
+    localStorage.setItem('op_last_autofill_count',String(result.matched.length));
+    return result.matched.length;
   }catch(e){console.error('Auto-fill Intervals error', e); return 0;}
 }
 
@@ -165,7 +76,7 @@ function fmtDate(d){return new Intl.DateTimeFormat('pl-PL',{day:'2-digit',month:
 function iso(d){return d.toISOString().slice(0,10)}
 function monthName(d){return new Intl.DateTimeFormat('pl-PL',{month:'long',year:'numeric'}).format(d)}
 function todayIso(){return iso(new Date())}
-function isRest(it){return /WOLNE|REGENERACJA/i.test((it.discipline||'')+' '+(it.intensity||''))}
+function isRest(it){return window.IntervalsAutofillEngine?.isRest(it)??/(^|[\s/+-])(WOLNE|REST|OFF)([\s/+-]|$)/i.test(it.discipline||'')}
 function num(v){let n=parseFloat(String(v||'').replace(',','.'));return isFinite(n)?n:0}
 function getLog(id){return logs[id]||{}}
 function merged(it){return {...it,...getLog(it.id)}}
@@ -208,7 +119,7 @@ function showView(id){currentView=id; document.querySelectorAll('.view').forEach
 function renderAll(){updateNav(); ['dashboard','calendar','plan','log','coach','garmin','backup'].forEach(renderView); const rd=readiness(); $('sideScore').textContent=rd.score??'—'; $('sideRing').style.setProperty('--p', (rd.score??0)+'%'); $('sideComment').textContent=rd.comment;}
 function renderView(id){const fn={dashboard:renderDashboard,calendar:renderCalendar,plan:renderPlan,log:renderLog,coach:renderCoach,garmin:renderGarmin,backup:renderBackup}[id]; if(fn) fn();}
 function metric(label,value,hint,cls=''){return `<div class="card metric ${cls}"><div class="label">${label}</div><div class="value">${value}</div><div class="hint">${hint}</div></div>`}
-function renderDashboard(){const rd=readiness(); const today=findTodayPlan(); const next=nextWorkout(); const done=Object.keys(logs).length; const total=items.length; const compl=Math.round(done/total*100);
+function renderDashboard(){const rd=readiness(); const today=findTodayPlan(); const next=nextWorkout(); const done=Object.values(logs).filter(log=>log.status!=='Częściowo').length; const total=items.length; const compl=Math.round(done/total*100);
   $('view-dashboard').innerHTML=`
   <div class="grid cols-4">
     ${metric('Readiness', rd.score===null?'—':rd.score+'/100', rd.label||'uzupełnij dane', rd.class)}
@@ -223,20 +134,21 @@ function renderDashboard(){const rd=readiness(); const today=findTodayPlan(); co
   <div class="list">${items.filter(x=>{let d=new Date();let e=new Date();e.setDate(e.getDate()+7);return x.date>=new Date(d.toDateString())&&x.date<=e}).map(workoutRow).join('')||'<div class="empty">Brak nadchodzących treningów.</div>'}</div>`;
 }
 function workoutFull(it,button=false){if(!it)return '<div class="empty">Brak jednostki.</div>'; const l=getLog(it.id); return `<div class="tagline"><span class="pill green">${esc(it.Phase)}</span><span class="pill">${esc(it.intensity)}</span><span class="pill">${esc(it.week)}</span></div><h3 style="margin:12px 0 4px">${esc(it.discipline)}</h3><p style="color:var(--muted);margin:0 0 12px">${fmtDate(it.date)} • ${esc(it['Dzień']||'')}</p><p style="line-height:1.55">${esc(it.description)}</p><div class="detail-grid"><div class="detail-item"><b>Cel</b><p>${esc(it.goal)}</p></div><div class="detail-item"><b>Żywienie</b><p>${esc(it.breakfast)} ${esc(it.lunch)} ${esc(it.dinner)}</p></div></div>${l.rpe?`<div class="tagline"><span class="pill green">RPE ${l.rpe}</span><span class="pill">ból ${l.pain||0}</span><span class="pill">sen ${l.sleep||'—'}h</span></div>`:''}${button?`<div style="margin-top:14px"><button class="btn primary" onclick="prefillLog('${it.id}')">Uzupełnij ten trening</button> <button class="btn" onclick="openWorkout('${it.id}')">Szczegóły</button></div>`:''}`}
-function workoutRow(it){return `<div class="workout-row" onclick="openWorkout('${it.id}')"><div class="datebox">${fmtDate(it.date)}<small>${esc(it['Dzień']||'')}</small></div><div><h4>${esc(it.discipline)}</h4><p>${esc(it.description)}</p><div class="tagline"><span class="pill">${esc(it.intensity)}</span><span class="pill">${esc(it.week)}</span>${logs[it.id]?'<span class="pill green">uzupełnione</span>':''}</div></div><button class="btn" onclick="event.stopPropagation();prefillLog('${it.id}')">Wpisz</button></div>`}
+function workoutRow(it){const log=logs[it.id]; const status=log?.status==='Częściowo'?'<span class="pill warn">częściowo</span>':log?'<span class="pill green">uzupełnione</span>':''; return `<div class="workout-row" onclick="openWorkout('${it.id}')"><div class="datebox">${fmtDate(it.date)}<small>${esc(it['Dzień']||'')}</small></div><div><h4>${esc(it.discipline)}</h4><p>${esc(it.description)}</p><div class="tagline"><span class="pill">${esc(it.intensity)}</span><span class="pill">${esc(it.week)}</span>${status}</div></div><button class="btn" onclick="event.stopPropagation();prefillLog('${it.id}')">Wpisz</button></div>`}
 function renderCalendar(){const y=calDate.getFullYear(), m=calDate.getMonth(); const first=new Date(y,m,1); const start=new Date(first); const offset=(first.getDay()+6)%7; start.setDate(first.getDate()-offset); const days=[]; for(let i=0;i<42;i++){let d=new Date(start);d.setDate(start.getDate()+i);days.push(d)}
  const monthItems=items.filter(x=>x.date.getFullYear()===y&&x.date.getMonth()===m);
  $('view-calendar').innerHTML=`<div class="card"><div class="calendar-head"><button class="btn" id="prevMonth">←</button><h3>${monthName(calDate)}</h3><button class="btn" id="nextMonth">→</button></div><div class="toolbar"><button class="btn" id="todayMonth">Dzisiaj</button><select id="monthJump">${[...new Set(items.map(x=>x.monthKey))].map(k=>{let [yy,mm]=k.split('-').map(Number);return `<option value="${k}" ${yy===y&&mm-1===m?'selected':''}>${monthName(new Date(yy,mm-1,1))}</option>`}).join('')}</select></div><div class="calendar-grid">${['Pon','Wt','Śr','Czw','Pt','Sob','Nd'].map(d=>`<div class="dow">${d}</div>`).join('')}${days.map(d=>calendarDay(d,m)).join('')}</div></div><div class="section-title"><div><h3>Lista miesiąca</h3><p>${monthItems.length} jednostek</p></div></div><div class="list">${monthItems.map(workoutRow).join('')}</div>`;
  $('prevMonth').onclick=()=>{calDate.setMonth(calDate.getMonth()-1);renderCalendar()}; $('nextMonth').onclick=()=>{calDate.setMonth(calDate.getMonth()+1);renderCalendar()}; $('todayMonth').onclick=()=>{calDate=new Date();renderCalendar()}; $('monthJump').onchange=e=>{const [yy,mm]=e.target.value.split('-').map(Number);calDate=new Date(yy,mm-1,1);renderCalendar()};}
-function calendarDay(d,curM){const ds=iso(d); const dayItems=items.filter(x=>x.dateISO===ds); const today=ds===todayIso(); return `<div class="day ${d.getMonth()!==curM?'off':''} ${today?'today':''}"><div class="day-num"><span>${d.getDate()}</span>${logsForDate(ds).length?'<span class="pill green">✓</span>':''}</div>${dayItems.slice(0,3).map(x=>`<div class="event ${eventClass(x)}" onclick="openWorkout('${x.id}')"><div class="e-title">${esc(x.discipline)}</div><div class="e-meta">${esc(x.intensity)}</div></div>`).join('')}${dayItems.length>3?`<div class="pill">+${dayItems.length-3}</div>`:''}</div>`}
+function calendarDay(d,curM){const ds=iso(d); const dayItems=items.filter(x=>x.dateISO===ds); const external=Object.values(standaloneActivities).filter(x=>x.date===ds); const today=ds===todayIso(); const allCount=dayItems.length+external.length; return `<div class="day ${d.getMonth()!==curM?'off':''} ${today?'today':''}"><div class="day-num"><span>${d.getDate()}</span>${logsForDate(ds).length||external.length?'<span class="pill green">✓</span>':''}</div>${dayItems.slice(0,3).map(x=>`<div class="event ${eventClass(x)}" onclick="openWorkout('${x.id}')"><div class="e-title">${esc(x.discipline)}</div><div class="e-meta">${esc(x.intensity)}</div></div>`).join('')}${external.slice(0,Math.max(0,3-dayItems.length)).map(x=>`<div class="event"><div class="e-title">${esc(x.name)}</div><div class="e-meta">${esc(x.status)}</div></div>`).join('')}${allCount>3?`<div class="pill">+${allCount-3}</div>`:''}</div>`}
 function eventClass(x){let s=((x.intensity||'')+' '+(x.discipline||'')).toUpperCase(); if(/LONG/.test(s))return 'LONG'; if(/START|TEST|MOCNY|INTERWA/.test(s))return 'MOCNY'; if(/BASEN|OPEN/.test(s))return 'BASEN'; if(/TACX|ROWER/.test(s))return 'TACX'; if(/WOLNE|REGENER/.test(s))return 'REGENERACJA'; return ''}
 function logsForDate(ds){return Object.entries(logs).filter(([id])=>items.find(x=>x.id===id)?.dateISO===ds)}
 function renderPlan(){const phases=[...new Set(items.map(x=>x.Phase))]; const intens=[...new Set(items.map(x=>x.intensity).filter(Boolean))]; $('view-plan').innerHTML=`<div class="toolbar"><div class="search"><input class="input" id="planSearch" placeholder="Szukaj: rytmy, long, Tacx, CSS..." /></div><select id="phaseFilter"><option value="">Wszystkie fazy</option>${phases.map(p=>`<option>${esc(p)}</option>`).join('')}</select><select id="intFilter"><option value="">Każda intensywność</option>${intens.map(p=>`<option>${esc(p)}</option>`).join('')}</select></div><div class="list" id="planList"></div>`; const update=()=>{let q=$('planSearch').value.toLowerCase(), ph=$('phaseFilter').value, itf=$('intFilter').value; let arr=items.filter(x=>(!ph||x.Phase===ph)&&(!itf||x.intensity===itf)&&(!q||JSON.stringify(x).toLowerCase().includes(q))); $('planList').innerHTML=arr.slice(0,300).map(workoutRow).join('')+(arr.length>300?`<div class="empty">Pokazuję 300 z ${arr.length}. Zawęź wyszukiwanie.</div>`:'')||'<div class="empty">Brak wyników.</div>'}; ['planSearch','phaseFilter','intFilter'].forEach(id=>setTimeout(()=>$(id).oninput=update)); update();}
 function renderLog(){const opts=items.map(x=>`<option value="${x.id}">${x.dateISO} • ${x.discipline} • ${x.week}</option>`).join(''); $('view-log').innerHTML=`<div class="card"><h3 style="margin-top:0">Wpis po treningu</h3><div class="form-grid"><div class="full"><label>Jednostka treningowa</label><select id="logWorkout">${opts}</select></div><div><label>RPE 1-10</label><input id="logRpe" class="input" type="number" min="1" max="10" step="1"></div><div><label>Ból 0-10</label><input id="logPain" class="input" type="number" min="0" max="10" step="1"></div><div><label>Sen (h)</label><input id="logSleep" class="input" type="number" min="0" step="0.1"></div><div><label>Mental 1-10</label><input id="logMental" class="input" type="number" min="1" max="10" step="1"></div><div><label>Czas min</label><input id="logTime" class="input" type="number" min="0"></div><div><label>Dystans km</label><input id="logKm" class="input" type="number" min="0" step="0.1"></div><div><label>Buty / sprzęt</label><input id="logShoes" class="input" placeholder="np. Metaspeed / Tacx / pianka"></div><div><label>Plan wykonany %</label><input id="logDone" class="input" type="number" min="0" max="130" value="100"></div><div class="wide"><label>Paliwo / żele</label><input id="logFuel" class="input" placeholder="np. 3 żele, 750 ml, sód"></div><div class="wide"><label>Status</label><select id="logStatus"><option>OK</option><option>Ciężko</option><option>Skrócone</option><option>Pominięte</option><option>Ból</option></select></div><div class="full"><label>Uwagi</label><textarea id="logNotes" placeholder="Jak weszło, co bolało, co zadziałało, co poprawić?"></textarea></div></div><div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap"><button class="btn primary" id="saveLog">Zapisz wpis</button><button class="btn warn" id="deleteLog">Usuń wpis dla tej jednostki</button></div></div><div class="section-title"><div><h3>Ostatnie wpisy</h3><p>Twoje najnowsze dane po treningach</p></div></div><div class="list" id="recentLogs"></div>`; $('logWorkout').onchange=loadLogForm; $('saveLog').onclick=saveLogForm; $('deleteLog').onclick=deleteLogForm; const next=findTodayPlan(); $('logWorkout').value=next?.id||items[0]?.id; loadLogForm(); renderRecentLogs();}
 function loadLogForm(){const id=$('logWorkout').value; const l=logs[id]||{}; const map={logRpe:'rpe',logPain:'pain',logSleep:'sleep',logMental:'mental',logTime:'time',logKm:'km',logShoes:'shoes',logDone:'done',logFuel:'fuel',logStatus:'status',logNotes:'notes'}; Object.entries(map).forEach(([el,k])=>{$(el).value=l[k]|| (k==='done'?'100':'')});}
-function saveLogForm(){const id=$('logWorkout').value; logs[id]={rpe:$('logRpe').value,pain:$('logPain').value,sleep:$('logSleep').value,mental:$('logMental').value,time:$('logTime').value,km:$('logKm').value,shoes:$('logShoes').value,done:$('logDone').value,fuel:$('logFuel').value,status:$('logStatus').value,notes:$('logNotes').value,updated:new Date().toISOString()}; saveLogs();}
+function saveLogForm(){const id=$('logWorkout').value; logs[id]={...(logs[id]||{}),rpe:$('logRpe').value,pain:$('logPain').value,sleep:$('logSleep').value,mental:$('logMental').value,time:$('logTime').value,km:$('logKm').value,shoes:$('logShoes').value,done:$('logDone').value,fuel:$('logFuel').value,status:$('logStatus').value,notes:$('logNotes').value,updated:new Date().toISOString()}; saveLogs();}
 function deleteLogForm(){const id=$('logWorkout').value; delete logs[id]; saveLogs(); loadLogForm();}
-function renderRecentLogs(){const arr=Object.keys(logs).map(id=>items.find(x=>x.id===id)).filter(Boolean).sort((a,b)=>b.date-a.date).slice(0,12); const el=$('recentLogs'); if(el) el.innerHTML=arr.map(workoutRow).join('')||'<div class="empty">Jeszcze brak wpisów.</div>'}
+function standaloneRow(activity){const date=activity.date?new Date(activity.date+'T12:00:00'):new Date();return `<div class="workout-row"><div class="datebox">${fmtDate(date)}<small>Intervals.icu</small></div><div><h4>${esc(activity.name||'Aktywność')}</h4><p>${esc(activity.sport||'Other')} • ${esc(activity.time||0)} min • ${esc(activity.km||0)} km • load ${esc(activity.load||0)}</p><div class="tagline"><span class="pill ${activity.status==='Poza planem'?'':'warn'}">${esc(activity.status||'Poza planem')}</span><span class="pill">Intervals auto</span></div></div></div>`}
+function renderRecentLogs(){const planned=Object.keys(logs).map(id=>items.find(x=>x.id===id)).filter(Boolean).map(item=>({kind:'plan',date:item.date,value:item})); const external=Object.values(standaloneActivities).map(item=>({kind:'external',date:new Date((item.date||'1970-01-01')+'T12:00:00'),value:item})); const arr=[...planned,...external].sort((a,b)=>b.date-a.date).slice(0,12); const el=$('recentLogs'); if(el) el.innerHTML=arr.map(row=>row.kind==='plan'?workoutRow(row.value):standaloneRow(row.value)).join('')||'<div class="empty">Jeszcze brak wpisów.</div>'}
 function prefillLog(id){showView('log'); setTimeout(()=>{$('logWorkout').value=id; loadLogForm(); window.scrollTo({top:0,behavior:'smooth'})},0)}
 function renderCoach(){const rd=readiness(); const shoeRows=shoeStats(); const next=findTodayPlan(); $('view-coach').innerHTML=`<div class="grid cols-3">${metric('Readiness',rd.score===null?'—':rd.score+'/100',rd.label||'brak danych',rd.class)}${metric('Ból ≥3 / 14 dni',rd.pain3,'sygnały przeciążenia',rd.pain3>2?'bad':'')}${metric('Mental 7 dni',rd.mental?rd.mental.toFixed(1):'—','głowa / motywacja')}</div>${intervalsCoachPanel()}<div class="section-title"><div><h3>Automatyczny Plan B</h3><p>Dla najbliższej jednostki</p></div></div><div class="card"><div class="detail-grid"><div class="detail-item"><b>Plan</b><p>${esc(next?.discipline)} — ${esc(next?.description)}</p></div><div class="detail-item"><b>Plan B</b><p>${esc(planBFor(next,rd))}</p></div></div></div><div class="section-title"><div><h3>Kalkulator paliwa</h3><p>Dla long runów, zakładek i startów</p></div></div><div class="card"><div class="form-grid"><div><label>Czas treningu (min)</label><input class="input" id="fuelMin" type="number" value="180"></div><div><label>Węgle g/h</label><input class="input" id="fuelCarb" type="number" value="70"></div><div><label>Żel g węgli</label><input class="input" id="fuelGel" type="number" value="25"></div><div><label>Płyn ml/h</label><input class="input" id="fuelFluid" type="number" value="600"></div></div><div id="fuelResult" style="margin-top:14px"></div></div><div class="section-title"><div><h3>Buty / sprzęt</h3><p>Liczone z Twoich wpisów dystansu i pola Buty/sprzęt</p></div></div><div class="card">${shoeRows.length?`<table class="table"><thead><tr><th>Sprzęt</th><th>Km</th><th>Status</th></tr></thead><tbody>${shoeRows.map(r=>`<tr><td>${esc(r.name)}</td><td>${r.km.toFixed(1)}</td><td>${r.km>650?'Wymiana / ostrożnie':r.km>450?'Obserwuj':'OK'}</td></tr>`).join('')}</tbody></table>`:'<div class="empty">Wpisz buty/sprzęt i dystans po biegach, a tracker zacznie liczyć przebieg.</div>'}</div><div class="section-title"><div><h3>Predykcja startów</h3><p>Orientacyjnie — na podstawie wpisanych testów</p></div></div><div class="grid cols-2"><div class="card"><h3>Oslo Marathon</h3><p style="color:var(--muted)">${racePredictor('oslo')}</p></div><div class="card"><h3>Ironman 70.3 Poznań</h3><p style="color:var(--muted)">${racePredictor('im')}</p></div></div>`; ['fuelMin','fuelCarb','fuelGel','fuelFluid'].forEach(id=>setTimeout(()=>$(id).oninput=calcFuel)); calcFuel();}
 function calcFuel(){const min=num($('fuelMin')?.value), carb=num($('fuelCarb')?.value), gel=num($('fuelGel')?.value)||25, fluid=num($('fuelFluid')?.value); if(!$('fuelResult')) return; const hours=min/60, total=hours*carb, gels=Math.ceil(total/gel), fl=hours*fluid; $('fuelResult').innerHTML=`<div class="grid cols-4">${metric('Węgle razem',Math.round(total)+' g',`${carb} g/h`)}${metric('Żele',gels,`${gel} g/żel`)}${metric('Płyn',Math.round(fl)+' ml',`${fluid} ml/h`)}${metric('Harmonogram',min?`co ${Math.max(20,Math.round(min/gels))} min`:'—','orientacyjnie')}</div>`}

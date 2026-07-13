@@ -1,0 +1,19 @@
+{
+  "events": [
+    {"id":"event-run-0707","external_id":"opcoach-FA-2026-07-07-31-run","category":"WORKOUT","type":"Run"},
+    {"id":"event-ride-0708","external_id":"opcoach-FA-2026-07-08-32-bike","category":"WORKOUT","type":"Ride"},
+    {"id":"event-run-0709","external_id":"opcoach-FA-2026-07-09-33-run","category":"WORKOUT","type":"Run"},
+    {"id":"event-swim-0709","external_id":"opcoach-FA-2026-07-09-33-swim","category":"WORKOUT","type":"Swim"},
+    {"id":"event-run-0711","external_id":"opcoach-FA-2026-07-11-35-note","category":"NOTE","type":"Run"}
+  ],
+  "activities": {
+    "run0707": {"id":"activity-run-0707","paired_event_id":"event-run-0707","start_date_local":"2026-07-07T08:00:00","type":"Run","name":"Bieg easy + rytmy","moving_time":2700,"distance":8000,"icu_training_load":42,"average_heartrate":145,"max_heartrate":171,"calories":540},
+    "ride0708": {"id":"activity-ride-0708","pairedEventId":"event-ride-0708","startDateLocal":"2026-07-08T09:00:00","type":"Ride","name":"Tacx recovery","elapsedTime":3000,"distance":22000,"trainingLoad":30,"averageWatts":158,"normalizedWatts":165,"averageCadence":93,"calories":410},
+    "run0709": {"id":"activity-run-0709","paired_event_id":"event-run-0709","start_date_local":"2026-07-09T07:00:00","type":"Run","name":"Morning easy run","moving_time":3300,"distance":9000,"icu_training_load":48},
+    "swim0709": {"id":"activity-swim-0709","paired_event_id":"event-swim-0709","start_date_local":"2026-07-09T18:00:00","type":"Swim","name":"Evening technique swim","moving_time":2400,"distance":1200,"icu_training_load":22},
+    "run0711": {"id":"activity-run-0711","paired_event_id":"event-run-0711","start_date_local":"2026-07-11T09:00:00","type":"Run","name":"10 km solo TT","moving_time":3300,"distance":14000,"icu_training_load":95},
+    "outsideRun": {"id":"activity-outside-run","start_date_local":"2026-06-09T12:00:00","type":"Run","name":"Spontaniczny bieg","moving_time":1800,"distance":5000,"icu_training_load":25},
+    "outsideRide": {"id":"activity-outside-ride","start_date_local":"2026-07-10T12:00:00","type":"Ride","name":"Dodatkowy rower","moving_time":3600,"distance":30000,"icu_training_load":45,"average_watts":180,"average_cadence":88},
+    "ambiguousRun": {"id":"activity-ambiguous-run","start_date_local":"2026-07-08T12:00:00","type":"Run","name":"Bieg bez relacji","moving_time":3000,"distance":8000,"icu_training_load":40}
+  }
+}
