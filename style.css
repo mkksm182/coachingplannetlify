@@ -23,3 +23,4 @@ button,input,select,textarea{font:inherit;color:inherit} button{cursor:pointer} 
 code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--glass);border:1px solid var(--line);border-radius:8px;padding:2px 6px;color:var(--text);word-break:break-all}
 @media (max-width:1100px){.mobile-nav .nav{grid-template-columns:repeat(7,1fr)}}
 @media (max-width:420px){.mobile-nav .nav{grid-template-columns:repeat(4,1fr)}.mobile-nav button{font-size:10px}}
+.input[readonly]{color:var(--muted);cursor:default}.manual-details{margin-top:18px;padding:14px;border:1px solid var(--line);border-radius:16px;background:var(--glass)}.manual-details summary{cursor:pointer;font-weight:800}
