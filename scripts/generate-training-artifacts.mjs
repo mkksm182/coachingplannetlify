@@ -41,67 +41,67 @@ function monthLabel(date) {
   return `${names[Number(date.slice(5, 7)) - 1]} ${date.slice(0, 4)}`;
 }
 
-function aggregatePlanItems(source, oldItems) {
+function buildPlanItems(source, oldItems) {
+  const previousById = new Map(oldItems.filter(inRange).map(item => [String(item.id), item]));
+  const previousByParent = new Map(oldItems.filter(inRange).map(item => [String(item.parentId || item.id), item]));
   const previousByDate = new Map(oldItems.filter(inRange).map(item => [item.dateISO, item]));
-  const groups = new Map();
-  for (const workout of source.workouts) {
-    if (!groups.has(workout.date)) groups.set(workout.date, []);
-    groups.get(workout.date).push(workout);
-  }
-  const replacements = [...groups.entries()].map(([dateISO, parts]) => {
-    const previous = previousByDate.get(dateISO) || {};
-    const requiredRuns = parts.filter(x => x.sport === "Run" && x.required);
-    const requiredKm = requiredRuns.reduce((sum, x) => sum + (typeof x.distanceKm === "number" ? x.distanceKm : 0), 0);
-    const range = requiredRuns.find(x => Array.isArray(x.distanceRangeKm))?.distanceRangeKm;
-    const requiredMinutes = parts.filter(x => x.required && Number.isFinite(x.durationMinutes)).reduce((sum, x) => sum + x.durationMinutes, 0);
-    const names = parts.map(x => x.name);
-    const descriptions = parts.map(x => {
-      const flag = x.optional ? "[OPCJONALNE/ALT] " : "";
-      return `${flag}${x.name}: ${[x.warmup, x.mainSet, x.recovery, x.cooldown].filter(Boolean).join(" | ")}`;
-    });
-    const planB = [...new Set(parts.map(x => x.planB).filter(Boolean))].join(" | ");
-    const conditions = [...new Set(parts.map(x => x.conditions).filter(Boolean))].join(" | ");
-    const priorities = [...new Set(parts.map(x => x.priority).filter(Boolean))];
-    const primary = requiredRuns[0] || parts.find(x => x.required) || parts[0];
+  const replacements = source.workouts.map(workout => {
+    const dateISO = workout.date;
+    const previous = previousById.get(workout.external_id) || previousByParent.get(workout.parentId) || previousByDate.get(dateISO) || {};
+    const distance = workout.distanceRangeKm ? `${workout.distanceRangeKm[0]}–${workout.distanceRangeKm[1]}` : workout.distanceKm ?? "";
+    const plannedKm = workout.optional ? "" : workout.distanceRangeKm ? workout.distanceRangeKm.join("-") : workout.distanceKm ?? "";
+    const plannedMinutes = workout.optional ? "" : workout.durationMinutes ?? "";
+    const status = workout.optional ? "[OPCJONALNE/ALT] " : workout.required ? "" : "[INFORMACJA] ";
+    const description = `${status}${[workout.warmup, workout.mainSet, workout.recovery, workout.cooldown].filter(Boolean).join(" | ")}${workout.paceDisplay ? `\nTempo i RPE: ${workout.paceDisplay}` : ""}`;
     const item = {
       Data: excelSerial(dateISO),
-      Dzień: primary.dayName,
-      "Faza / tydzień": primary.week,
-      "Priorytet tygodnia": priorities.join(" / "),
-      Dyscyplina: names.join(" + "),
-      "Szczegółowy opis treningu": descriptions.join("\n"),
-      Intensywność: primary.intensity,
-      "Cel jednostki": [...new Set(parts.map(x => x.goal).filter(Boolean))].join(" | "),
-      Śniadanie: primary.fuel,
+      Dzień: workout.dayName,
+      "Faza / tydzień": workout.week,
+      "Priorytet tygodnia": workout.priority,
+      Dyscyplina: workout.name,
+      "Szczegółowy opis treningu": description,
+      Intensywność: workout.intensity,
+      "Cel jednostki": workout.goal,
+      Śniadanie: workout.fuel,
       Obiad: "Po treningu: pełnowartościowy posiłek, białko, węglowodany i płyny.",
-      "Kolacja / po treningu": primary.fuel,
-      "Modyfikacja jeśli zmęczenie/ból": planB,
+      "Kolacja / po treningu": workout.fuel,
+      "Modyfikacja jeśli zmęczenie/ból": workout.planB,
       Miesiąc: dateISO.endsWith("-01") ? monthLabel(dateISO).toUpperCase() : "",
       Kolor: "■",
-      Typ: primary.workoutType,
-      Charakterystyka: conditions || primary.goal,
-      "Czas min": requiredMinutes || "",
-      "Dystans km": range ? `${range[0]}–${range[1]}` : requiredKm || "",
-      Phase: primary.phase,
+      Typ: workout.workoutType,
+      Charakterystyka: workout.conditions || workout.goal,
+      "Czas min": plannedMinutes,
+      "Dystans km": workout.optional ? "" : distance,
+      Phase: workout.phase,
       dateISO,
-      id: primary.parentId,
-      parentId: primary.parentId,
-      week: primary.week,
-      discipline: names.join(" + "),
-      description: descriptions.join("\n"),
-      intensity: primary.intensity,
-      goal: [...new Set(parts.map(x => x.goal).filter(Boolean))].join(" | "),
-      breakfast: primary.fuel,
+      id: workout.external_id,
+      external_id: workout.external_id,
+      parentId: workout.parentId,
+      week: workout.week,
+      discipline: workout.name,
+      sport: workout.sport,
+      description,
+      intensity: workout.intensity,
+      goal: workout.goal,
+      breakfast: workout.fuel,
       lunch: "Po treningu: pełnowartościowy posiłek, białko, węglowodany i płyny.",
-      dinner: primary.fuel,
-      modification: [planB, conditions].filter(Boolean).join(" | "),
-      plannedMinutes: requiredMinutes || "",
-      plannedKm: range ? `${range[0]}-${range[1]}` : requiredKm || "",
+      dinner: workout.fuel,
+      modification: [workout.planB, workout.conditions].filter(Boolean).join(" | "),
+      plannedMinutes,
+      plannedKm,
+      pace: workout.pace,
+      paceDisplay: workout.paceDisplay,
+      paceSummary: workout.paceSummary,
+      rpe: workout.rpe,
+      effortBased: Boolean(workout.effortBased),
+      optional: Boolean(workout.optional),
+      required: Boolean(workout.required),
+      alternativeGroup: workout.alternativeGroup,
       monthLabel: monthLabel(dateISO),
       dayNum: Number(dateISO.slice(8, 10)),
       monthKey: dateISO.slice(0, 7),
       sourceVersion: "oslo-v2",
-      parts: parts.map(x => x.external_id),
+      parts: [workout.external_id],
     };
     for (const field of MANUAL_FIELDS) item[field] = previous[field] ?? "";
     return item;
@@ -120,6 +120,7 @@ function formatDescription(workout) {
     "",
     "## Coach notes",
     [workout.warmup, workout.mainSet, workout.recovery, workout.cooldown].filter(Boolean).join(" | "),
+    workout.paceDisplay ? `Tempo i RPE: ${workout.paceDisplay}` : "",
     workout.conditions ? `Warunki: ${workout.conditions}` : "",
     `Plan B: ${workout.planB}`,
     `Fueling: ${workout.fuel}`,
@@ -154,7 +155,12 @@ function buildStructured(source, oldStructured) {
     plannedMinutes: workout.durationMinutes ?? "",
     intensity: workout.intensity,
     pace: workout.pace,
+    paceDisplay: workout.paceDisplay,
+    paceSummary: workout.paceSummary,
     rpe: workout.rpe,
+    effortBased: Boolean(workout.effortBased),
+    goalPaceConditional: Boolean(workout.goalPaceConditional),
+    structuredSteps: workout.structuredSteps || [],
     elevationM: workout.elevationM,
     conditions: workout.conditions,
     planB: workout.planB,
@@ -260,7 +266,7 @@ export async function generateArtifacts({ outputRoot = REPO_ROOT, baselineRoot =
     file,
     await fs.readFile(path.join(baselineRoot, file), "utf8"),
   ])));
-  const planItems = aggregatePlanItems(source, oldPlan.items);
+  const planItems = buildPlanItems(source, oldPlan.items);
   const structured = buildStructured(source, oldStructured);
   const plan = {
     stats: { ...oldPlan.stats, generated: source.generatedAt, count: planItems.length, source: "data/oslo-marathon-2026-v2.json" },

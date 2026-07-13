@@ -82,7 +82,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-07",
-      "dayNum": 15
+      "dayNum": 15,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-07-15-ride-alt",
@@ -101,8 +102,8 @@
       "distanceRangeKm": null,
       "durationMinutes": 40,
       "intensity": "REGENERACJA",
-      "pace": null,
-      "rpe": "2–3",
+      "pace": "Z2; bez tempa biegowego",
+      "rpe": "3",
       "elevationM": null,
       "warmup": "",
       "mainSet": "40 min spokojnego Z2, kadencja 85–95; bez sweet spotu.",
@@ -114,14 +115,16 @@
       "required": false,
       "countsTowardMileage": false,
       "alternativeGroup": "alt-2026-07-15",
-      "conditions": "Wykonaj tylko przy świeżych nogach; pełne wolne jest równorzędnym wyborem.",
+      "conditions": "Wykonaj tylko przy świeżych nogach; pełne wolne jest równorzędnym wyborem. Wybierz tylko jedną opcję z grupy alt-2026-07-15.",
       "quality": false,
       "mechanicalLoad": "low",
       "structuredWorkoutText": "- Easy spin 40m 55-70% 85-95rpm",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-07",
-      "dayNum": 15
+      "dayNum": 15,
+      "paceDisplay": "Rower Z2, RPE 3; bez tempa biegowego. Wybierz tylko jedną opcję ALT.",
+      "paceSummary": "Z2 • RPE 3"
     },
     {
       "id": "cc-v2-oslo-2026-2026-07-16-run-1",
@@ -140,13 +143,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "5:50–6:25/km",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 5 km easy 5:50–6:25/km, RPE 3–4 + 6 × 20 s rytmu technicznego, RPE 7–8, bez targetu tempa. Przerwy: 90 s pełnego truchtu lub marszu, target otwarty. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Rytmy wykonuj luźno i technicznie; Garmin bez alarmu tempa. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "3–4",
       "elevationM": 60,
-      "warmup": "5 km easy",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "6 × 20 s rytmu luźno, nie sprint",
       "recovery": "90 s pełnego truchtu",
-      "cooldown": "Do 7 km easy",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -156,11 +159,67 @@
       "conditions": "",
       "quality": false,
       "mechanicalLoad": "moderate",
-      "structuredWorkoutText": "- Warmup easy 5km 5:50/km-6:25/km Pace\n\nRytmy 6x\n- Fast relaxed 20s 7-8 RPE\n- Full easy recovery 90s Z1 Pace\n\n- Cooldown easy 1km Z1-Z2 Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Easy 5km 5:50/km-6:25/km Pace\n\nStrides 6x\n- Fast relaxed 20s 7-8 RPE\n- Full recovery 90s open\n\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-07",
-      "dayNum": 16
+      "dayNum": 16,
+      "effortBased": true,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 5 km easy 5:50–6:25/km, RPE 3–4 + 6 × 20 s rytmu technicznego, RPE 7–8, bez targetu tempa. Przerwy: 90 s pełnego truchtu lub marszu, target otwarty. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Rytmy wykonuj luźno i technicznie; Garmin bez alarmu tempa. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Easy",
+          "sport": "Run",
+          "distanceKm": 5,
+          "targetType": "pace",
+          "targetPace": "5:50–6:25/km",
+          "rpe": "3–4",
+          "flatOnly": true
+        },
+        {
+          "kind": "repeat",
+          "label": "Rytm techniczny",
+          "sport": "Run",
+          "repetitions": 6,
+          "durationSeconds": 20,
+          "targetType": "effort",
+          "targetPace": null,
+          "rpe": "7–8",
+          "effortBased": true
+        },
+        {
+          "kind": "recovery",
+          "label": "Pełny trucht lub marsz",
+          "sport": "Run",
+          "repetitions": 6,
+          "durationSeconds": 90,
+          "targetType": "open",
+          "targetPace": null,
+          "rpe": "1–2"
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 5:50–6:25/km • 6:10–6:40/km • odcinki wysiłkowo"
     },
     {
       "id": "cc-v2-oslo-2026-2026-07-16-strength-1",
@@ -199,7 +258,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-07",
-      "dayNum": 16
+      "dayNum": 16,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-07-17-note-1",
@@ -238,7 +298,8 @@
       "goal": "Regeneracja i adaptacja.",
       "strategyGate": null,
       "monthKey": "2026-07",
-      "dayNum": 17
+      "dayNum": 17,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-07-18-run-1",
@@ -257,13 +318,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "5:55–6:25/km",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 10 km easy 5:50–6:25/km, RPE 3–4. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "3–4",
       "elevationM": 120,
-      "warmup": "",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "12 km easy na łagodnie pofałdowanej trasie; bez MP.",
       "recovery": "",
-      "cooldown": "",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "8–10 km easy albo przerwanie przy narastającym bólu; nie nadrabiaj.",
       "optional": false,
@@ -273,11 +334,45 @@
       "conditions": "Ból 0–2/10 i brak zmiany kroku. W innym przypadku 8–10 km easy.",
       "quality": true,
       "mechanicalLoad": "high",
-      "structuredWorkoutText": "- Long easy 12km 5:55/km-6:25/km Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Long easy 10km 5:50/km-6:25/km Pace\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-07",
-      "dayNum": 18
+      "dayNum": 18,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 10 km easy 5:50–6:25/km, RPE 3–4. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Long easy",
+          "sport": "Run",
+          "distanceKm": 10,
+          "targetType": "pace",
+          "targetPace": "5:50–6:25/km",
+          "rpe": "3–4",
+          "flatOnly": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 5:50–6:25/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-07-19-run-1",
@@ -296,13 +391,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "6:15–6:45/km",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Recovery: 3 km 6:15–6:45/km, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "2–3",
       "elevationM": 30,
-      "warmup": "",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "5 km bardzo lekko.",
       "recovery": "",
-      "cooldown": "",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Pełne wolne, jeśli po longu jest ból albo sztywność.",
       "optional": false,
@@ -312,11 +407,45 @@
       "conditions": "",
       "quality": false,
       "mechanicalLoad": "moderate",
-      "structuredWorkoutText": "- Recovery run 5km 6:15/km-6:45/km Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Recovery 3km 6:15/km-6:45/km Pace\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-07",
-      "dayNum": 19
+      "dayNum": 19,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Recovery: 3 km 6:15–6:45/km, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Recovery",
+          "sport": "Run",
+          "distanceKm": 3,
+          "targetType": "pace",
+          "targetPace": "6:15–6:45/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 6:15–6:45/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-07-20-note-1",
@@ -355,7 +484,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-07",
-      "dayNum": 20
+      "dayNum": 20,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-07-20-strength-1",
@@ -394,7 +524,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-07",
-      "dayNum": 20
+      "dayNum": 20,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-07-21-run-1",
@@ -413,13 +544,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "odcinki 4:58–5:05/km",
-      "rpe": "6–7",
+      "pace": "Rozgrzewka: 2 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 3 × 1 km 4:58–5:05/km, RPE 7, na płaskim. Przerwy: 2 min truchtu 6:15–6:45/km, RPE 2–3. Schłodzenie: 2 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "rpe": "7",
       "elevationM": 50,
-      "warmup": "2 km easy + mobilizacja",
+      "warmup": "Rozgrzewka: 2 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "3 × 1 km w tempie progowym",
       "recovery": "2 min trucht",
-      "cooldown": "Easy do 8 km",
+      "cooldown": "Schłodzenie: 2 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -429,11 +560,57 @@
       "conditions": "",
       "quality": true,
       "mechanicalLoad": "high",
-      "structuredWorkoutText": "- Warmup easy 2km Z2 Pace\n\nThreshold 3x\n- Threshold 1km 4:58/km-5:05/km Pace\n- Recovery 2m Z1 Pace\n\n- Cooldown easy 2km Z1-Z2 Pace",
+      "structuredWorkoutText": "- Warmup 2km 6:00/km-6:30/km Pace\n\nThreshold 3x\n- Threshold 1km 4:58/km-5:05/km Pace\n- Recovery 2m 6:15/km-6:45/km Pace\n\n- Cooldown 2km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-07",
-      "dayNum": 21
+      "dayNum": 21,
+      "paceDisplay": "Rozgrzewka: 2 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 3 × 1 km 4:58–5:05/km, RPE 7, na płaskim. Przerwy: 2 min truchtu 6:15–6:45/km, RPE 2–3. Schłodzenie: 2 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 2,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "repeat",
+          "label": "Threshold",
+          "sport": "Run",
+          "repetitions": 3,
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "4:58–5:05/km",
+          "rpe": "7",
+          "flatOnly": true
+        },
+        {
+          "kind": "recovery",
+          "label": "Trucht",
+          "sport": "Run",
+          "repetitions": 3,
+          "durationMinutes": 2,
+          "targetType": "pace",
+          "targetPace": "6:15–6:45/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 2,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 4:58–5:05/km • 6:15–6:45/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-07-22-note-1",
@@ -472,7 +649,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-07",
-      "dayNum": 22
+      "dayNum": 22,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-07-22-ride-alt",
@@ -491,8 +669,8 @@
       "distanceRangeKm": null,
       "durationMinutes": 45,
       "intensity": "REGENERACJA",
-      "pace": null,
-      "rpe": "2–3",
+      "pace": "Z2; bez tempa biegowego",
+      "rpe": "3",
       "elevationM": null,
       "warmup": "",
       "mainSet": "45 min spokojnego Z2, kadencja 85–95; bez sweet spotu.",
@@ -504,14 +682,16 @@
       "required": false,
       "countsTowardMileage": false,
       "alternativeGroup": "alt-2026-07-22",
-      "conditions": "Wykonaj tylko przy świeżych nogach; pełne wolne jest równorzędnym wyborem.",
+      "conditions": "Wykonaj tylko przy świeżych nogach; pełne wolne jest równorzędnym wyborem. Wybierz tylko jedną opcję z grupy alt-2026-07-22.",
       "quality": false,
       "mechanicalLoad": "low",
       "structuredWorkoutText": "- Easy spin 45m 55-70% 85-95rpm",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-07",
-      "dayNum": 22
+      "dayNum": 22,
+      "paceDisplay": "Rower Z2, RPE 3; bez tempa biegowego. Wybierz tylko jedną opcję ALT.",
+      "paceSummary": "Z2 • RPE 3"
     },
     {
       "id": "cc-v2-oslo-2026-2026-07-23-run-1",
@@ -530,13 +710,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "5:50–6:20/km",
+      "pace": "Rozgrzewka: 2 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 7 km średnio-długiego easy 5:45–6:15/km, RPE 3–4 + 6 × 8 s hill sprint techniczny, nachylenie 4–6%, RPE 8, bez targetu tempa. Przerwy: 2 min pełnego marszu/truchtu w dół, target otwarty. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Podbieg wykonywany na wysiłek — nie kontroluj tempa chwilowego. Garmin bez alarmu tempa na hill sprintach.",
       "rpe": "3–4",
       "elevationM": 100,
-      "warmup": "8 km easy",
+      "warmup": "Rozgrzewka: 2 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "6 × 8 s sprężystego podbiegu, nie maksymalnie",
       "recovery": "2 min pełnego marszu/truchtu",
-      "cooldown": "Easy do 10 km",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -546,11 +726,68 @@
       "conditions": "Hill sprints są dodatkiem nerwowo-mięśniowym; pełna regeneracja, bez celu tempa na stromym podbiegu.",
       "quality": false,
       "mechanicalLoad": "moderate",
-      "structuredWorkoutText": "- Easy run 8km 5:50/km-6:20/km Pace\n\nHill sprints 6x\n- Uphill fast relaxed 8s 8 RPE\n- Full recovery 2m Z1 Pace\n\n- Cooldown easy 1km Z1-Z2 Pace",
+      "structuredWorkoutText": "- Warmup 2km 6:00/km-6:30/km Pace\n- Medium long easy 7km 5:45/km-6:15/km Pace\n\nHill sprints 6x\n- Uphill fast relaxed 8s 8 RPE\n- Full walk-jog recovery 2m open\n\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-07",
-      "dayNum": 23
+      "dayNum": 23,
+      "effortBased": true,
+      "paceDisplay": "Rozgrzewka: 2 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 7 km średnio-długiego easy 5:45–6:15/km, RPE 3–4 + 6 × 8 s hill sprint techniczny, nachylenie 4–6%, RPE 8, bez targetu tempa. Przerwy: 2 min pełnego marszu/truchtu w dół, target otwarty. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Podbieg wykonywany na wysiłek — nie kontroluj tempa chwilowego. Garmin bez alarmu tempa na hill sprintach.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 2,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Średnio-długi easy",
+          "sport": "Run",
+          "distanceKm": 7,
+          "targetType": "pace",
+          "targetPace": "5:45–6:15/km",
+          "rpe": "3–4",
+          "flatOnly": true
+        },
+        {
+          "kind": "repeat",
+          "label": "Hill sprint techniczny",
+          "sport": "Run",
+          "repetitions": 6,
+          "durationSeconds": 8,
+          "targetType": "effort",
+          "targetPace": null,
+          "rpe": "8",
+          "grade": "4–6%",
+          "effortBased": true
+        },
+        {
+          "kind": "recovery",
+          "label": "Pełny marsz/trucht w dół",
+          "sport": "Run",
+          "repetitions": 6,
+          "durationSeconds": 120,
+          "targetType": "open",
+          "targetPace": null,
+          "rpe": "1–2"
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 5:45–6:15/km • 6:10–6:40/km • odcinki wysiłkowo"
     },
     {
       "id": "cc-v2-oslo-2026-2026-07-24-note-1",
@@ -589,7 +826,8 @@
       "goal": "Regeneracja i adaptacja.",
       "strategyGate": null,
       "monthKey": "2026-07",
-      "dayNum": 24
+      "dayNum": 24,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-07-25-run-1",
@@ -608,13 +846,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "5:55–6:25/km",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 10 km easy 5:50–6:25/km, RPE 3–4. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "3–4",
       "elevationM": 140,
-      "warmup": "",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "12 km easy na pofałdowanej trasie, równy wysiłek.",
       "recovery": "",
-      "cooldown": "",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -624,11 +862,45 @@
       "conditions": "",
       "quality": true,
       "mechanicalLoad": "high",
-      "structuredWorkoutText": "- Long easy 12km 5:55/km-6:25/km Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Long easy 10km 5:50/km-6:25/km Pace\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-07",
-      "dayNum": 25
+      "dayNum": 25,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 10 km easy 5:50–6:25/km, RPE 3–4. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Long easy",
+          "sport": "Run",
+          "distanceKm": 10,
+          "targetType": "pace",
+          "targetPace": "5:50–6:25/km",
+          "rpe": "3–4",
+          "flatOnly": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 5:50–6:25/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-07-26-run-1",
@@ -647,13 +919,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "6:15–6:45/km",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Recovery: 3 km 6:15–6:45/km, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "2–3",
       "elevationM": 30,
-      "warmup": "",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "5 km bardzo lekko.",
       "recovery": "",
-      "cooldown": "",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -663,11 +935,45 @@
       "conditions": "",
       "quality": false,
       "mechanicalLoad": "moderate",
-      "structuredWorkoutText": "- Recovery run 5km 6:15/km-6:45/km Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Recovery 3km 6:15/km-6:45/km Pace\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-07",
-      "dayNum": 26
+      "dayNum": 26,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Recovery: 3 km 6:15–6:45/km, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Recovery",
+          "sport": "Run",
+          "distanceKm": 3,
+          "targetType": "pace",
+          "targetPace": "6:15–6:45/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 6:15–6:45/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-07-27-note-1",
@@ -706,7 +1012,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-07",
-      "dayNum": 27
+      "dayNum": 27,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-07-27-strength-1",
@@ -745,7 +1052,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-07",
-      "dayNum": 27
+      "dayNum": 27,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-07-28-run-1",
@@ -764,13 +1072,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "easy 5:55–6:25/km; podbieg wg RPE",
+      "pace": "Rozgrzewka: 2.5 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 6 × 60 s pod górę, nachylenie 4–7%, RPE 7; bez targetu tempa. Przerwy: pełny trucht w dół 2.5 min, target otwarty, RPE 2–3. Schłodzenie: 2 km 6:10–6:40/km, RPE 2–3. Podbieg wykonywany na wysiłek — nie kontroluj tempa chwilowego.",
       "rpe": "7 na podbiegach",
       "elevationM": 180,
-      "warmup": "2.5 km easy + 4 przebieżki",
+      "warmup": "Rozgrzewka: 2.5 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "6 × 60 s pod górę w kontrolowanym mocnym wysiłku",
       "recovery": "Pełny trucht w dół 2–3 min",
-      "cooldown": "Easy do 9 km",
+      "cooldown": "Schłodzenie: 2 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -780,11 +1088,58 @@
       "conditions": "Bez celu tempa na podbiegu; technika i równy wysiłek.",
       "quality": true,
       "mechanicalLoad": "high",
-      "structuredWorkoutText": "- Warmup easy 2.5km Z2 Pace\n\nLong hills 6x\n- Uphill controlled 1m 7 RPE\n- Full jog-down recovery 2m30s Z1 Pace\n\n- Cooldown easy 2km Z1-Z2 Pace",
+      "structuredWorkoutText": "- Warmup 2.5km 6:00/km-6:30/km Pace\n\nUphill effort 6x\n- Uphill 60s 7 RPE\n- Full jog-down recovery 150s open\n\n- Cooldown 2km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-07",
-      "dayNum": 28
+      "dayNum": 28,
+      "effortBased": true,
+      "paceDisplay": "Rozgrzewka: 2.5 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 6 × 60 s pod górę, nachylenie 4–7%, RPE 7; bez targetu tempa. Przerwy: pełny trucht w dół 2.5 min, target otwarty, RPE 2–3. Schłodzenie: 2 km 6:10–6:40/km, RPE 2–3. Podbieg wykonywany na wysiłek — nie kontroluj tempa chwilowego.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 2.5,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "repeat",
+          "label": "Podbieg",
+          "sport": "Run",
+          "repetitions": 6,
+          "durationSeconds": 60,
+          "targetType": "effort",
+          "targetPace": null,
+          "rpe": "7",
+          "grade": "4–7%",
+          "effortBased": true
+        },
+        {
+          "kind": "recovery",
+          "label": "Trucht w dół",
+          "sport": "Run",
+          "repetitions": 6,
+          "durationSeconds": 150,
+          "targetType": "open",
+          "targetPace": null,
+          "rpe": "2–3"
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 2,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 6:10–6:40/km • odcinki wysiłkowo"
     },
     {
       "id": "cc-v2-oslo-2026-2026-07-29-note-1",
@@ -823,7 +1178,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-07",
-      "dayNum": 29
+      "dayNum": 29,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-07-29-ride-alt",
@@ -842,8 +1198,8 @@
       "distanceRangeKm": null,
       "durationMinutes": 45,
       "intensity": "REGENERACJA",
-      "pace": null,
-      "rpe": "2–3",
+      "pace": "Z2; bez tempa biegowego",
+      "rpe": "3",
       "elevationM": null,
       "warmup": "",
       "mainSet": "45 min spokojnego Z2, kadencja 85–95; bez sweet spotu.",
@@ -855,14 +1211,16 @@
       "required": false,
       "countsTowardMileage": false,
       "alternativeGroup": "alt-2026-07-29",
-      "conditions": "Wykonaj tylko przy świeżych nogach; pełne wolne jest równorzędnym wyborem.",
+      "conditions": "Wykonaj tylko przy świeżych nogach; pełne wolne jest równorzędnym wyborem. Wybierz tylko jedną opcję z grupy alt-2026-07-29.",
       "quality": false,
       "mechanicalLoad": "low",
       "structuredWorkoutText": "- Easy spin 45m 55-70% 85-95rpm",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-07",
-      "dayNum": 29
+      "dayNum": 29,
+      "paceDisplay": "Rower Z2, RPE 3; bez tempa biegowego. Wybierz tylko jedną opcję ALT.",
+      "paceSummary": "Z2 • RPE 3"
     },
     {
       "id": "cc-v2-oslo-2026-2026-07-30-run-1",
@@ -881,13 +1239,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "8 km 5:50–6:15/km + 3 km 5:20–5:35/km",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 6 km średnio-długiego easy 5:45–6:15/km, RPE 3–4 + 3 km steady 5:20–5:35/km, RPE 5–6. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "3–5",
       "elevationM": 100,
-      "warmup": "8 km easy",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "Ostatnie 3 km steady, bez wejścia na próg",
       "recovery": "",
-      "cooldown": "5 min marszu",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -897,11 +1255,55 @@
       "conditions": "",
       "quality": false,
       "mechanicalLoad": "moderate",
-      "structuredWorkoutText": "- Easy run 8km 5:50/km-6:15/km Pace\n- Steady finish 3km 5:20/km-5:35/km Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Medium long easy 6km 5:45/km-6:15/km Pace\n- Steady 3km 5:20/km-5:35/km Pace\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-07",
-      "dayNum": 30
+      "dayNum": 30,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 6 km średnio-długiego easy 5:45–6:15/km, RPE 3–4 + 3 km steady 5:20–5:35/km, RPE 5–6. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Średnio-długi easy",
+          "sport": "Run",
+          "distanceKm": 6,
+          "targetType": "pace",
+          "targetPace": "5:45–6:15/km",
+          "rpe": "3–4",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Steady",
+          "sport": "Run",
+          "distanceKm": 3,
+          "targetType": "pace",
+          "targetPace": "5:20–5:35/km",
+          "rpe": "5–6",
+          "flatOnly": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 5:45–6:15/km • 5:20–5:35/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-07-31-note-1",
@@ -940,7 +1342,8 @@
       "goal": "Regeneracja i adaptacja.",
       "strategyGate": null,
       "monthKey": "2026-07",
-      "dayNum": 31
+      "dayNum": 31,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-01-run-1",
@@ -959,13 +1362,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "5:55–6:30/km wg terenu",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 12 km easy 5:50–6:25/km na płaskich fragmentach; na podbiegach według wysiłku, RPE 3–4. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "3–5",
       "elevationM": 220,
-      "warmup": "",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "14 km po pofałdowanej trasie, wysiłek easy; bez MP.",
       "recovery": "",
-      "cooldown": "",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Śniadanie 2–3 h przed. 40–60 g węgli/h, płyny i sód według pogody; nic nowego.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -975,11 +1378,45 @@
       "conditions": "Kontroluj wysiłek na podbiegach; tempo może spadać.",
       "quality": true,
       "mechanicalLoad": "high",
-      "structuredWorkoutText": "- Hilly long easy 14km 3-5 RPE",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Long easy 12km 5:50/km-6:25/km Pace\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 1
+      "dayNum": 1,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 12 km easy 5:50–6:25/km na płaskich fragmentach; na podbiegach według wysiłku, RPE 3–4. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Long easy",
+          "sport": "Run",
+          "distanceKm": 12,
+          "targetType": "pace",
+          "targetPace": "5:50–6:25/km",
+          "rpe": "3–4",
+          "flatOnly": false
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 5:50–6:25/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-02-run-1",
@@ -998,13 +1435,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "6:15–6:45/km",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Recovery: 3 km 6:15–6:45/km, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "2–3",
       "elevationM": 30,
-      "warmup": "",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "5 km bardzo lekko.",
       "recovery": "",
-      "cooldown": "",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -1014,11 +1451,45 @@
       "conditions": "",
       "quality": false,
       "mechanicalLoad": "moderate",
-      "structuredWorkoutText": "- Recovery run 5km 6:15/km-6:45/km Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Recovery 3km 6:15/km-6:45/km Pace\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 2
+      "dayNum": 2,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Recovery: 3 km 6:15–6:45/km, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Recovery",
+          "sport": "Run",
+          "distanceKm": 3,
+          "targetType": "pace",
+          "targetPace": "6:15–6:45/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 6:15–6:45/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-03-note-1",
@@ -1057,7 +1528,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 3
+      "dayNum": 3,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-03-strength-1",
@@ -1096,7 +1568,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 3
+      "dayNum": 3,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-04-run-1",
@@ -1115,13 +1588,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "odcinki 4:58–5:05/km",
-      "rpe": "6–7",
+      "pace": "Rozgrzewka: 2 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 4 × 1 km 4:58–5:05/km, RPE 7, na płaskim. Przerwy: 2 min truchtu 6:15–6:45/km, RPE 2–3. Schłodzenie: 2 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "rpe": "7",
       "elevationM": 60,
-      "warmup": "2 km easy",
+      "warmup": "Rozgrzewka: 2 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "4 × 1 km progowo",
       "recovery": "2 min trucht",
-      "cooldown": "Easy do 9 km",
+      "cooldown": "Schłodzenie: 2 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -1131,11 +1604,57 @@
       "conditions": "",
       "quality": true,
       "mechanicalLoad": "high",
-      "structuredWorkoutText": "- Warmup easy 2km Z2 Pace\n\nThreshold 4x\n- Threshold 1km 4:58/km-5:05/km Pace\n- Recovery 2m Z1 Pace\n\n- Cooldown easy 2km Z1-Z2 Pace",
+      "structuredWorkoutText": "- Warmup 2km 6:00/km-6:30/km Pace\n\nThreshold 4x\n- Threshold 1km 4:58/km-5:05/km Pace\n- Recovery 2m 6:15/km-6:45/km Pace\n\n- Cooldown 2km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 4
+      "dayNum": 4,
+      "paceDisplay": "Rozgrzewka: 2 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 4 × 1 km 4:58–5:05/km, RPE 7, na płaskim. Przerwy: 2 min truchtu 6:15–6:45/km, RPE 2–3. Schłodzenie: 2 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 2,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "repeat",
+          "label": "Threshold",
+          "sport": "Run",
+          "repetitions": 4,
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "4:58–5:05/km",
+          "rpe": "7",
+          "flatOnly": true
+        },
+        {
+          "kind": "recovery",
+          "label": "Trucht",
+          "sport": "Run",
+          "repetitions": 4,
+          "durationMinutes": 2,
+          "targetType": "pace",
+          "targetPace": "6:15–6:45/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 2,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 4:58–5:05/km • 6:15–6:45/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-05-note-1",
@@ -1174,7 +1693,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 5
+      "dayNum": 5,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-05-ride-alt",
@@ -1193,8 +1713,8 @@
       "distanceRangeKm": null,
       "durationMinutes": 40,
       "intensity": "REGENERACJA",
-      "pace": null,
-      "rpe": "2–3",
+      "pace": "Z2; bez tempa biegowego",
+      "rpe": "3",
       "elevationM": null,
       "warmup": "",
       "mainSet": "40 min spokojnego Z2, kadencja 85–95; bez sweet spotu.",
@@ -1206,14 +1726,16 @@
       "required": false,
       "countsTowardMileage": false,
       "alternativeGroup": "alt-2026-08-05",
-      "conditions": "Wykonaj tylko przy świeżych nogach; pełne wolne jest równorzędnym wyborem.",
+      "conditions": "Wykonaj tylko przy świeżych nogach; pełne wolne jest równorzędnym wyborem. Wybierz tylko jedną opcję z grupy alt-2026-08-05.",
       "quality": false,
       "mechanicalLoad": "low",
       "structuredWorkoutText": "- Easy spin 40m 55-70% 85-95rpm",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 5
+      "dayNum": 5,
+      "paceDisplay": "Rower Z2, RPE 3; bez tempa biegowego. Wybierz tylko jedną opcję ALT.",
+      "paceSummary": "Z2 • RPE 3"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-06-run-1",
@@ -1232,13 +1754,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "5:50–6:20/km",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Średnio-długi easy: 8 km 5:45–6:15/km, RPE 3–4. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "3–4",
       "elevationM": 90,
-      "warmup": "",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "10 km spokojnie.",
       "recovery": "",
-      "cooldown": "",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -1248,11 +1770,45 @@
       "conditions": "",
       "quality": false,
       "mechanicalLoad": "moderate",
-      "structuredWorkoutText": "- Medium long easy 10km 5:50/km-6:20/km Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Średnio-długi easy 8km 5:45/km-6:15/km Pace\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 6
+      "dayNum": 6,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Średnio-długi easy: 8 km 5:45–6:15/km, RPE 3–4. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Średnio-długi easy",
+          "sport": "Run",
+          "distanceKm": 8,
+          "targetType": "pace",
+          "targetPace": "5:45–6:15/km",
+          "rpe": "3–4",
+          "flatOnly": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 5:45–6:15/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-07-note-1",
@@ -1291,7 +1847,8 @@
       "goal": "Regeneracja i adaptacja.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 7
+      "dayNum": 7,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-08-run-1",
@@ -1310,13 +1867,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "5:55–6:25/km",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 10 km easy 5:50–6:25/km, RPE 3–4. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "3–4",
       "elevationM": 120,
-      "warmup": "",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "12 km easy, bez MP.",
       "recovery": "",
-      "cooldown": "",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -1326,11 +1883,45 @@
       "conditions": "",
       "quality": true,
       "mechanicalLoad": "high",
-      "structuredWorkoutText": "- Long easy 12km 5:55/km-6:25/km Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Long easy 10km 5:50/km-6:25/km Pace\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 8
+      "dayNum": 8,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 10 km easy 5:50–6:25/km, RPE 3–4. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Long easy",
+          "sport": "Run",
+          "distanceKm": 10,
+          "targetType": "pace",
+          "targetPace": "5:50–6:25/km",
+          "rpe": "3–4",
+          "flatOnly": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 5:50–6:25/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-09-run-1",
@@ -1349,13 +1940,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "6:15–6:45/km",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Recovery: 3 km 6:15–6:45/km, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "2–3",
       "elevationM": 30,
-      "warmup": "",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "5 km bardzo lekko.",
       "recovery": "",
-      "cooldown": "",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -1365,11 +1956,45 @@
       "conditions": "",
       "quality": false,
       "mechanicalLoad": "moderate",
-      "structuredWorkoutText": "- Recovery run 5km 6:15/km-6:45/km Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Recovery 3km 6:15/km-6:45/km Pace\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 9
+      "dayNum": 9,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Recovery: 3 km 6:15–6:45/km, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Recovery",
+          "sport": "Run",
+          "distanceKm": 3,
+          "targetType": "pace",
+          "targetPace": "6:15–6:45/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 6:15–6:45/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-10-note-1",
@@ -1408,7 +2033,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 10
+      "dayNum": 10,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-10-strength-1",
@@ -1447,7 +2073,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 10
+      "dayNum": 10,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-11-run-1",
@@ -1466,13 +2093,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "easy 5:55–6:25/km; podbieg wg RPE",
+      "pace": "Rozgrzewka: 2.5 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 4 × 3 min pod górę, nachylenie 4–7%, RPE 7; bez targetu tempa. Przerwy: pełny trucht w dół 3 min, target otwarty, RPE 2–3. Schłodzenie: 2 km 6:10–6:40/km, RPE 2–3. Podbieg wykonywany na wysiłek — nie kontroluj tempa chwilowego.",
       "rpe": "7",
       "elevationM": 240,
-      "warmup": "2.5 km easy",
+      "warmup": "Rozgrzewka: 2.5 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "4 × 3 min pod górę równo, bez finiszu",
       "recovery": "Pełny trucht w dół 3 min",
-      "cooldown": "Easy do 10 km",
+      "cooldown": "Schłodzenie: 2 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -1482,11 +2109,58 @@
       "conditions": "Nie utrzymuj konkretnego tempa na stromym podbiegu.",
       "quality": true,
       "mechanicalLoad": "high",
-      "structuredWorkoutText": "- Warmup easy 2.5km Z2 Pace\n\nOslo hills 4x\n- Uphill controlled 3m 7 RPE\n- Full jog-down recovery 3m Z1 Pace\n\n- Cooldown easy 2km Z1-Z2 Pace",
+      "structuredWorkoutText": "- Warmup 2.5km 6:00/km-6:30/km Pace\n\nUphill effort 4x\n- Uphill 180s 7 RPE\n- Full jog-down recovery 180s open\n\n- Cooldown 2km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 11
+      "dayNum": 11,
+      "effortBased": true,
+      "paceDisplay": "Rozgrzewka: 2.5 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 4 × 3 min pod górę, nachylenie 4–7%, RPE 7; bez targetu tempa. Przerwy: pełny trucht w dół 3 min, target otwarty, RPE 2–3. Schłodzenie: 2 km 6:10–6:40/km, RPE 2–3. Podbieg wykonywany na wysiłek — nie kontroluj tempa chwilowego.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 2.5,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "repeat",
+          "label": "Podbieg",
+          "sport": "Run",
+          "repetitions": 4,
+          "durationSeconds": 180,
+          "targetType": "effort",
+          "targetPace": null,
+          "rpe": "7",
+          "grade": "4–7%",
+          "effortBased": true
+        },
+        {
+          "kind": "recovery",
+          "label": "Trucht w dół",
+          "sport": "Run",
+          "repetitions": 4,
+          "durationSeconds": 180,
+          "targetType": "open",
+          "targetPace": null,
+          "rpe": "2–3"
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 2,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 6:10–6:40/km • odcinki wysiłkowo"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-12-note-1",
@@ -1525,7 +2199,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 12
+      "dayNum": 12,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-12-run-alt",
@@ -1544,27 +2219,61 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "REGENERACJA",
-      "pace": "6:15–6:45/km",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Recovery: 3 km 6:15–6:45/km, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "2–3",
       "elevationM": null,
-      "warmup": "",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "5 km bardzo swobodnie, bez dokładania kilometrów.",
       "recovery": "",
-      "cooldown": "",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": true,
       "required": false,
       "countsTowardMileage": false,
       "alternativeGroup": "alt-2026-08-12",
-      "conditions": "Dostępne dopiero od 10.08; wybierz albo ten bieg, albo rower Z2, albo wolne.",
+      "conditions": "Dostępne dopiero od 10.08; wybierz albo ten bieg, albo rower Z2, albo wolne. Wybierz tylko jedną opcję z grupy alt-2026-08-12.",
       "quality": false,
       "mechanicalLoad": "low",
-      "structuredWorkoutText": "- Recovery run 5km 6:15/km-6:45/km Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Recovery 3km 6:15/km-6:45/km Pace\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 12
+      "dayNum": 12,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Recovery: 3 km 6:15–6:45/km, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Recovery",
+          "sport": "Run",
+          "distanceKm": 3,
+          "targetType": "pace",
+          "targetPace": "6:15–6:45/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 6:15–6:45/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-12-ride-alt",
@@ -1583,8 +2292,8 @@
       "distanceRangeKm": null,
       "durationMinutes": 45,
       "intensity": "REGENERACJA",
-      "pace": null,
-      "rpe": "2–3",
+      "pace": "Z2; bez tempa biegowego",
+      "rpe": "3",
       "elevationM": null,
       "warmup": "",
       "mainSet": "45 min spokojnego Z2, kadencja 85–95; bez sweet spotu.",
@@ -1596,14 +2305,16 @@
       "required": false,
       "countsTowardMileage": false,
       "alternativeGroup": "alt-2026-08-12",
-      "conditions": "Wykonaj tylko przy świeżych nogach; pełne wolne jest równorzędnym wyborem.",
+      "conditions": "Wykonaj tylko przy świeżych nogach; pełne wolne jest równorzędnym wyborem. Wybierz tylko jedną opcję z grupy alt-2026-08-12.",
       "quality": false,
       "mechanicalLoad": "low",
       "structuredWorkoutText": "- Easy spin 45m 55-70% 85-95rpm",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 12
+      "dayNum": 12,
+      "paceDisplay": "Rower Z2, RPE 3; bez tempa biegowego. Wybierz tylko jedną opcję ALT.",
+      "paceSummary": "Z2 • RPE 3"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-13-run-1",
@@ -1622,13 +2333,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "8 km 5:50–6:15/km + 3 km 5:20–5:35/km",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 6 km średnio-długiego easy 5:45–6:15/km, RPE 3–4 + 3 km steady 5:20–5:35/km, RPE 5–6. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "3–5",
       "elevationM": 110,
-      "warmup": "8 km easy",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "3 km steady",
       "recovery": "",
-      "cooldown": "",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -1638,11 +2349,55 @@
       "conditions": "",
       "quality": false,
       "mechanicalLoad": "moderate",
-      "structuredWorkoutText": "- Easy run 8km 5:50/km-6:15/km Pace\n- Steady finish 3km 5:20/km-5:35/km Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Medium long easy 6km 5:45/km-6:15/km Pace\n- Steady 3km 5:20/km-5:35/km Pace\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 13
+      "dayNum": 13,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 6 km średnio-długiego easy 5:45–6:15/km, RPE 3–4 + 3 km steady 5:20–5:35/km, RPE 5–6. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Średnio-długi easy",
+          "sport": "Run",
+          "distanceKm": 6,
+          "targetType": "pace",
+          "targetPace": "5:45–6:15/km",
+          "rpe": "3–4",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Steady",
+          "sport": "Run",
+          "distanceKm": 3,
+          "targetType": "pace",
+          "targetPace": "5:20–5:35/km",
+          "rpe": "5–6",
+          "flatOnly": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 5:45–6:15/km • 5:20–5:35/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-14-note-1",
@@ -1681,7 +2436,8 @@
       "goal": "Regeneracja i adaptacja.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 14
+      "dayNum": 14,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-15-run-1",
@@ -1703,13 +2459,13 @@
       ],
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "easy 5:55–6:25/km; MP tylko warunkowo",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3 w obu wariantach. Część główna — wariant 18 km: 16 km easy 5:50–6:25/km, RPE 3–4. Część główna — wariant 20 km tylko po spełnieniu bramki: 15 km easy 5:50–6:25/km + 3 km docelowego MP 3:30 4:58–5:03/km, RPE maks. 6. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "easy ≤4",
       "elevationM": 220,
-      "warmup": "",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3 w obu wariantach",
       "mainSet": "18 km easy. Dodaj do 20 km wyłącznie po spełnieniu warunków; opcjonalnie ostatnie 3 km przy wysiłku maratońskim, nie szybciej.",
       "recovery": "",
-      "cooldown": "",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Śniadanie 2–3 h przed. 40–60 g węgli/h, płyny i sód według pogody; nic nowego.",
       "planB": "18 km easy bez MP. Przerwij wcześniej przy narastającym bólu lub zmianie kroku.",
       "optional": false,
@@ -1719,11 +2475,57 @@
       "conditions": "20 km tylko przy bólu 0–2/10, easy RPE ≤4 i braku pogorszenia następnego ranka. W innym przypadku 18 km easy bez bloku docelowego MP.",
       "quality": true,
       "mechanicalLoad": "high",
-      "structuredWorkoutText": "- Long easy 18km 5:55/km-6:25/km Pace\n\nConditional extension\n- Optional steady 2km 5:15/km-5:25/km Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Easy 15km 5:50/km-6:25/km Pace\n- Conditional goal MP 3km 4:58/km-5:03/km Pace\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": "gate-2026-08-15",
       "monthKey": "2026-08",
-      "dayNum": 15
+      "dayNum": 15,
+      "goalPaceConditional": true,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3 w obu wariantach. Część główna — wariant 18 km: 16 km easy 5:50–6:25/km, RPE 3–4. Część główna — wariant 20 km tylko po spełnieniu bramki: 15 km easy 5:50–6:25/km + 3 km docelowego MP 3:30 4:58–5:03/km, RPE maks. 6. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Easy",
+          "sport": "Run",
+          "distanceKm": 15,
+          "targetType": "pace",
+          "targetPace": "5:50–6:25/km",
+          "rpe": "3–4",
+          "flatOnly": true
+        },
+        {
+          "kind": "conditional",
+          "label": "Docelowe MP 3:30",
+          "sport": "Run",
+          "distanceKm": 3,
+          "targetType": "pace",
+          "targetPace": "4:58–5:03/km",
+          "rpe": "≤6",
+          "flatOnly": true,
+          "conditional": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 5:50–6:25/km • 4:58–5:03/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-16-run-1",
@@ -1742,13 +2544,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "6:20–6:50/km",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Recovery: 2 km 6:15–6:45/km, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "2",
       "elevationM": 20,
-      "warmup": "",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "4 km wyłącznie jeśli rano brak pogorszenia.",
       "recovery": "",
-      "cooldown": "",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Pełne wolne.",
       "optional": false,
@@ -1758,11 +2560,45 @@
       "conditions": "Jeśli rano ból/sztywność większe niż przed longiem — pełne wolne.",
       "quality": false,
       "mechanicalLoad": "moderate",
-      "structuredWorkoutText": "- Recovery run 4km 6:20/km-6:50/km Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Recovery 2km 6:15/km-6:45/km Pace\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 16
+      "dayNum": 16,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Recovery: 2 km 6:15–6:45/km, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Recovery",
+          "sport": "Run",
+          "distanceKm": 2,
+          "targetType": "pace",
+          "targetPace": "6:15–6:45/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 6:15–6:45/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-17-note-1",
@@ -1801,7 +2637,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 17
+      "dayNum": 17,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-17-strength-1",
@@ -1840,7 +2677,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 17
+      "dayNum": 17,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-18-run-1",
@@ -1859,13 +2697,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "odcinki 4:58–5:05/km",
-      "rpe": "6–7",
+      "pace": "Rozgrzewka: 1.5 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 3 × 2 km 4:58–5:05/km, RPE 7, na płaskim. Przerwy: 3 min truchtu 6:15–6:45/km, RPE 2–3. Schłodzenie: 1.5 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "rpe": "7",
       "elevationM": 60,
-      "warmup": "1.5 km easy",
+      "warmup": "Rozgrzewka: 1.5 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "3 × 2 km progowo",
       "recovery": "3 min trucht",
-      "cooldown": "Easy do 9 km",
+      "cooldown": "Schłodzenie: 1",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Zamień na 7–8 km easy, jeśli 15.08 pozostawiło zmęczenie lub ból.",
       "optional": false,
@@ -1875,11 +2713,57 @@
       "conditions": "",
       "quality": true,
       "mechanicalLoad": "high",
-      "structuredWorkoutText": "- Warmup easy 1.5km Z2 Pace\n\nThreshold 3x\n- Threshold 2km 4:58/km-5:05/km Pace\n- Recovery 3m Z1 Pace\n\n- Cooldown easy 1.5km Z1-Z2 Pace",
+      "structuredWorkoutText": "- Warmup 1.5km 6:00/km-6:30/km Pace\n\nThreshold 3x\n- Threshold 2km 4:58/km-5:05/km Pace\n- Recovery 3m 6:15/km-6:45/km Pace\n\n- Cooldown 1.5km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 18
+      "dayNum": 18,
+      "paceDisplay": "Rozgrzewka: 1.5 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 3 × 2 km 4:58–5:05/km, RPE 7, na płaskim. Przerwy: 3 min truchtu 6:15–6:45/km, RPE 2–3. Schłodzenie: 1.5 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1.5,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "repeat",
+          "label": "Threshold",
+          "sport": "Run",
+          "repetitions": 3,
+          "distanceKm": 2,
+          "targetType": "pace",
+          "targetPace": "4:58–5:05/km",
+          "rpe": "7",
+          "flatOnly": true
+        },
+        {
+          "kind": "recovery",
+          "label": "Trucht",
+          "sport": "Run",
+          "repetitions": 3,
+          "durationMinutes": 3,
+          "targetType": "pace",
+          "targetPace": "6:15–6:45/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1.5,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 4:58–5:05/km • 6:15–6:45/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-19-note-1",
@@ -1918,7 +2802,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 19
+      "dayNum": 19,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-19-run-alt",
@@ -1937,27 +2822,61 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "REGENERACJA",
-      "pace": "6:15–6:45/km",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Recovery: 3 km 6:15–6:45/km, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "2–3",
       "elevationM": null,
-      "warmup": "",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "5 km bardzo swobodnie, bez dokładania kilometrów.",
       "recovery": "",
-      "cooldown": "",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": true,
       "required": false,
       "countsTowardMileage": false,
       "alternativeGroup": "alt-2026-08-19",
-      "conditions": "Dostępne dopiero od 10.08; wybierz albo ten bieg, albo rower Z2, albo wolne.",
+      "conditions": "Dostępne dopiero od 10.08; wybierz albo ten bieg, albo rower Z2, albo wolne. Wybierz tylko jedną opcję z grupy alt-2026-08-19.",
       "quality": false,
       "mechanicalLoad": "low",
-      "structuredWorkoutText": "- Recovery run 5km 6:15/km-6:45/km Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Recovery 3km 6:15/km-6:45/km Pace\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 19
+      "dayNum": 19,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Recovery: 3 km 6:15–6:45/km, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Recovery",
+          "sport": "Run",
+          "distanceKm": 3,
+          "targetType": "pace",
+          "targetPace": "6:15–6:45/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 6:15–6:45/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-19-ride-alt",
@@ -1976,8 +2895,8 @@
       "distanceRangeKm": null,
       "durationMinutes": 45,
       "intensity": "REGENERACJA",
-      "pace": null,
-      "rpe": "2–3",
+      "pace": "Z2; bez tempa biegowego",
+      "rpe": "3",
       "elevationM": null,
       "warmup": "",
       "mainSet": "45 min spokojnego Z2, kadencja 85–95; bez sweet spotu.",
@@ -1989,14 +2908,16 @@
       "required": false,
       "countsTowardMileage": false,
       "alternativeGroup": "alt-2026-08-19",
-      "conditions": "Wykonaj tylko przy świeżych nogach; pełne wolne jest równorzędnym wyborem.",
+      "conditions": "Wykonaj tylko przy świeżych nogach; pełne wolne jest równorzędnym wyborem. Wybierz tylko jedną opcję z grupy alt-2026-08-19.",
       "quality": false,
       "mechanicalLoad": "low",
       "structuredWorkoutText": "- Easy spin 45m 55-70% 85-95rpm",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 19
+      "dayNum": 19,
+      "paceDisplay": "Rower Z2, RPE 3; bez tempa biegowego. Wybierz tylko jedną opcję ALT.",
+      "paceSummary": "Z2 • RPE 3"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-20-run-1",
@@ -2015,13 +2936,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "5:50–6:20/km",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Średnio-długi easy: 9 km 5:45–6:15/km, RPE 3–4. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "3–4",
       "elevationM": 100,
-      "warmup": "",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "11 km easy, bez finiszu.",
       "recovery": "",
-      "cooldown": "",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -2031,11 +2952,45 @@
       "conditions": "",
       "quality": false,
       "mechanicalLoad": "moderate",
-      "structuredWorkoutText": "- Medium long easy 11km 5:50/km-6:20/km Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Średnio-długi easy 9km 5:45/km-6:15/km Pace\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 20
+      "dayNum": 20,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Średnio-długi easy: 9 km 5:45–6:15/km, RPE 3–4. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Średnio-długi easy",
+          "sport": "Run",
+          "distanceKm": 9,
+          "targetType": "pace",
+          "targetPace": "5:45–6:15/km",
+          "rpe": "3–4",
+          "flatOnly": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 5:45–6:15/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-21-note-1",
@@ -2074,7 +3029,8 @@
       "goal": "Regeneracja i adaptacja.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 21
+      "dayNum": 21,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-22-run-1",
@@ -2096,13 +3052,13 @@
       ],
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "easy 5:55–6:30/km; blok 5:15–5:25/km warunkowo",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3 w każdym wariancie. Część główna — wariant 22 km easy: 20 km easy 5:50–6:25/km, RPE 3–4. Część główna — wariant 22 km z blokiem: 17 km easy 5:50–6:25/km + 3 km aktualnego wysiłku maratońskiego 5:15–5:25/km, RPE 5–6. Część główna — wariant 24 km po zaliczeniu 15.08: 19 km easy 5:50–6:25/km + 3 km aktualnego wysiłku maratońskiego 5:15–5:25/km. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "3–5",
       "elevationM": 300,
-      "warmup": "",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3 w każdym wariancie",
       "mainSet": "22 km easy. 24 km tylko po zaliczeniu 15.08. Jeśli bramka 15.08 niezaliczona: 22 km easy albo jeden blok 3 km przy aktualnym wysiłku maratońskim.",
       "recovery": "",
-      "cooldown": "",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Śniadanie 2–3 h przed. 40–60 g węgli/h, płyny i sód według pogody; nic nowego.",
       "planB": "22 km easy albo 19 km easy + jeden blok 3 km aktualnego wysiłku maratońskiego; bez docelowego MP.",
       "optional": false,
@@ -2112,11 +3068,56 @@
       "conditions": "24 km tylko po zaliczeniu 15.08: ból 0–2/10, easy RPE ≤4, brak pogorszenia następnego ranka. Bez zaliczenia: maks. 22 km.",
       "quality": true,
       "mechanicalLoad": "high",
-      "structuredWorkoutText": "- Hilly long easy 19km 3-5 RPE\n- Conditional marathon effort 3km 5:15/km-5:25/km Pace\n- Optional easy extension 2km Z2 Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Long easy 19km 5:50/km-6:25/km Pace\n- Conditional current marathon effort 3km 5:15/km-5:25/km Pace\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": "gate-2026-08-22",
       "monthKey": "2026-08",
-      "dayNum": 22
+      "dayNum": 22,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3 w każdym wariancie. Część główna — wariant 22 km easy: 20 km easy 5:50–6:25/km, RPE 3–4. Część główna — wariant 22 km z blokiem: 17 km easy 5:50–6:25/km + 3 km aktualnego wysiłku maratońskiego 5:15–5:25/km, RPE 5–6. Część główna — wariant 24 km po zaliczeniu 15.08: 19 km easy 5:50–6:25/km + 3 km aktualnego wysiłku maratońskiego 5:15–5:25/km. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Easy",
+          "sport": "Run",
+          "distanceKm": 19,
+          "targetType": "pace",
+          "targetPace": "5:50–6:25/km",
+          "rpe": "3–4",
+          "flatOnly": true
+        },
+        {
+          "kind": "conditional",
+          "label": "Aktualny wysiłek maratoński",
+          "sport": "Run",
+          "distanceKm": 3,
+          "targetType": "pace",
+          "targetPace": "5:15–5:25/km",
+          "rpe": "5–6",
+          "flatOnly": true,
+          "conditional": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 5:50–6:25/km • 5:15–5:25/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-23-run-1",
@@ -2135,13 +3136,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "6:20–6:50/km",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Recovery: 3 km 6:15–6:45/km, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "2",
       "elevationM": 20,
-      "warmup": "",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "5 km wyłącznie jeśli brak pogorszenia.",
       "recovery": "",
-      "cooldown": "",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Pełne wolne.",
       "optional": false,
@@ -2151,11 +3152,45 @@
       "conditions": "",
       "quality": false,
       "mechanicalLoad": "moderate",
-      "structuredWorkoutText": "- Recovery run 5km 6:20/km-6:50/km Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Recovery 3km 6:15/km-6:45/km Pace\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 23
+      "dayNum": 23,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Recovery: 3 km 6:15–6:45/km, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Recovery",
+          "sport": "Run",
+          "distanceKm": 3,
+          "targetType": "pace",
+          "targetPace": "6:15–6:45/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 6:15–6:45/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-24-note-1",
@@ -2194,7 +3229,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 24
+      "dayNum": 24,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-24-strength-1",
@@ -2233,7 +3269,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 24
+      "dayNum": 24,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-25-run-1",
@@ -2252,13 +3289,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "blok 5:15–5:25/km; 4:58/km tylko po obu bramkach",
+      "pace": "Rozgrzewka: 2 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 6 km aktualnego wysiłku maratońskiego 5:15–5:25/km, RPE 5–6. Docelowe MP 3:30 4:58–5:03/km, RPE maks. 6, wyłącznie po zaliczeniu obu bramek. Przerwy: nie dotyczy. Schłodzenie: 2 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "5–6",
       "elevationM": 70,
-      "warmup": "2 km easy",
+      "warmup": "Rozgrzewka: 2 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "6 km przy aktualnym wysiłku maratońskim",
       "recovery": "",
-      "cooldown": "2 km easy",
+      "cooldown": "Schłodzenie: 2 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -2268,11 +3305,58 @@
       "conditions": "Docelowe MP 4:58/km wolno testować tylko po zaliczeniu bramek 15.08 i 22.08; bez ścigania.",
       "quality": true,
       "mechanicalLoad": "high",
-      "structuredWorkoutText": "- Warmup easy 2km Z2 Pace\n- Current marathon effort 6km 5:15/km-5:25/km Pace\n- Cooldown easy 2km Z1-Z2 Pace",
+      "structuredWorkoutText": "- Warmup 2km 6:00/km-6:30/km Pace\n- Current marathon effort 6km 5:15/km-5:25/km Pace\n- Cooldown 2km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 25
+      "dayNum": 25,
+      "goalPaceConditional": true,
+      "paceDisplay": "Rozgrzewka: 2 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 6 km aktualnego wysiłku maratońskiego 5:15–5:25/km, RPE 5–6. Docelowe MP 3:30 4:58–5:03/km, RPE maks. 6, wyłącznie po zaliczeniu obu bramek. Przerwy: nie dotyczy. Schłodzenie: 2 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 2,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Aktualny wysiłek maratoński",
+          "sport": "Run",
+          "distanceKm": 6,
+          "targetType": "pace",
+          "targetPace": "5:15–5:25/km",
+          "rpe": "5–6",
+          "flatOnly": true
+        },
+        {
+          "kind": "conditional",
+          "label": "Docelowe MP 3:30",
+          "sport": "Run",
+          "distanceKm": 6,
+          "targetType": "pace",
+          "targetPace": "4:58–5:03/km",
+          "rpe": "≤6",
+          "flatOnly": true,
+          "conditional": true,
+          "alternativeToPrevious": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 2,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 5:15–5:25/km • 4:58–5:03/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-26-note-1",
@@ -2311,7 +3395,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 26
+      "dayNum": 26,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-26-run-alt",
@@ -2330,27 +3415,61 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "REGENERACJA",
-      "pace": "6:15–6:45/km",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Recovery: 3 km 6:15–6:45/km, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "2–3",
       "elevationM": null,
-      "warmup": "",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "5 km bardzo swobodnie, bez dokładania kilometrów.",
       "recovery": "",
-      "cooldown": "",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": true,
       "required": false,
       "countsTowardMileage": false,
       "alternativeGroup": "alt-2026-08-26",
-      "conditions": "Dostępne dopiero od 10.08; wybierz albo ten bieg, albo rower Z2, albo wolne.",
+      "conditions": "Dostępne dopiero od 10.08; wybierz albo ten bieg, albo rower Z2, albo wolne. Wybierz tylko jedną opcję z grupy alt-2026-08-26.",
       "quality": false,
       "mechanicalLoad": "low",
-      "structuredWorkoutText": "- Recovery run 5km 6:15/km-6:45/km Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Recovery 3km 6:15/km-6:45/km Pace\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 26
+      "dayNum": 26,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Recovery: 3 km 6:15–6:45/km, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Recovery",
+          "sport": "Run",
+          "distanceKm": 3,
+          "targetType": "pace",
+          "targetPace": "6:15–6:45/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 6:15–6:45/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-26-ride-alt",
@@ -2369,8 +3488,8 @@
       "distanceRangeKm": null,
       "durationMinutes": 40,
       "intensity": "REGENERACJA",
-      "pace": null,
-      "rpe": "2–3",
+      "pace": "Z2; bez tempa biegowego",
+      "rpe": "3",
       "elevationM": null,
       "warmup": "",
       "mainSet": "40 min spokojnego Z2, kadencja 85–95; bez sweet spotu.",
@@ -2382,14 +3501,16 @@
       "required": false,
       "countsTowardMileage": false,
       "alternativeGroup": "alt-2026-08-26",
-      "conditions": "Wykonaj tylko przy świeżych nogach; pełne wolne jest równorzędnym wyborem.",
+      "conditions": "Wykonaj tylko przy świeżych nogach; pełne wolne jest równorzędnym wyborem. Wybierz tylko jedną opcję z grupy alt-2026-08-26.",
       "quality": false,
       "mechanicalLoad": "low",
       "structuredWorkoutText": "- Easy spin 40m 55-70% 85-95rpm",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 26
+      "dayNum": 26,
+      "paceDisplay": "Rower Z2, RPE 3; bez tempa biegowego. Wybierz tylko jedną opcję ALT.",
+      "paceSummary": "Z2 • RPE 3"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-27-run-1",
@@ -2408,13 +3529,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "5:50–6:20/km",
+      "pace": "Rozgrzewka: 2 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 7 km średnio-długiego easy 5:45–6:15/km, RPE 3–4 + 6 × 10 s hill sprint techniczny, nachylenie 4–6%, RPE 8, bez targetu tempa. Przerwy: 2 min pełnego marszu/truchtu w dół, target otwarty. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Podbieg wykonywany na wysiłek — nie kontroluj tempa chwilowego. Garmin bez alarmu tempa na hill sprintach.",
       "rpe": "3–4",
       "elevationM": 100,
-      "warmup": "8 km easy",
+      "warmup": "Rozgrzewka: 2 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "6 × 10 s sprężyście pod górę, nie maksymalnie",
       "recovery": "2 min pełnej regeneracji",
-      "cooldown": "Easy do 10 km",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -2424,11 +3545,68 @@
       "conditions": "Bez celu tempa na podbiegu; hill sprints nie są osobnym ciężkim bodźcem.",
       "quality": false,
       "mechanicalLoad": "moderate",
-      "structuredWorkoutText": "- Easy run 8km 5:50/km-6:20/km Pace\n\nHill sprints 6x\n- Uphill fast relaxed 10s 8 RPE\n- Full recovery 2m Z1 Pace\n\n- Cooldown easy 1km Z1-Z2 Pace",
+      "structuredWorkoutText": "- Warmup 2km 6:00/km-6:30/km Pace\n- Medium long easy 7km 5:45/km-6:15/km Pace\n\nHill sprints 6x\n- Uphill fast relaxed 10s 8 RPE\n- Full walk-jog recovery 2m open\n\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 27
+      "dayNum": 27,
+      "effortBased": true,
+      "paceDisplay": "Rozgrzewka: 2 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 7 km średnio-długiego easy 5:45–6:15/km, RPE 3–4 + 6 × 10 s hill sprint techniczny, nachylenie 4–6%, RPE 8, bez targetu tempa. Przerwy: 2 min pełnego marszu/truchtu w dół, target otwarty. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Podbieg wykonywany na wysiłek — nie kontroluj tempa chwilowego. Garmin bez alarmu tempa na hill sprintach.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 2,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Średnio-długi easy",
+          "sport": "Run",
+          "distanceKm": 7,
+          "targetType": "pace",
+          "targetPace": "5:45–6:15/km",
+          "rpe": "3–4",
+          "flatOnly": true
+        },
+        {
+          "kind": "repeat",
+          "label": "Hill sprint techniczny",
+          "sport": "Run",
+          "repetitions": 6,
+          "durationSeconds": 10,
+          "targetType": "effort",
+          "targetPace": null,
+          "rpe": "8",
+          "grade": "4–6%",
+          "effortBased": true
+        },
+        {
+          "kind": "recovery",
+          "label": "Pełny marsz/trucht w dół",
+          "sport": "Run",
+          "repetitions": 6,
+          "durationSeconds": 120,
+          "targetType": "open",
+          "targetPace": null,
+          "rpe": "1–2"
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 5:45–6:15/km • 6:10–6:40/km • odcinki wysiłkowo"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-28-note-1",
@@ -2467,7 +3645,8 @@
       "goal": "Regeneracja i adaptacja.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 28
+      "dayNum": 28,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-29-run-1",
@@ -2486,13 +3665,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "5:55–6:30/km wg terenu",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 14 km easy 5:50–6:25/km na płaskich fragmentach; na podbiegach według wysiłku, RPE 3–4. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "3–5",
       "elevationM": 240,
-      "warmup": "",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "16 km easy po pofałdowanej trasie; bez szybkiego finiszu.",
       "recovery": "",
-      "cooldown": "",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Śniadanie 2–3 h przed. 40–60 g węgli/h, płyny i sód według pogody; nic nowego.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -2502,11 +3681,45 @@
       "conditions": "",
       "quality": true,
       "mechanicalLoad": "high",
-      "structuredWorkoutText": "- Hilly long easy 16km 3-5 RPE",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Long easy 14km 5:50/km-6:25/km Pace\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 29
+      "dayNum": 29,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 14 km easy 5:50–6:25/km na płaskich fragmentach; na podbiegach według wysiłku, RPE 3–4. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Long easy",
+          "sport": "Run",
+          "distanceKm": 14,
+          "targetType": "pace",
+          "targetPace": "5:50–6:25/km",
+          "rpe": "3–4",
+          "flatOnly": false
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 5:50–6:25/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-30-run-1",
@@ -2525,13 +3738,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "6:15–6:45/km",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Recovery: 3 km 6:15–6:45/km, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "2–3",
       "elevationM": 30,
-      "warmup": "",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "5 km bardzo lekko.",
       "recovery": "",
-      "cooldown": "",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -2541,11 +3754,45 @@
       "conditions": "",
       "quality": false,
       "mechanicalLoad": "moderate",
-      "structuredWorkoutText": "- Recovery run 5km 6:15/km-6:45/km Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Recovery 3km 6:15/km-6:45/km Pace\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 30
+      "dayNum": 30,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Recovery: 3 km 6:15–6:45/km, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Recovery",
+          "sport": "Run",
+          "distanceKm": 3,
+          "targetType": "pace",
+          "targetPace": "6:15–6:45/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 6:15–6:45/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-31-note-1",
@@ -2584,7 +3831,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 31
+      "dayNum": 31,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-08-31-strength-1",
@@ -2623,7 +3871,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-08",
-      "dayNum": 31
+      "dayNum": 31,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-09-01-run-1",
@@ -2642,13 +3891,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "wariant A 4:58–5:02/km; B 5:16–5:20/km; C 5:24–5:34/km",
+      "pace": "Rozgrzewka: 2 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 3 × 2 km — wariant A 4:58–5:03/km, RPE maks. 6 wyłącznie po zaliczeniu bramek; wariant B 5:16–5:20/km; wariant C 5:24–5:34/km. Przerwy: 500 m truchtu 6:15–6:45/km, RPE 2–3. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Wszystkie targety dotyczą płaskiego terenu.",
       "rpe": "5–6",
       "elevationM": 50,
-      "warmup": "2 km easy",
+      "warmup": "Rozgrzewka: 2 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "3 × 2 km w tempie odpowiadającym aktualnie zaliczonej strategii",
       "recovery": "500 m easy",
-      "cooldown": "Easy do 10 km",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -2658,11 +3907,71 @@
       "conditions": "Nie wymuszaj 4:58/km. Zapisz RPE, ból i reakcję następnego ranka do decyzji 02.09.",
       "quality": true,
       "mechanicalLoad": "high",
-      "structuredWorkoutText": "- Warmup easy 2km Z2 Pace\n\nRace pace calibration 3x\n- Controlled marathon pace 2km 5:15/km-5:25/km Pace\n- Recovery 500m Z1 Pace\n\n- Cooldown easy 1km Z1-Z2 Pace",
+      "structuredWorkoutText": "- Warmup 2km 6:00/km-6:30/km Pace\n\nRace pace calibration 3x\n- Controlled marathon pace 2km 5:15/km-5:25/km Pace\n- Recovery 500m 6:15/km-6:45/km Pace\n\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": "gate-2026-09-01",
       "monthKey": "2026-09",
-      "dayNum": 1
+      "dayNum": 1,
+      "goalPaceConditional": true,
+      "paceDisplay": "Rozgrzewka: 2 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 3 × 2 km — wariant A 4:58–5:03/km, RPE maks. 6 wyłącznie po zaliczeniu bramek; wariant B 5:16–5:20/km; wariant C 5:24–5:34/km. Przerwy: 500 m truchtu 6:15–6:45/km, RPE 2–3. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Wszystkie targety dotyczą płaskiego terenu.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 2,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "repeat",
+          "label": "Kalibracja MP",
+          "sport": "Run",
+          "repetitions": 3,
+          "distanceKm": 2,
+          "targetType": "pace",
+          "targetPace": "5:15–5:25/km",
+          "rpe": "5–6",
+          "flatOnly": true
+        },
+        {
+          "kind": "conditional",
+          "label": "Wariant A — docelowe MP 3:30",
+          "sport": "Run",
+          "repetitions": 3,
+          "distanceKm": 2,
+          "targetType": "pace",
+          "targetPace": "4:58–5:03/km",
+          "rpe": "≤6",
+          "flatOnly": true,
+          "conditional": true,
+          "alternativeToPrevious": true
+        },
+        {
+          "kind": "recovery",
+          "label": "Trucht",
+          "sport": "Run",
+          "repetitions": 2,
+          "distanceKm": 0.5,
+          "targetType": "pace",
+          "targetPace": "6:15–6:45/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 5:15–5:25/km • 4:58–5:03/km • 6:15–6:45/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-09-02-decision-1",
@@ -2701,7 +4010,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": "decision-2026-09-02",
       "monthKey": "2026-09",
-      "dayNum": 2
+      "dayNum": 2,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-09-02-ride-alt",
@@ -2720,8 +4030,8 @@
       "distanceRangeKm": null,
       "durationMinutes": 30,
       "intensity": "REGENERACJA",
-      "pace": null,
-      "rpe": "2–3",
+      "pace": "Z2; bez tempa biegowego",
+      "rpe": "3",
       "elevationM": null,
       "warmup": "",
       "mainSet": "30 min spokojnego Z2, kadencja 85–95; bez sweet spotu.",
@@ -2733,14 +4043,16 @@
       "required": false,
       "countsTowardMileage": false,
       "alternativeGroup": "alt-2026-09-02",
-      "conditions": "Wykonaj tylko przy świeżych nogach; pełne wolne jest równorzędnym wyborem.",
+      "conditions": "Wykonaj tylko przy świeżych nogach; pełne wolne jest równorzędnym wyborem. Wybierz tylko jedną opcję z grupy alt-2026-09-02.",
       "quality": false,
       "mechanicalLoad": "low",
       "structuredWorkoutText": "- Easy spin 30m 55-70% 85-95rpm",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-09",
-      "dayNum": 2
+      "dayNum": 2,
+      "paceDisplay": "Rower Z2, RPE 3; bez tempa biegowego. Wybierz tylko jedną opcję ALT.",
+      "paceSummary": "Z2 • RPE 3"
     },
     {
       "id": "cc-v2-oslo-2026-2026-09-03-run-1",
@@ -2759,13 +4071,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "5:55–6:25/km",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 6 km easy 5:50–6:25/km, RPE 3–4 + 4 × 15 s rytmu technicznego, RPE 7–8, bez targetu tempa. Przerwy: 90 s pełnego truchtu lub marszu, target otwarty. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Rytmy wykonuj luźno i technicznie; Garmin bez alarmu tempa. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "3",
       "elevationM": 50,
-      "warmup": "6 km easy",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "4 × 15 s rytmu",
       "recovery": "90 s pełnego truchtu",
-      "cooldown": "Do 8 km easy",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -2775,11 +4087,67 @@
       "conditions": "",
       "quality": false,
       "mechanicalLoad": "moderate",
-      "structuredWorkoutText": "- Easy run 6km 5:55/km-6:25/km Pace\n\nRytmy 4x\n- Fast relaxed 15s 7 RPE\n- Full easy recovery 90s Z1 Pace\n\n- Cooldown easy 1km Z1-Z2 Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Easy 6km 5:50/km-6:25/km Pace\n\nStrides 4x\n- Fast relaxed 15s 7-8 RPE\n- Full recovery 90s open\n\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-09",
-      "dayNum": 3
+      "dayNum": 3,
+      "effortBased": true,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 6 km easy 5:50–6:25/km, RPE 3–4 + 4 × 15 s rytmu technicznego, RPE 7–8, bez targetu tempa. Przerwy: 90 s pełnego truchtu lub marszu, target otwarty. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Rytmy wykonuj luźno i technicznie; Garmin bez alarmu tempa. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Easy",
+          "sport": "Run",
+          "distanceKm": 6,
+          "targetType": "pace",
+          "targetPace": "5:50–6:25/km",
+          "rpe": "3–4",
+          "flatOnly": true
+        },
+        {
+          "kind": "repeat",
+          "label": "Rytm techniczny",
+          "sport": "Run",
+          "repetitions": 4,
+          "durationSeconds": 15,
+          "targetType": "effort",
+          "targetPace": null,
+          "rpe": "7–8",
+          "effortBased": true
+        },
+        {
+          "kind": "recovery",
+          "label": "Pełny trucht lub marsz",
+          "sport": "Run",
+          "repetitions": 4,
+          "durationSeconds": 90,
+          "targetType": "open",
+          "targetPace": null,
+          "rpe": "1–2"
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 5:50–6:25/km • 6:10–6:40/km • odcinki wysiłkowo"
     },
     {
       "id": "cc-v2-oslo-2026-2026-09-04-note-1",
@@ -2818,7 +4186,8 @@
       "goal": "Regeneracja i adaptacja.",
       "strategyGate": null,
       "monthKey": "2026-09",
-      "dayNum": 4
+      "dayNum": 4,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-09-05-run-1",
@@ -2837,13 +4206,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "5:55–6:25/km",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 6 km easy 5:50–6:25/km, RPE 3–4. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "3",
       "elevationM": 70,
-      "warmup": "",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "8 km easy, zakończ z niedosytem.",
       "recovery": "",
-      "cooldown": "",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -2853,11 +4222,45 @@
       "conditions": "",
       "quality": true,
       "mechanicalLoad": "high",
-      "structuredWorkoutText": "- Taper long easy 8km 5:55/km-6:25/km Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Long easy 6km 5:50/km-6:25/km Pace\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-09",
-      "dayNum": 5
+      "dayNum": 5,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 6 km easy 5:50–6:25/km, RPE 3–4. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Long easy",
+          "sport": "Run",
+          "distanceKm": 6,
+          "targetType": "pace",
+          "targetPace": "5:50–6:25/km",
+          "rpe": "3–4",
+          "flatOnly": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 5:50–6:25/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-09-06-run-1",
@@ -2876,13 +4279,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "6:20–6:50/km",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Recovery: 2 km 6:15–6:45/km, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "2",
       "elevationM": 20,
-      "warmup": "",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "4 km bardzo lekko.",
       "recovery": "",
-      "cooldown": "",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Pełne wolne.",
       "optional": false,
@@ -2892,11 +4295,45 @@
       "conditions": "",
       "quality": false,
       "mechanicalLoad": "moderate",
-      "structuredWorkoutText": "- Recovery run 4km 6:20/km-6:50/km Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Recovery 2km 6:15/km-6:45/km Pace\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-09",
-      "dayNum": 6
+      "dayNum": 6,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna — Recovery: 2 km 6:15–6:45/km, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Recovery",
+          "sport": "Run",
+          "distanceKm": 2,
+          "targetType": "pace",
+          "targetPace": "6:15–6:45/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 6:15–6:45/km • 6:10–6:40/km"
     },
     {
       "id": "cc-v2-oslo-2026-2026-09-07-note-1",
@@ -2935,7 +4372,8 @@
       "goal": "Regeneracja i adaptacja.",
       "strategyGate": null,
       "monthKey": "2026-09",
-      "dayNum": 7
+      "dayNum": 7,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-09-08-run-1",
@@ -2954,13 +4392,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "5:55–6:25/km",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 3 km easy 5:50–6:25/km, RPE 3–4 + 4 × 15 s rytmu technicznego, RPE 7–8, bez targetu tempa. Przerwy: 90 s pełnego truchtu lub marszu, target otwarty. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Rytmy wykonuj luźno i technicznie; Garmin bez alarmu tempa. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "2–3",
       "elevationM": 30,
-      "warmup": "3 km easy",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "4 × 15 s rytmu",
       "recovery": "90 s pełnego truchtu",
-      "cooldown": "Do 5 km easy",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -2970,11 +4408,67 @@
       "conditions": "",
       "quality": false,
       "mechanicalLoad": "moderate",
-      "structuredWorkoutText": "- Warmup easy 3km Z2 Pace\n\nRytmy 4x\n- Fast relaxed 15s 7 RPE\n- Full easy recovery 90s Z1 Pace\n\n- Cooldown easy 1km Z1-Z2 Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Easy 3km 5:50/km-6:25/km Pace\n\nStrides 4x\n- Fast relaxed 15s 7-8 RPE\n- Full recovery 90s open\n\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-09",
-      "dayNum": 8
+      "dayNum": 8,
+      "effortBased": true,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 3 km easy 5:50–6:25/km, RPE 3–4 + 4 × 15 s rytmu technicznego, RPE 7–8, bez targetu tempa. Przerwy: 90 s pełnego truchtu lub marszu, target otwarty. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Rytmy wykonuj luźno i technicznie; Garmin bez alarmu tempa. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Easy",
+          "sport": "Run",
+          "distanceKm": 3,
+          "targetType": "pace",
+          "targetPace": "5:50–6:25/km",
+          "rpe": "3–4",
+          "flatOnly": true
+        },
+        {
+          "kind": "repeat",
+          "label": "Rytm techniczny",
+          "sport": "Run",
+          "repetitions": 4,
+          "durationSeconds": 15,
+          "targetType": "effort",
+          "targetPace": null,
+          "rpe": "7–8",
+          "effortBased": true
+        },
+        {
+          "kind": "recovery",
+          "label": "Pełny trucht lub marsz",
+          "sport": "Run",
+          "repetitions": 4,
+          "durationSeconds": 90,
+          "targetType": "open",
+          "targetPace": null,
+          "rpe": "1–2"
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 5:50–6:25/km • 6:10–6:40/km • odcinki wysiłkowo"
     },
     {
       "id": "cc-v2-oslo-2026-2026-09-09-note-1",
@@ -3013,7 +4507,8 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-09",
-      "dayNum": 9
+      "dayNum": 9,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-09-09-ride-alt",
@@ -3032,8 +4527,8 @@
       "distanceRangeKm": null,
       "durationMinutes": 25,
       "intensity": "REGENERACJA",
-      "pace": null,
-      "rpe": "2–3",
+      "pace": "Z2; bez tempa biegowego",
+      "rpe": "3",
       "elevationM": null,
       "warmup": "",
       "mainSet": "25 min spokojnego Z2, kadencja 85–95; bez sweet spotu.",
@@ -3045,14 +4540,16 @@
       "required": false,
       "countsTowardMileage": false,
       "alternativeGroup": "alt-2026-09-09",
-      "conditions": "Wykonaj tylko przy świeżych nogach; pełne wolne jest równorzędnym wyborem.",
+      "conditions": "Wykonaj tylko przy świeżych nogach; pełne wolne jest równorzędnym wyborem. Wybierz tylko jedną opcję z grupy alt-2026-09-09.",
       "quality": false,
       "mechanicalLoad": "low",
       "structuredWorkoutText": "- Easy spin 25m 55-70% 85-95rpm",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-09",
-      "dayNum": 9
+      "dayNum": 9,
+      "paceDisplay": "Rower Z2, RPE 3; bez tempa biegowego. Wybierz tylko jedną opcję ALT.",
+      "paceSummary": "Z2 • RPE 3"
     },
     {
       "id": "cc-v2-oslo-2026-2026-09-10-run-1",
@@ -3071,13 +4568,13 @@
       "distanceRangeKm": null,
       "durationMinutes": null,
       "intensity": "ŁATWY",
-      "pace": "6:00–6:30/km",
+      "pace": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 2 km easy 5:50–6:25/km, RPE 3–4 + 3 × 10 s rytmu technicznego, RPE 7–8, bez targetu tempa. Przerwy: 90 s pełnego truchtu lub marszu, target otwarty. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Rytmy wykonuj luźno i technicznie; Garmin bez alarmu tempa. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
       "rpe": "2–3",
       "elevationM": 20,
-      "warmup": "",
+      "warmup": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "4 km easy + 3 × 10 s luźnego rytmu, jeśli nogi chcą.",
       "recovery": "90 s pełnego truchtu",
-      "cooldown": "",
+      "cooldown": "Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3",
       "fuel": "Normalny posiłek i nawodnienie; po treningu białko oraz węglowodany.",
       "planB": "Ból ≥3/10, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.",
       "optional": false,
@@ -3087,11 +4584,67 @@
       "conditions": "",
       "quality": false,
       "mechanicalLoad": "moderate",
-      "structuredWorkoutText": "- Easy run 3km 6:00/km-6:30/km Pace\n\nOptional strides 3x\n- Fast relaxed 10s 7 RPE\n- Full easy recovery 90s Z1 Pace",
+      "structuredWorkoutText": "- Warmup 1km 6:00/km-6:30/km Pace\n- Easy 2km 5:50/km-6:25/km Pace\n\nStrides 3x\n- Fast relaxed 10s 7-8 RPE\n- Full recovery 90s open\n\n- Cooldown 1km 6:10/km-6:40/km Pace",
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": null,
       "monthKey": "2026-09",
-      "dayNum": 10
+      "dayNum": 10,
+      "effortBased": true,
+      "paceDisplay": "Rozgrzewka: 1 km 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: 2 km easy 5:50–6:25/km, RPE 3–4 + 3 × 10 s rytmu technicznego, RPE 7–8, bez targetu tempa. Przerwy: 90 s pełnego truchtu lub marszu, target otwarty. Schłodzenie: 1 km 6:10–6:40/km, RPE 2–3. Rytmy wykonuj luźno i technicznie; Garmin bez alarmu tempa. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu; na podbiegach utrzymuj wskazane RPE.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Easy",
+          "sport": "Run",
+          "distanceKm": 2,
+          "targetType": "pace",
+          "targetPace": "5:50–6:25/km",
+          "rpe": "3–4",
+          "flatOnly": true
+        },
+        {
+          "kind": "repeat",
+          "label": "Rytm techniczny",
+          "sport": "Run",
+          "repetitions": 3,
+          "durationSeconds": 10,
+          "targetType": "effort",
+          "targetPace": null,
+          "rpe": "7–8",
+          "effortBased": true
+        },
+        {
+          "kind": "recovery",
+          "label": "Pełny trucht lub marsz",
+          "sport": "Run",
+          "repetitions": 3,
+          "durationSeconds": 90,
+          "targetType": "open",
+          "targetPace": null,
+          "rpe": "1–2"
+        },
+        {
+          "kind": "cooldown",
+          "label": "Schłodzenie",
+          "sport": "Run",
+          "distanceKm": 1,
+          "targetType": "pace",
+          "targetPace": "6:10–6:40/km",
+          "rpe": "2–3",
+          "flatOnly": true
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 5:50–6:25/km • 6:10–6:40/km • odcinki wysiłkowo"
     },
     {
       "id": "cc-v2-oslo-2026-2026-09-11-note-1",
@@ -3130,7 +4683,8 @@
       "goal": "Regeneracja i adaptacja.",
       "strategyGate": null,
       "monthKey": "2026-09",
-      "dayNum": 11
+      "dayNum": 11,
+      "paceDisplay": null
     },
     {
       "id": "cc-v2-oslo-2026-2026-09-12-run-1",
@@ -3149,13 +4703,13 @@
       "distanceRangeKm": null,
       "durationMinutes": 210,
       "intensity": "ŁATWY",
-      "pace": "A 4:58/km | B 5:16–5:20/km | C 5:24–5:34/km",
+      "pace": "Rozgrzewka: 10–15 min bardzo lekko, 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: Plan A 3:30 — 4:58–5:03/km, RPE początkowo 5–6, tylko po wszystkich bramkach; Plan B 5:16–5:20/km; Plan C 5:24–5:34/km. Przerwy: brak; punkty żywieniowe pokonuj według sytuacji. Schłodzenie: 10–15 min marszu lub truchtu, target otwarty, RPE 1–2. Tempo dotyczy płaskich fragmentów; na podbiegach utrzymuj wysiłek.",
       "rpe": "start 5–6, progres wg stanu",
       "elevationM": 300,
-      "warmup": "10–15 min mobilizacji i bardzo lekki trucht według logistyki startu",
+      "warmup": "Rozgrzewka przed startem: 10–15 min bardzo lekko, 6:00–6:30/km albo wolniej, RPE 2–3",
       "mainSet": "Strategia A 3:30 tylko po wszystkich bramkach. B 3:42–3:45. C 3:48–3:55. Pierwsze 5 km spokojnie, wysiłek równy na podbiegach.",
       "recovery": "",
-      "cooldown": "Marsz, płyny, jedzenie i ciepłe ubranie.",
+      "cooldown": "Marsz/trucht: 10–15 min marszu lub truchtu, target otwarty, RPE 1–2",
       "fuel": "60–75 g węgli/h, płyny i sód przećwiczone na longach; pierwszy żel wcześnie, nic nowego.",
       "planB": "Przejdź z A do B/C przy narastającym bólu, RPE ponad plan albo pogorszeniu techniki; zdrowie ma pierwszeństwo.",
       "optional": false,
@@ -3169,7 +4723,85 @@
       "goal": "Budowa formy bez przekraczania aktualnej tolerancji mechanicznej.",
       "strategyGate": "race-strategy",
       "monthKey": "2026-09",
-      "dayNum": 12
+      "dayNum": 12,
+      "goalPaceConditional": true,
+      "paceDisplay": "Rozgrzewka: 10–15 min bardzo lekko, 6:00–6:30/km albo wolniej, RPE 2–3. Część główna: Plan A 3:30 — 4:58–5:03/km, RPE początkowo 5–6, tylko po wszystkich bramkach; Plan B 5:16–5:20/km; Plan C 5:24–5:34/km. Przerwy: brak; punkty żywieniowe pokonuj według sytuacji. Schłodzenie: 10–15 min marszu lub truchtu, target otwarty, RPE 1–2. Tempo dotyczy płaskich fragmentów; na podbiegach utrzymuj wysiłek.",
+      "structuredSteps": [
+        {
+          "kind": "warmup",
+          "label": "Rozgrzewka przed startem",
+          "sport": "Run",
+          "durationMinutes": 12,
+          "targetType": "pace",
+          "targetPace": "6:00–6:30/km albo wolniej",
+          "rpe": "2–3",
+          "flatOnly": true
+        },
+        {
+          "kind": "main",
+          "label": "Plan A 3:30",
+          "sport": "Run",
+          "distanceKm": 42.195,
+          "targetType": "pace",
+          "targetPace": "4:58–5:03/km",
+          "rpe": "5–7",
+          "flatOnly": false,
+          "conditional": true
+        },
+        {
+          "kind": "cooldown",
+          "label": "Marsz/trucht",
+          "sport": "Run",
+          "durationMinutes": 12,
+          "targetType": "open",
+          "targetPace": null,
+          "rpe": "1–2"
+        }
+      ],
+      "paceSummary": "6:00–6:30/km albo wolniej • 4:58–5:03/km"
     }
-  ]
+  ],
+  "paceCatalog": {
+    "recovery": {
+      "pace": "6:15–6:45/km",
+      "rpe": "2–3"
+    },
+    "easy": {
+      "pace": "5:50–6:25/km",
+      "rpe": "3–4"
+    },
+    "mediumLongEasy": {
+      "pace": "5:45–6:15/km",
+      "rpe": "3–4"
+    },
+    "steady": {
+      "pace": "5:20–5:35/km",
+      "rpe": "5–6"
+    },
+    "currentMarathonEffort": {
+      "pace": "5:15–5:25/km",
+      "rpe": "5–6"
+    },
+    "goalMarathonPace330": {
+      "pace": "4:58–5:03/km",
+      "rpe": "≤6",
+      "conditionalOnly": true
+    },
+    "threshold": {
+      "pace": "4:58–5:05/km",
+      "rpe": "7"
+    },
+    "tenKIntervals": {
+      "pace": "4:43–4:50/km",
+      "rpe": "7–8"
+    },
+    "warmup": {
+      "pace": "6:00–6:30/km albo wolniej",
+      "rpe": "2–3"
+    },
+    "cooldown": {
+      "pace": "6:10–6:40/km",
+      "rpe": "2–3"
+    }
+  }
 }

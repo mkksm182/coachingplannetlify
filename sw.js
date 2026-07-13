@@ -1,4 +1,4 @@
-const CACHE='op-coach-center-v9-autofill';
+const CACHE='op-coach-center-v10-oslo-pace-sessions';
 const FILES=['./','./index.html','./style.css','./app.js','./data/plan.js','./manifest.json','./assets/icon.svg'];
 self.addEventListener('install',e=>{self.skipWaiting(); e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES).catch(()=>null)))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});

@@ -16,10 +16,10 @@ for (const sheet of [plan, weeks, strategy]) sheet.showGridLines = false;
 
 const headers = [
   "Data", "Dzień", "Tydzień", "Status", "Sport", "Trening", "Typ", "Km min", "Km max",
-  "Czas min", "Intensywność", "Tempo", "RPE", "Przewyższenie m", "Część główna", "Plan B",
-  "Warunki", "Paliwo", "parentId", "external_id", "Long",
+  "Czas min", "Intensywność", "Tempo — skrót", "Tempo i RPE — wszystkie bloki", "RPE", "Przewyższenie m",
+  "Część główna", "Plan B", "Warunki", "Paliwo", "parentId", "external_id", "Structured workout", "Long",
 ];
-plan.getRange(`A1:U${source.workouts.length + 1}`).values = [
+plan.getRange(`A1:W${source.workouts.length + 1}`).values = [
   headers,
   ...source.workouts.map(item => [
     new Date(`${item.date}T12:00:00Z`), item.dayName, item.week,
@@ -27,28 +27,32 @@ plan.getRange(`A1:U${source.workouts.length + 1}`).values = [
     item.sport, item.name, item.workoutType,
     item.distanceRangeKm?.[0] ?? item.distanceKm ?? null,
     item.distanceRangeKm?.[1] ?? item.distanceKm ?? null,
-    item.durationMinutes, item.intensity, item.pace, item.rpe, item.elevationM,
-    item.mainSet, item.planB, item.conditions, item.fuel, item.parentId, item.external_id, item.workoutType.startsWith("LONG") ? 1 : 0,
+    item.durationMinutes, item.intensity, item.paceSummary || item.pace, item.paceDisplay, item.rpe, item.elevationM,
+    item.mainSet, item.planB, item.conditions, item.fuel, item.parentId, item.external_id, item.structuredWorkoutText, item.workoutType.startsWith("LONG") ? 1 : 0,
   ]),
 ];
-plan.getRange("A1:U1").format = { fill: "#12304A", font: { bold: true, color: "#FFFFFF" }, wrapText: true };
+plan.getRange("A1:W1").format = { fill: "#12304A", font: { bold: true, color: "#FFFFFF" }, wrapText: true };
 plan.getRange(`A2:A${source.workouts.length + 1}`).format.numberFormat = "yyyy-mm-dd";
 plan.getRange(`H2:J${source.workouts.length + 1}`).format.numberFormat = "0.0";
-plan.getRange(`N2:N${source.workouts.length + 1}`).format.numberFormat = "0";
-plan.getRange(`A1:U${source.workouts.length + 1}`).format.borders = { preset: "inside", style: "thin", color: "#D9E2EA" };
-plan.getRange(`A2:U${source.workouts.length + 1}`).format.verticalAlignment = "top";
-plan.getRange(`O2:R${source.workouts.length + 1}`).format.wrapText = true;
-plan.getRange(`A2:U${source.workouts.length + 1}`).conditionalFormats.add("containsText", { text: "OPCJONALNE / ALT", format: { fill: "#FFF3CD", font: { color: "#664D03" } } });
-plan.getRange(`A2:U${source.workouts.length + 1}`).conditionalFormats.add("containsText", { text: "BRAMKA", format: { fill: "#FCE8E6", font: { bold: true, color: "#A61B1B" } } });
+plan.getRange(`O2:O${source.workouts.length + 1}`).format.numberFormat = "0";
+plan.getRange(`A1:W${source.workouts.length + 1}`).format.borders = { preset: "inside", style: "thin", color: "#D9E2EA" };
+plan.getRange(`A2:W${source.workouts.length + 1}`).format.verticalAlignment = "top";
+plan.getRange(`M2:S${source.workouts.length + 1}`).format.wrapText = true;
+plan.getRange(`V2:V${source.workouts.length + 1}`).format.wrapText = true;
+plan.getRange(`A2:W${source.workouts.length + 1}`).conditionalFormats.add("containsText", { text: "OPCJONALNE / ALT", format: { fill: "#FFF3CD", font: { color: "#664D03" } } });
+plan.getRange(`A2:W${source.workouts.length + 1}`).conditionalFormats.add("containsText", { text: "BRAMKA", format: { fill: "#FCE8E6", font: { bold: true, color: "#A61B1B" } } });
 plan.freezePanes.freezeRows(1);
 plan.getRange("A:A").format.columnWidth = 12;
 plan.getRange("B:B").format.columnWidth = 13;
 plan.getRange("C:C").format.columnWidth = 22;
 plan.getRange("D:G").format.columnWidth = 18;
-plan.getRange("H:N").format.columnWidth = 13;
-plan.getRange("O:R").format.columnWidth = 42;
-plan.getRange("S:T").format.columnWidth = 38;
-plan.getRange("U:U").format.columnWidth = 10;
+plan.getRange("H:L").format.columnWidth = 14;
+plan.getRange("M:M").format.columnWidth = 70;
+plan.getRange("N:O").format.columnWidth = 13;
+plan.getRange("P:S").format.columnWidth = 42;
+plan.getRange("T:U").format.columnWidth = 38;
+plan.getRange("V:V").format.columnWidth = 55;
+plan.getRange("W:W").format.columnWidth = 10;
 
 const weekStarts = ["2026-07-13", "2026-07-20", "2026-07-27", "2026-08-03", "2026-08-10", "2026-08-17", "2026-08-24", "2026-08-31", "2026-09-07"];
 weeks.getRange("A1:H1").merge();
@@ -65,8 +69,8 @@ for (let row = 4; row < 4 + weekStarts.length; row += 1) {
   weeks.getRange(`C${row}`).formulas = [[`=COUNTIFS('FAZA 1 - OSLO V2'!$A$2:$A$81,">="&A${row},'FAZA 1 - OSLO V2'!$A$2:$A$81,"<="&B${row},'FAZA 1 - OSLO V2'!$D$2:$D$81,"OBOWIĄZKOWE",'FAZA 1 - OSLO V2'!$E$2:$E$81,"Run")`]];
   weeks.getRange(`D${row}`).formulas = [[`=SUMIFS('FAZA 1 - OSLO V2'!$H$2:$H$81,'FAZA 1 - OSLO V2'!$A$2:$A$81,">="&A${row},'FAZA 1 - OSLO V2'!$A$2:$A$81,"<="&B${row},'FAZA 1 - OSLO V2'!$D$2:$D$81,"OBOWIĄZKOWE",'FAZA 1 - OSLO V2'!$E$2:$E$81,"Run")`]];
   weeks.getRange(`E${row}`).formulas = [[`=SUMIFS('FAZA 1 - OSLO V2'!$I$2:$I$81,'FAZA 1 - OSLO V2'!$A$2:$A$81,">="&A${row},'FAZA 1 - OSLO V2'!$A$2:$A$81,"<="&B${row},'FAZA 1 - OSLO V2'!$D$2:$D$81,"OBOWIĄZKOWE",'FAZA 1 - OSLO V2'!$E$2:$E$81,"Run")`]];
-  weeks.getRange(`F${row}`).formulas = [[`=SUMIFS('FAZA 1 - OSLO V2'!$H$2:$H$81,'FAZA 1 - OSLO V2'!$A$2:$A$81,">="&A${row},'FAZA 1 - OSLO V2'!$A$2:$A$81,"<="&B${row},'FAZA 1 - OSLO V2'!$U$2:$U$81,1)`]];
-  weeks.getRange(`G${row}`).formulas = [[`=SUMIFS('FAZA 1 - OSLO V2'!$I$2:$I$81,'FAZA 1 - OSLO V2'!$A$2:$A$81,">="&A${row},'FAZA 1 - OSLO V2'!$A$2:$A$81,"<="&B${row},'FAZA 1 - OSLO V2'!$U$2:$U$81,1)`]];
+  weeks.getRange(`F${row}`).formulas = [[`=SUMIFS('FAZA 1 - OSLO V2'!$H$2:$H$81,'FAZA 1 - OSLO V2'!$A$2:$A$81,">="&A${row},'FAZA 1 - OSLO V2'!$A$2:$A$81,"<="&B${row},'FAZA 1 - OSLO V2'!$W$2:$W$81,1)`]];
+  weeks.getRange(`G${row}`).formulas = [[`=SUMIFS('FAZA 1 - OSLO V2'!$I$2:$I$81,'FAZA 1 - OSLO V2'!$A$2:$A$81,">="&A${row},'FAZA 1 - OSLO V2'!$A$2:$A$81,"<="&B${row},'FAZA 1 - OSLO V2'!$W$2:$W$81,1)`]];
   weeks.getRange(`H${row}`).values = [[weekStarts[row - 4] === "2026-08-10" ? "15.08: ból 0–2, RPE ≤4, brak pogorszenia" : weekStarts[row - 4] === "2026-08-17" ? "22.08 zależne od 15.08" : weekStarts[row - 4] === "2026-08-31" ? "01.09 test; 02.09 decyzja A/B/C" : "—"]];
 }
 weeks.getRange(`A4:B${3 + weekStarts.length}`).format.numberFormat = "yyyy-mm-dd";

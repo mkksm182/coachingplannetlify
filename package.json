@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "node --test tests/*.test.mjs",
-    "generate:oslo-v2": "node scripts/generate-training-artifacts.mjs",
+    "generate:oslo-v2": "node scripts/enrich-oslo-v2-paces.mjs && node scripts/generate-training-artifacts.mjs",
     "intervals:oslo-v2:dry-run": "node scripts/sync-oslo-v2-to-intervals.mjs"
   },
   "dependencies": {
