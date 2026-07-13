@@ -18,6 +18,7 @@ const structured = context.window.STRUCTURED_WORKOUTS;
 const workouts = source.workouts;
 const futurePlan = plan.filter(item => item.dateISO >= source.range.start && item.dateISO <= source.range.end);
 const futureStructured = structured.filter(item => item.dateISO >= source.range.start && item.dateISO <= source.range.end);
+const appSource = await fs.readFile(path.join(root, "app.js"), "utf8");
 
 function runActivity(externalId, date, name = "Test Run") {
   return { id: `activity-${externalId}`, external_id: externalId, start_date_local: `${date}T07:00:00`, type: "Run", name, moving_time: 3600, distance: 10000 };
@@ -79,6 +80,11 @@ test("plan zachowuje jeden rekord i jedną kartę na każdą sesję", () => {
     assert.equal(generated.sport, item.sport);
     assert.equal(generated.parentId, item.parentId);
   }
+});
+
+test("kalendarz porównuje lokalną datę bez przesunięcia UTC", () => {
+  assert.match(appSource, /function iso\(d\)\{return \[d\.getFullYear\(\),String\(d\.getMonth\(\)\+1\).*d\.getDate\(\)/);
+  assert.doesNotMatch(appSource, /function iso\(d\)\{return d\.toISOString\(\)/);
 });
 
 test("Run + Strength są osobnymi rekordami ze wspólnym parentId", () => {

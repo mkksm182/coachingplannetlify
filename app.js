@@ -75,7 +75,7 @@ function autoFillLogsFromIntervals(data){
 function $(id){return document.getElementById(id)}
 function esc(s){return String(s??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]))}
 function fmtDate(d){return new Intl.DateTimeFormat('pl-PL',{day:'2-digit',month:'short',year:'numeric'}).format(d)}
-function iso(d){return d.toISOString().slice(0,10)}
+function iso(d){return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')}
 function monthName(d){return new Intl.DateTimeFormat('pl-PL',{month:'long',year:'numeric'}).format(d)}
 function todayIso(){return iso(new Date())}
 function isRest(it){return window.IntervalsAutofillEngine?.isRest(it)??/(^|[\s/+-])(WOLNE|REST|OFF)([\s/+-]|$)/i.test(it.discipline||'')}
