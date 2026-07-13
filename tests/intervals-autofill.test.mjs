@@ -109,3 +109,91 @@ test('12. Statystyki obejmują aktywności dopasowane i poza planem', () => {
   assert.equal(stats.km, 8 + 22 + 5 + 30);
   assert.equal(stats.load, 42 + 30 + 25 + 45);
 });
+
+test('13. Dopasowana aktywność automatycznie wypełnia wszystkie dostępne statystyki', () => {
+  const result = sync([fixture.activities.run0707]);
+  const log = result.logs['FA-2026-07-07-31'];
+  assert.equal(log.status, 'OK');
+  assert.equal(log.activityName, 'Bieg easy + rytmy');
+  assert.equal(log.activityStart, '2026-07-07T08:00:00');
+  assert.equal(log.time, '45');
+  assert.equal(log.km, '8');
+  assert.equal(log.speed, 10.67);
+  assert.equal(log.pace, 5.63);
+  assert.equal(log.avgHr, 145);
+  assert.equal(log.maxHr, 171);
+  assert.equal(log.avgWatts, 268);
+  assert.equal(log.normalizedWatts, 281);
+  assert.equal(log.cadence, 176);
+  assert.equal(log.elevation, 94);
+  assert.equal(log.calories, 540);
+  assert.equal(log.load, 42);
+  assert.ok(Number(log.done) > 0);
+  assert.equal(log.intervalsId, 'activity-run-0707');
+  assert.equal(log.autoSource, 'Intervals auto');
+  assert.ok(log.lastSyncedAt);
+});
+
+test('14. Odświeżenie strony zachowuje automatycznie uzupełnione dane', () => {
+  const first = sync([fixture.activities.run0707]);
+  const restored = {
+    logs: JSON.parse(JSON.stringify(first.logs)),
+    standalone: JSON.parse(JSON.stringify(first.standalone))
+  };
+  const afterRefresh = sync([fixture.activities.run0707], restored);
+  assert.deepEqual(afterRefresh.logs['FA-2026-07-07-31'].autoActivityIds, first.logs['FA-2026-07-07-31'].autoActivityIds);
+  assert.equal(afterRefresh.logs['FA-2026-07-07-31'].time, '45');
+});
+
+test('15. Druga synchronizacja tej samej aktywności nie tworzy duplikatu', () => {
+  const first = sync([fixture.activities.run0707]);
+  const second = sync([fixture.activities.run0707], first);
+  const log = second.logs['FA-2026-07-07-31'];
+  assert.equal(Object.keys(log.parts).length, 1);
+  assert.equal(log.autoActivityIds, 'activity-run-0707');
+  assert.equal(Object.keys(second.standalone).length, 0);
+});
+
+test('16. Aktualizacja tej samej aktywności aktualizuje dane wykonania', () => {
+  const first = sync([fixture.activities.run0707]);
+  const changed = { ...fixture.activities.run0707, moving_time: 2880, distance: 8500, max_heartrate: 175, icu_training_load: 49 };
+  const second = sync([changed], first);
+  const log = second.logs['FA-2026-07-07-31'];
+  assert.equal(log.time, '48');
+  assert.equal(log.km, '8.5');
+  assert.equal(log.maxHr, 175);
+  assert.equal(log.load, 49);
+});
+
+test('17. Ręczne RPE i prywatna notatka pozostają po synchronizacji', () => {
+  const first = sync([fixture.activities.run0707], { logs: { 'FA-2026-07-07-31': { rpe: '8', notes: 'Tylko moja notatka' } } });
+  const second = sync([{ ...fixture.activities.run0707, average_heartrate: 149 }], first);
+  assert.equal(second.logs['FA-2026-07-07-31'].rpe, '8');
+  assert.equal(second.logs['FA-2026-07-07-31'].notes, 'Tylko moja notatka');
+  assert.equal(second.logs['FA-2026-07-07-31'].avgHr, 149);
+});
+
+test('18. Aktywność poza planem pojawia się automatycznie bez formularza', () => {
+  const result = sync([fixture.activities.outsideRide]);
+  const outside = result.standalone['activity-outside-ride'];
+  assert.equal(outside.status, 'Poza planem');
+  assert.equal(outside.intervalsId, 'activity-outside-ride');
+  assert.equal(outside.autoSource, 'Intervals auto');
+  assert.ok(outside.lastSyncedAt);
+});
+
+test('19. Rekord wymagający przypisania nie uzupełnia niewłaściwego treningu', () => {
+  const result = sync([fixture.activities.ambiguousRun]);
+  assert.equal(result.matched.length, 0);
+  assert.equal(Object.keys(result.logs).length, 0);
+  assert.equal(result.standalone['activity-ambiguous-run'].status, 'Wymaga przypisania');
+});
+
+test('20. Jednostka wielosportowa zachowuje osobno wykonane części', () => {
+  const result = sync([fixture.activities.run0709, fixture.activities.swim0709]);
+  const parts = result.logs['FA-2026-07-09-33'].parts;
+  assert.equal(Object.keys(parts).length, 2);
+  assert.equal(parts['opcoach-FA-2026-07-09-33-run'].activityName, 'Morning easy run');
+  assert.equal(parts['opcoach-FA-2026-07-09-33-swim'].activityName, 'Evening technique swim');
+  assert.notEqual(parts['opcoach-FA-2026-07-09-33-run'].intervalsId, parts['opcoach-FA-2026-07-09-33-swim'].intervalsId);
+});

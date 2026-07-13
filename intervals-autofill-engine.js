@@ -91,15 +91,24 @@
     const kmDirect = numberFrom(activity, ['km', 'distance_km', 'distanceKm']);
     const distance = numberFrom(activity, ['distance', 'Distance']);
     const km = kmDirect > 0 ? kmDirect : distance > 0 ? (distance > 1000 ? distance / 1000 : distance) : 0;
+    const startDateLocal = valueFrom(activity, ['start_date_local', 'startDateLocal']);
+    const startDate = valueFrom(activity, ['start_date', 'startDate']);
+    const roundedMinutes = Math.round(minutes || 0);
+    const roundedKm = Math.round((km || 0) * 100) / 100;
+    const speed = roundedMinutes > 0 && roundedKm > 0 ? roundedKm / (roundedMinutes / 60) :
+      numberFrom(activity, ['speed', 'average_speed', 'averageSpeed', 'avg_speed']);
+    const pace = roundedMinutes > 0 && roundedKm > 0 ? roundedMinutes / roundedKm :
+      valueFrom(activity, ['pace', 'average_pace', 'averagePace']);
     return {
       activityId: activityId(activity),
       name: String(valueFrom(activity, ['name', 'title']) || valueFrom(activity, ['type', 'sport']) || 'Aktywność'),
       date: activityDate(activity),
-      startDateLocal: valueFrom(activity, ['start_date_local', 'startDateLocal']),
-      startDate: valueFrom(activity, ['start_date', 'startDate']),
+      startDateLocal,
+      startDate,
+      activityStart: startDateLocal || startDate || activityDate(activity),
       sport: activitySport(activity),
-      minutes: Math.round(minutes || 0),
-      km: Math.round((km || 0) * 100) / 100,
+      minutes: roundedMinutes,
+      km: roundedKm,
       load: numberFrom(activity, ['load', 'icu_training_load', 'icuTrainingLoad', 'training_load', 'trainingLoad', 'tss', 'TSS']),
       avgHr: numberFrom(activity, ['avg_hr', 'average_heartrate', 'averageHeartRate', 'average_hr', 'avgHeartRate']),
       maxHr: numberFrom(activity, ['max_hr', 'max_heartrate', 'maxHeartRate', 'maximum_heartrate']),
@@ -108,8 +117,8 @@
       cadence: numberFrom(activity, ['cadence', 'average_cadence', 'averageCadence', 'avg_cadence', 'avgCadence']),
       elevation: numberFrom(activity, ['elevation', 'total_elevation_gain', 'totalElevationGain', 'elevation_gain', 'elevationGain']),
       calories: numberFrom(activity, ['calories', 'calorie_count', 'calorieCount']),
-      speed: numberFrom(activity, ['speed', 'average_speed', 'averageSpeed', 'avg_speed']),
-      pace: valueFrom(activity, ['pace', 'average_pace', 'averagePace']),
+      speed: Math.round(speed * 100) / 100,
+      pace,
       pairedEventId: String(valueFrom(activity, ['paired_event_id', 'pairedEventId', 'event_id', 'eventId', 'icu_event_id']) || ''),
       externalId: String(valueFrom(activity, ['external_id', 'externalId']) || ''),
       url: valueFrom(activity, ['url', 'activity_url', 'activityUrl'])
@@ -194,9 +203,10 @@
     return next;
   }
 
-  function autoPart(metrics) {
+  function autoPart(metrics, syncedAt) {
     return {
       activityId: metrics.activityId,
+      intervalsId: metrics.activityId,
       status: 'OK',
       time: String(metrics.minutes || ''),
       km: String(metrics.km || ''),
@@ -212,12 +222,15 @@
       pace: metrics.pace,
       activityName: metrics.name,
       activityDate: metrics.date,
+      activityStart: metrics.activityStart,
       autoSource: 'Intervals auto',
-      autoMatchedAt: new Date().toISOString()
+      lastSyncedAt: syncedAt,
+      autoMatchedAt: syncedAt,
+      updated: syncedAt
     };
   }
 
-  function aggregateParent(parentId, logs, parts) {
+  function aggregateParent(parentId, logs, parts, syncedAt) {
     const parentParts = parts.filter(part => part.parentId === parentId);
     const previous = logs[parentId] || {};
     const savedParts = previous.parts || {};
@@ -254,22 +267,30 @@
       cadence: average('cadence'),
       elevation: Math.round(totals.elevation),
       calories: Math.round(totals.calories),
+      speed: totals.minutes > 0 && totals.km > 0 ? Math.round(totals.km / (totals.minutes / 60) * 100) / 100 : 0,
+      pace: totals.minutes > 0 && totals.km > 0 ? Math.round(totals.minutes / totals.km * 100) / 100 : null,
       activityName: completed.map(part => savedParts[part.id].activityName).filter(Boolean).join(' + '),
+      activityDate: completed.map(part => savedParts[part.id].activityDate).filter(Boolean).sort()[0] || '',
+      activityStart: completed.map(part => savedParts[part.id].activityStart).filter(Boolean).sort()[0] || '',
       done: String(Math.round(Math.min(130, done || 0))),
       autoSource: 'Intervals auto',
       autoActivityIds: completed.map(part => savedParts[part.id].activityId).join(','),
-      updated: new Date().toISOString()
+      intervalsId: completed.map(part => savedParts[part.id].activityId).join(','),
+      lastSyncedAt: syncedAt,
+      updated: syncedAt
     };
     logs[parentId] = keepManualFields(previous, next);
   }
 
-  function standaloneRecord(metrics, status, candidateIds) {
+  function standaloneRecord(metrics, status, candidateIds, syncedAt, previous) {
     return {
+      ...(previous || {}),
       id: metrics.activityId,
       intervalsId: metrics.activityId,
       date: metrics.date,
       startDateLocal: metrics.startDateLocal,
       startDate: metrics.startDate,
+      activityStart: metrics.activityStart,
       name: metrics.name,
       sport: metrics.sport,
       status,
@@ -288,7 +309,8 @@
       url: metrics.url,
       candidatePartIds: candidateIds || [],
       autoSource: 'Intervals auto',
-      updated: new Date().toISOString()
+      lastSyncedAt: syncedAt,
+      updated: syncedAt
     };
   }
 
@@ -299,6 +321,7 @@
     const events = options.events || [];
     const logs = JSON.parse(JSON.stringify(options.logs || {}));
     const standalone = JSON.parse(JSON.stringify(options.standalone || {}));
+    const syncedAt = options.syncedAt || new Date().toISOString();
     const parts = makeParts(items, structuredWorkouts);
     const itemIds = new Set(items.map(item => String(item.id)));
     const eventById = new Map(events.map(event => [eventId(event), event]).filter(([id]) => id));
@@ -333,29 +356,29 @@
           part = candidates[0];
           matchMethod = 'fallback';
         } else if (candidates.length > 1) {
-          standalone[metrics.activityId] = standaloneRecord(metrics, 'Wymaga przypisania', candidates.map(candidate => candidate.id));
+          standalone[metrics.activityId] = keepManualFields(standalone[metrics.activityId], standaloneRecord(metrics, 'Wymaga przypisania', candidates.map(candidate => candidate.id), syncedAt, standalone[metrics.activityId]));
           pending.push(metrics.activityId);
           continue;
         }
       }
       const currentOwner = part && partOwners.get(part.id);
       if (part && currentOwner && currentOwner !== metrics.activityId) {
-        standalone[metrics.activityId] = standaloneRecord(metrics, 'Wymaga przypisania', [part.id]);
+        standalone[metrics.activityId] = keepManualFields(standalone[metrics.activityId], standaloneRecord(metrics, 'Wymaga przypisania', [part.id], syncedAt, standalone[metrics.activityId]));
         pending.push(metrics.activityId);
         continue;
       }
       if (!part) {
-        standalone[metrics.activityId] = standaloneRecord(metrics, 'Poza planem', []);
+        standalone[metrics.activityId] = keepManualFields(standalone[metrics.activityId], standaloneRecord(metrics, 'Poza planem', [], syncedAt, standalone[metrics.activityId]));
         outsidePlan.push(metrics.activityId);
         continue;
       }
       delete standalone[metrics.activityId];
       const parent = logs[part.parentId] || {};
       const savedParts = { ...(parent.parts || {}) };
-      savedParts[part.id] = { ...autoPart(metrics), matchMethod, eventId: relatedEvent ? eventId(relatedEvent) : '' };
+      savedParts[part.id] = { ...autoPart(metrics, syncedAt), matchMethod, eventId: relatedEvent ? eventId(relatedEvent) : '' };
       partOwners.set(part.id, metrics.activityId);
       logs[part.parentId] = keepManualFields(parent, { ...parent, parts: savedParts });
-      aggregateParent(part.parentId, logs, parts);
+      aggregateParent(part.parentId, logs, parts, syncedAt);
       matched.push({ activityId: metrics.activityId, parentId: part.parentId, partId: part.id, method: matchMethod });
     }
     return { logs, standalone, matched, pending, outsidePlan, parts };
