@@ -143,18 +143,20 @@
     const parentsWithWorkout = new Set();
     for (const workout of structuredWorkouts || []) {
       if (String(workout.category || '').toUpperCase() !== 'WORKOUT') continue;
-      const parentId = String(workout.parentId || '');
-      const parent = itemById.get(parentId);
-      if (!parent) continue;
+      const id = String(workout.id || workout.external_id || '');
+      const planItem = itemById.get(id) || itemById.get(String(workout.parentId || ''));
+      if (!planItem) continue;
+      const parentId = String(workout.parentId || planItem.parentId || planItem.id || '');
       const sport = activitySport({ type: workout.type, name: workout.title });
-      const id = String(workout.id || `${parentId}:${sport}`);
-      parentsWithWorkout.add(parentId);
-      parts.push({ id, externalId: id, parentId, dateISO: workout.dateISO || parent.dateISO, sport, plannedMinutes: parseMinutes(workout) || parseMinutes(parent), plannedKm: parseKm(workout) || parseKm(parent), title: workout.title || parent.discipline });
+      const optional = Boolean(workout.optional ?? planItem.optional);
+      const required = workout.required !== undefined ? Boolean(workout.required) : planItem.required !== undefined ? Boolean(planItem.required) : !optional;
+      parentsWithWorkout.add(String(planItem.id));
+      parts.push({ id, externalId: String(workout.external_id || id), parentId, dateISO: workout.dateISO || planItem.dateISO, sport, plannedMinutes: parseMinutes(workout) || parseMinutes(planItem), plannedKm: parseKm(workout) || parseKm(planItem), title: workout.title || planItem.discipline, optional, required, alternativeGroup: workout.alternativeGroup || planItem.alternativeGroup || '' });
     }
     for (const item of items) {
       if (isRest(item) || parentsWithWorkout.has(String(item.id))) continue;
       for (const sport of planSports(item).filter(value => value !== 'rest')) {
-        parts.push({ id: `plan:${item.id}:${sport}`, externalId: String(item.id), parentId: String(item.id), dateISO: item.dateISO, sport, plannedMinutes: parseMinutes(item), plannedKm: parseKm(item), title: item.discipline });
+        parts.push({ id: `plan:${item.id}:${sport}`, externalId: String(item.id), parentId: String(item.parentId || item.id), dateISO: item.dateISO, sport, plannedMinutes: parseMinutes(item), plannedKm: parseKm(item), title: item.discipline, optional: Boolean(item.optional), required: item.required !== false, alternativeGroup: item.alternativeGroup || '' });
       }
     }
     return parts;
@@ -236,6 +238,14 @@
     const savedParts = previous.parts || {};
     const completed = parentParts.filter(part => savedParts[part.id]?.activityId);
     if (!completed.length) return;
+    const requiredParts = parentParts.filter(part => part.required && !part.optional);
+    const statusParts = requiredParts.length ? requiredParts : parentParts;
+    const statusCompleted = statusParts.filter(part => savedParts[part.id]?.activityId);
+    for (const completedPart of completed.filter(part => part.alternativeGroup)) {
+      for (const sibling of parentParts.filter(part => part.alternativeGroup === completedPart.alternativeGroup && part.id !== completedPart.id)) {
+        logs[sibling.id] = keepManualFields(logs[sibling.id], { ...(logs[sibling.id] || {}), status: 'Niewymagana / wybrano inną opcję', parentId, alternativeGroup: sibling.alternativeGroup, updated: syncedAt });
+      }
+    }
     const totals = completed.reduce((sum, part) => {
       const value = savedParts[part.id];
       sum.minutes += Number(value.time) || 0;
@@ -250,13 +260,15 @@
       return values.length ? Math.round(values.reduce((sum, value) => sum + value, 0) / values.length) : 0;
     };
     const maximum = key => Math.max(0, ...completed.map(part => Number(savedParts[part.id][key]) || 0));
-    const plannedMinutes = parentParts.reduce((sum, part) => sum + (part.plannedMinutes || 0), 0);
-    const plannedKm = parentParts.reduce((sum, part) => sum + (part.plannedKm || 0), 0);
-    const done = plannedMinutes > 0 ? totals.minutes / plannedMinutes * 100 : plannedKm > 0 ? totals.km / plannedKm * 100 : completed.length / parentParts.length * 100;
+    const plannedMinutes = statusParts.reduce((sum, part) => sum + (part.plannedMinutes || 0), 0);
+    const plannedKm = statusParts.reduce((sum, part) => sum + (part.plannedKm || 0), 0);
+    const done = plannedMinutes > 0 ? statusCompleted.reduce((sum, part) => sum + (Number(savedParts[part.id]?.time) || 0), 0) / plannedMinutes * 100 : plannedKm > 0 ? statusCompleted.reduce((sum, part) => sum + (Number(savedParts[part.id]?.km) || 0), 0) / plannedKm * 100 : statusCompleted.length / statusParts.length * 100;
+    const parentComplete = requiredParts.length ? statusCompleted.length === requiredParts.length : completed.length > 0;
     const next = {
       ...previous,
       parts: savedParts,
-      status: completed.length === parentParts.length ? 'OK' : 'Częściowo',
+      status: parentComplete ? 'OK' : 'Częściowo',
+      parentStatus: parentComplete ? 'Wykonany' : 'Częściowo',
       time: String(totals.minutes || ''),
       km: String(Math.round(totals.km * 100) / 100 || ''),
       load: Math.round(totals.load),
@@ -375,9 +387,11 @@
       delete standalone[metrics.activityId];
       const parent = logs[part.parentId] || {};
       const savedParts = { ...(parent.parts || {}) };
-      savedParts[part.id] = { ...autoPart(metrics, syncedAt), matchMethod, eventId: relatedEvent ? eventId(relatedEvent) : '' };
+      const savedPart = { ...autoPart(metrics, syncedAt), matchMethod, eventId: relatedEvent ? eventId(relatedEvent) : '', parentId: part.parentId };
+      savedParts[part.id] = savedPart;
       partOwners.set(part.id, metrics.activityId);
       logs[part.parentId] = keepManualFields(parent, { ...parent, parts: savedParts });
+      logs[part.id] = keepManualFields(logs[part.id], savedPart);
       aggregateParent(part.parentId, logs, parts, syncedAt);
       matched.push({ activityId: metrics.activityId, parentId: part.parentId, partId: part.id, method: matchMethod });
     }
