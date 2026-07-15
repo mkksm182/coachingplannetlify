@@ -116,7 +116,7 @@ test("zatwierdzone long runy i bramki mają dokładne warunki", () => {
   assert.match(aug15.conditions, /braku pogorszenia następnego ranka/);
   assert.deepEqual(aug22.distanceRangeKm, [22, 24]);
   assert.match(aug22.conditions, /24 km tylko po zaliczeniu 15\.08/);
-  assert.match(aug22.planB, /jeden blok 3 km aktualnego wysiłku maratońskiego/);
+  assert.match(aug22.planB, /jeden blok 3 km steady/);
 });
 
 test("taper kończy się startem 12.09, a decyzja A/B/C jest 02.09", () => {
@@ -142,7 +142,8 @@ test("structured workouty jakościowe mają rozgrzewkę, pracę, odpoczynek i sc
   }
   const continuous = workouts.find(item => item.workoutType === "MARATHON_EFFORT");
   assert.match(continuous.structuredWorkoutText, /- Warmup/i);
-  assert.match(continuous.structuredWorkoutText, /marathon effort/i);
+  assert.match(continuous.structuredWorkoutText, /Steady 6km/i);
+  assert.match(continuous.structuredWorkoutText, /Conditional goal MP/i);
   assert.match(continuous.structuredWorkoutText, /- Cooldown/i);
   for (const item of workouts.filter(item => item.workoutType === "HILLS" || item.workoutType === "EASY_STRIDES")) {
     assert.doesNotMatch(item.structuredWorkoutText, /Uphill[^\n]*\d:\d{2}\/km/i, item.id);
