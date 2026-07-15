@@ -1,4 +1,6 @@
 import fs from "node:fs/promises";
+import { execFileSync } from "node:child_process";
+import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { SpreadsheetFile, Workbook } from "@oai/artifact-tool";
@@ -7,6 +9,52 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const source = JSON.parse(await fs.readFile(path.join(root, "data/oslo-marathon-2026-v2.json"), "utf8"));
 const output = path.join(root, "source_plan_v2.xlsx");
 const previewDir = path.join(root, "work/source-plan-v2-preview");
+
+async function filesBelow(directory, current = "") {
+  const entries = await fs.readdir(path.join(directory, current), { withFileTypes: true });
+  const files = [];
+  for (const entry of entries) {
+    const relative = path.join(current, entry.name);
+    if (entry.isDirectory()) files.push(...await filesBelow(directory, relative));
+    else files.push(relative);
+  }
+  return files.sort();
+}
+
+function stableRelationshipId(target) {
+  const name = String(target).split("/").pop().replace(/\.[^.]+$/, "").replace(/[^a-z0-9]+/gi, "-");
+  return `R-${name}`;
+}
+
+async function normalizeXlsx(filePath) {
+  const directory = await fs.mkdtemp(path.join(os.tmpdir(), "oslo-v2-xlsx-"));
+  try {
+    execFileSync("unzip", ["-qq", filePath, "-d", directory]);
+    const relationshipFiles = ["_rels/.rels", "xl/_rels/workbook.xml.rels"];
+    for (const relative of relationshipFiles) {
+      const absolute = path.join(directory, relative);
+      const xml = await fs.readFile(absolute, "utf8");
+      const normalized = xml.replace(/(<Relationship\b[^>]*\bTarget="([^"]+)"[^>]*\bId=")[^"]+("\s*\/>)/g,
+        (match, before, target, after) => `${before}${stableRelationshipId(target)}${after}`);
+      await fs.writeFile(absolute, normalized);
+    }
+    const workbookPath = path.join(directory, "xl/workbook.xml");
+    const workbookXml = await fs.readFile(workbookPath, "utf8");
+    await fs.writeFile(workbookPath, workbookXml.replace(/(<x:sheet\b[^>]*\bsheetId="(\d+)"[^>]*\br:id=")[^"]+(")/g,
+      (match, before, sheetId, after) => `${before}R-sheet${sheetId}${after}`));
+
+    const files = await filesBelow(directory);
+    const fixedTime = new Date("2000-01-01T00:00:00Z");
+    for (const relative of files) await fs.utimes(path.join(directory, relative), fixedTime, fixedTime);
+    const normalizedPath = path.join(os.tmpdir(), `source-plan-v2-${process.pid}.xlsx`);
+    await fs.rm(normalizedPath, { force: true });
+    execFileSync("zip", ["-X", "-q", normalizedPath, ...files], { cwd: directory });
+    await fs.copyFile(normalizedPath, filePath);
+    await fs.rm(normalizedPath, { force: true });
+  } finally {
+    await fs.rm(directory, { recursive: true, force: true });
+  }
+}
 
 const workbook = Workbook.create();
 const plan = workbook.worksheets.add("FAZA 1 - OSLO V2");
@@ -107,4 +155,5 @@ const errors = await workbook.inspect({ kind: "match", searchTerm: "#REF!|#DIV/0
 console.log(errors.ndjson);
 const blob = await SpreadsheetFile.exportXlsx(workbook);
 await blob.save(output);
+await normalizeXlsx(output);
 console.log(`Saved ${output}`);

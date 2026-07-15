@@ -284,6 +284,23 @@ function profileFor(workout) {
   return continuousProfile(workout, PACE.easy, "3–4", "Easy");
 }
 
+function intensityForWorkout(workout) {
+  const type = String(workout.workoutType || "").toUpperCase();
+  const name = String(workout.name || "");
+  const steps = Array.isArray(workout.structuredSteps) ? workout.structuredSteps : [];
+  const hasGoalMarathonPace = steps.some(item => item.targetPace === PACE.goalMarathon);
+
+  if (type === "RECOVERY") return "REGENERACJA";
+  if (type === "THRESHOLD") return "PROGOWY";
+  if (/10K|TEN_K|INTERVAL/.test(type)) return "INTERWAŁOWY";
+  if (/VO2/.test(type)) return "VO2";
+  if (type === "HILLS") return "PODBIEGI";
+  if (/hill sprints/i.test(name)) return "SIŁA BIEGOWA";
+  if (hasGoalMarathonPace || /MARATHON_PACE|MARATHON_EFFORT|RACE/.test(type)) return "MARATOŃSKI";
+  if (/steady/i.test(name) || steps.some(item => item.label === "Steady")) return "UMIARKOWANY";
+  return "ŁATWY";
+}
+
 const source = JSON.parse(await fs.readFile(sourcePath, "utf8"));
 const alternativeInstruction = workout => `Wybierz tylko jedną opcję z grupy ${workout.alternativeGroup}.`;
 const normalizedConditions = workout => {
@@ -319,6 +336,20 @@ source.paceCatalog = {
   warmup: { pace: PACE.warmup, rpe: "2–3" },
   cooldown: { pace: PACE.cooldown, rpe: "2–3" },
 };
+source.intensityCatalog = {
+  restNote: "WOLNE",
+  recovery: "REGENERACJA",
+  easy: "ŁATWY",
+  steady: "UMIARKOWANY",
+  goalMarathonPace: "MARATOŃSKI",
+  threshold: "PROGOWY",
+  tenKIntervals: "INTERWAŁOWY",
+  vo2: "VO2",
+  hillSprints: "SIŁA BIEGOWA",
+  hillRepeats: "PODBIEGI",
+  strengthLight: "LEKKA",
+  strengthMaintenance: "PODTRZYMUJĄCA",
+};
 
 source.raceStrategies = source.raceStrategies.map(strategy => strategy.code === "A"
   ? { ...strategy, pace: PACE.goalMarathon }
@@ -350,7 +381,16 @@ source.workouts = source.workouts.map(workout => {
     const paceTargets = [...new Set(profile.structuredSteps.map(item => item.targetPace).filter(Boolean))];
     next.paceSummary = `${paceTargets.join(" • ")}${profile.effortBased ? `${paceTargets.length ? " • " : ""}odcinki wysiłkowo` : ""}`;
     next.pace = profile.paceDisplay;
+    next.intensity = intensityForWorkout(next);
     next.rpe = next.workoutType === "THRESHOLD" ? "7" : next.rpe;
+    if (next.workoutType === "THRESHOLD") {
+      next.quality = true;
+      next.mechanicalLoad = "high";
+    }
+    if (next.workoutType === "RECOVERY") {
+      next.quality = false;
+      next.mechanicalLoad = "low";
+    }
     next.warmup = profile.structuredSteps.find(item => item.kind === "warmup")?.label + `: ${profile.paceDisplay.split(". ")[0].replace(/^Rozgrzewka:\s*/, "")}`;
     next.cooldown = profile.structuredSteps.find(item => item.kind === "cooldown")?.label + `: ${profile.paceDisplay.match(/Schłodzenie: ([^.]+)/)?.[1] || PACE.cooldown}`;
     if (next.alternativeGroup) next.conditions = normalizedConditions(next);
