@@ -353,1056 +353,554 @@ UID:cc-v2-oslo-2026-2026-07-15-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260715T000000
 DTEND;TZID=Europe/Oslo:20260715T003000
-SUMMARY:WOLNE (alternatywa dla roweru)
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# WOLNE (alternatywa dla roweru)\nData: 2026-07-15\nFaza: Faz
- a 1 - Oslo Marathon\nTydzień: Tydzień przejściowy 8 do Oslo\nIntensyw
- ność: WOLNE\nStatus: OPCJONALNE / ALT\n\n## Coach notes\n\nPlan B: Prz
- y zmęczeniu wybierz pełny odpoczynek.\nFueling: Normalny posiłek i na
- wodnienie\; po treningu białko oraz węglowodany.\n\n---\n\nPełne woln
- e
+DESCRIPTION:Wybierz jedną opcję:\nA: Rower Z2 40 min\, RPE 3\nB: Pełne
+  wolne\nNie wykonuj więcej niż jednej.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-07-15-ride-alt@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260715T180000
 DTEND;TZID=Europe/Oslo:20260715T184000
-SUMMARY:ALT: rower Z2 albo pełne wolne
+SUMMARY:Rower Z2 — 40 min
 CATEGORIES:Ride
-DESCRIPTION:# ALT: rower Z2 albo pełne wolne\nData: 2026-07-15\nFaza: Fa
- za 1 - Oslo Marathon\nTydzień: Tydzień przejściowy 8 do Oslo\nIntensy
- wność: REGENERACJA\nStatus: OPCJONALNE / ALT\n\n## Coach notes\n40 min
-  spokojnego Z2\, kadencja 85–95\; bez sweet spotu.\nTempo i RPE: Rower
-  Z2\, RPE 3\; bez tempa biegowego. Wybierz tylko jedną opcję ALT.\nWar
- unki: Wykonaj tylko przy świeżych nogach\; pełne wolne jest równorz
- ędnym wyborem. Wybierz tylko jedną opcję z grupy alt-2026-07-15.\nPla
- n B: Przy zmęczeniu wybierz pełny odpoczynek.\nFueling: Normalny posi
- łek i nawodnienie\; po treningu białko oraz węglowodany.\n\n---\n\n-
-  Easy spin 40m 55-70% 85-95rpm
+DESCRIPTION:Wybierz jedną opcję:\nA: Rower Z2 40 min\, RPE 3\nB: Pełne
+  wolne\nNie wykonuj więcej niż jednej.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-07-16-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260716T070000
 DTEND;TZID=Europe/Oslo:20260716T081500
-SUMMARY:Easy + rytmy
+SUMMARY:Easy 7 km + rytmy
 CATEGORIES:Run
-DESCRIPTION:# Easy + rytmy\nData: 2026-07-16\nFaza: Faza 1 - Oslo Maratho
- n\nTydzień: Tydzień przejściowy 8 do Oslo\nIntensywność: ŁATWY\nSt
- atus: OBOWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/km\,
-  RPE 2–3 | 6 × 20 s rytmu luźno\, nie sprint | 90 s pełnego truchtu
-  | Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3\nTempo i RPE: Rozgrzewk
- a: 1 km 5:30–6:05/km\, RPE 2–3. Część główna: 5 km easy 5:10–
- 5:45/km\, RPE 3–4 + 6 × 20 s rytmu technicznego\, RPE 7–8\, bez tar
- getu tempa. Przerwy: 90 s pełnego truchtu lub marszu\, target otwarty.
-  Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3. Rytmy wykonuj luźno i t
- echnicznie\; Garmin bez alarmu tempa. Zakresy tempa dotyczą płaskiego
-  lub łagodnie pofałdowanego terenu. Na pagórkach\, w upale i przy wie
- trze RPE ma pierwszeństwo przed tempem.\n\nPlan B: Ból ≥3/10\, naras
- tanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lu
- b lekkim rowerem.\nFueling: Normalny posiłek i nawodnienie\; po trening
- u białko oraz węglowodany.\n\n---\n\n- Warmup 1km 5:30/km-6:05/km Pace
- \n- Easy 5km 5:10/km-5:45/km Pace\n\nStrides 6x\n- Fast relaxed 20s 7-8
-  RPE\n- Full recovery 90s open\n\n- Cooldown 1km 5:35/km-6:15/km Pace
+DESCRIPTION:Easy 7 km + rytmy\nEasy 5 km @ 5:10–5:45/km\, RPE 3–4\n6
+  × Rytm 20 s\, RPE 7–8\nPrzerwa: 90 s easy
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-07-16-strength-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260716T183000
 DTEND;TZID=Europe/Oslo:20260716T184200
-SUMMARY:Siła techniczna — nauka ruchu
+SUMMARY:Siła — 12 min
 CATEGORIES:WeightTraining
-DESCRIPTION:# Siła techniczna — nauka ruchu\nData: 2026-07-16\nFaza: F
- aza 1 - Oslo Marathon\nTydzień: Tydzień przejściowy 8 do Oslo\nIntens
- ywność: LEKKA\nStatus: OPCJONALNE / ALT\n\n## Coach notes\nTechnika: s
- plit squat do ławki\, wspięcia łydki\, hip hinge bez ciężaru\, side
-  plank\; 1–2 serie\, zostaw 4–5 powtórzeń w zapasie.\n\nWarunki: B
- ez DOMS i bez pracy do upadku. Przerwij przy bólu >2/10.\nPlan B: Przy
-  zmęczeniu wybierz pełny odpoczynek.\nFueling: Normalny posiłek i naw
- odnienie\; po treningu białko oraz węglowodany.\n\n---\n\n- Technika i
-  stabilizacja 12m 2-4 RPE
+DESCRIPTION:Siła — 12 min\nSplit squat 1–2 serie\nWspięcia łydki 1
+ –2 serie\nHip hinge 1–2 serie\nSide plank 1–2 serie\nRPE: 2–4
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-07-17-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260717T000000
 DTEND;TZID=Europe/Oslo:20260717T003000
-SUMMARY:WOLNE przed long runem
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# WOLNE przed long runem\nData: 2026-07-17\nFaza: Faza 1 - Os
- lo Marathon\nTydzień: Tydzień przejściowy 8 do Oslo\nIntensywność:
-  WOLNE\nStatus: INFORMACJA\n\n## Coach notes\n\nPlan B: Przy zmęczeniu
-  wybierz pełny odpoczynek.\nFueling: Normalny posiłek i nawodnienie\;
-  po treningu białko oraz węglowodany.\n\n---\n\nWOLNE przed long runem
+DESCRIPTION:WOLNE
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-07-18-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260718T070000
 DTEND;TZID=Europe/Oslo:20260718T081500
-SUMMARY:Long easy 12 km
+SUMMARY:Long 12 km
 CATEGORIES:Run
-DESCRIPTION:# Long easy 12 km\nData: 2026-07-18\nFaza: Faza 1 - Oslo Mara
- thon\nTydzień: Tydzień przejściowy 8 do Oslo\nIntensywność: ŁATWY\
- nStatus: OBOWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/km
- \, RPE 2–3 | 12 km easy na łagodnie pofałdowanej trasie\; bez MP. |
-  Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3\nTempo i RPE: Rozgrzewka:
-  1 km 5:30–6:05/km\, RPE 2–3. Część główna: 10 km easy 5:15–5
- :50/km\, RPE 3–4. Przerwy: nie dotyczy. Schłodzenie: 1 km 5:35–6:15
- /km\, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałd
- owanego terenu. Na pagórkach\, w upale i przy wietrze RPE ma pierwszeń
- stwo przed tempem.\nWarunki: Ból 0–2/10 i brak zmiany kroku. W innym
-  przypadku 8–10 km easy.\nPlan B: 8–10 km easy albo przerwanie przy
-  narastającym bólu\; nie nadrabiaj.\nFueling: Normalny posiłek i nawo
- dnienie\; po treningu białko oraz węglowodany.\n\n---\n\n- Warmup 1km
-  5:30/km-6:05/km Pace\n- Long easy 10km 5:15/km-5:50/km Pace\n- Cooldown
-  1km 5:35/km-6:15/km Pace
+DESCRIPTION:Long 12 km\nLong easy 10 km @ 5:15–5:50/km\, RPE 3–4
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-07-19-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260719T070000
 DTEND;TZID=Europe/Oslo:20260719T081500
-SUMMARY:Recovery run
+SUMMARY:Recovery 5 km
 CATEGORIES:Run
-DESCRIPTION:# Recovery run\nData: 2026-07-19\nFaza: Faza 1 - Oslo Maratho
- n\nTydzień: Tydzień przejściowy 8 do Oslo\nIntensywność: REGENERACJ
- A\nStatus: OBOWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/
- km\, RPE 2–3 | 5 km bardzo lekko. | Schłodzenie: 1 km 5:35–6:15/km\
- , RPE 2–3\nTempo i RPE: Rozgrzewka: 1 km 5:30–6:05/km\, RPE 2–3. C
- zęść główna — Recovery: 3 km 5:40–6:20/km\, RPE 2–3. Przerwy:
-  nie dotyczy. Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3. Zakresy tem
- pa dotyczą płaskiego lub łagodnie pofałdowanego terenu. Na pagórkac
- h\, w upale i przy wietrze RPE ma pierwszeństwo przed tempem. Przy zmę
- czeniu nie przyspieszaj: pozostań w zakresie\, a RPE ma pierwszeństwo.
- \n\nPlan B: Pełne wolne\, jeśli po longu jest ból albo sztywność.\n
- Fueling: Normalny posiłek i nawodnienie\; po treningu białko oraz węg
- lowodany.\n\n---\n\n- Warmup 1km 5:30/km-6:05/km Pace\n- Recovery 3km 5:
- 40/km-6:20/km Pace\n- Cooldown 1km 5:35/km-6:15/km Pace
+DESCRIPTION:Recovery 5 km\nTempo: 5:40–6:20/km\nRPE: 2–3
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-07-20-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260720T000000
 DTEND;TZID=Europe/Oslo:20260720T003000
-SUMMARY:Regeneracja + opcjonalna siła techniczna
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# Regeneracja + opcjonalna siła techniczna\nData: 2026-07-20
- \nFaza: Faza 1 - Oslo Marathon\nTydzień: Tydzień 8 do Oslo\nIntensywno
- ść: WOLNE\nStatus: OPCJONALNE / ALT\n\n## Coach notes\n\nPlan B: Przy
-  zmęczeniu wybierz pełny odpoczynek.\nFueling: Normalny posiłek i naw
- odnienie\; po treningu białko oraz węglowodany.\n\n---\n\nRegeneracja
+DESCRIPTION:WOLNE
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-07-20-strength-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260720T183000
 DTEND;TZID=Europe/Oslo:20260720T184500
-SUMMARY:Siła techniczna — minimalna objętość
+SUMMARY:Siła — 15 min
 CATEGORIES:WeightTraining
-DESCRIPTION:# Siła techniczna — minimalna objętość\nData: 2026-07-2
- 0\nFaza: Faza 1 - Oslo Marathon\nTydzień: Tydzień 8 do Oslo\nIntensywn
- ość: LEKKA\nStatus: OPCJONALNE / ALT\n\n## Coach notes\nTechnika: spli
- t squat do ławki\, wspięcia łydki\, hip hinge bez ciężaru\, side pl
- ank\; 1–2 serie\, zostaw 4–5 powtórzeń w zapasie.\n\nWarunki: Bez
-  DOMS i bez pracy do upadku. Przerwij przy bólu >2/10.\nPlan B: Przy zm
- ęczeniu wybierz pełny odpoczynek.\nFueling: Normalny posiłek i nawodn
- ienie\; po treningu białko oraz węglowodany.\n\n---\n\n- Technika i st
- abilizacja 15m 2-4 RPE
+DESCRIPTION:Siła — 15 min\nSplit squat 1–2 serie\nWspięcia łydki 1
+ –2 serie\nHip hinge 1–2 serie\nSide plank 1–2 serie\nRPE: 2–4
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-07-21-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260721T070000
 DTEND;TZID=Europe/Oslo:20260721T081500
-SUMMARY:Próg kontrolowany 3 × 1 km
+SUMMARY:Threshold 8 km
 CATEGORIES:Run
-DESCRIPTION:# Próg kontrolowany 3 × 1 km\nData: 2026-07-21\nFaza: Faza
-  1 - Oslo Marathon\nTydzień: Tydzień 8 do Oslo\nIntensywność: PROGOW
- Y\nStatus: OBOWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 2 km 5:30–6:05/
- km\, RPE 2–3 | 3 × 1 km w tempie progowym | 2 min trucht | Schłodzen
- ie: 2 km 5:35–6:15/km\, RPE 2–3\nTempo i RPE: Rozgrzewka: 2 km 5:30
- –6:05/km\, RPE 2–3. Część główna: 3 × 1 km 4:12–4:20/km\, RP
- E 7\, na płaskim. Przerwy: 2 min truchtu 5:40–6:20/km\, RPE 2–3. Sc
- hłodzenie: 2 km 5:35–6:15/km\, RPE 2–3. Zakresy tempa dotyczą pła
- skiego lub łagodnie pofałdowanego terenu. Na pagórkach\, w upale i pr
- zy wietrze RPE ma pierwszeństwo przed tempem.\n\nPlan B: Ból ≥3/10\,
-  narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynk
- iem lub lekkim rowerem.\nFueling: Normalny posiłek i nawodnienie\; po t
- reningu białko oraz węglowodany.\n\n---\n\n- Warmup 2km 5:30/km-6:05/k
- m Pace\n\nThreshold 3x\n- Threshold 1km 4:12/km-4:20/km Pace\n- Recovery
-  2m 5:40/km-6:20/km Pace\n\n- Cooldown 2km 5:35/km-6:15/km Pace
+DESCRIPTION:Threshold 8 km\nWU: 2 km @ 5:30–6:05/km\n3 × Próg 1 km @
+  4:12–4:20/km\, RPE 7\nPrzerwa: 2 min @ 5:40–6:20/km\nCD: 2 km @ 5:3
+ 5–6:15/km\nPlan B: Easy albo odpoczynek przy bólu lub wyraźnym zmęc
+ zeniu.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-07-22-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260722T000000
 DTEND;TZID=Europe/Oslo:20260722T003000
-SUMMARY:WOLNE (alternatywa dla roweru)
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# WOLNE (alternatywa dla roweru)\nData: 2026-07-22\nFaza: Faz
- a 1 - Oslo Marathon\nTydzień: Tydzień 8 do Oslo\nIntensywność: WOLNE
- \nStatus: OPCJONALNE / ALT\n\n## Coach notes\n\nPlan B: Przy zmęczeniu
-  wybierz pełny odpoczynek.\nFueling: Normalny posiłek i nawodnienie\;
-  po treningu białko oraz węglowodany.\n\n---\n\nPełne wolne
+DESCRIPTION:Wybierz jedną opcję:\nA: Rower Z2 45 min\, RPE 3\nB: Pełne
+  wolne\nNie wykonuj więcej niż jednej.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-07-22-ride-alt@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260722T180000
 DTEND;TZID=Europe/Oslo:20260722T184500
-SUMMARY:ALT: rower Z2 albo pełne wolne
+SUMMARY:Rower Z2 — 45 min
 CATEGORIES:Ride
-DESCRIPTION:# ALT: rower Z2 albo pełne wolne\nData: 2026-07-22\nFaza: Fa
- za 1 - Oslo Marathon\nTydzień: Tydzień 8 do Oslo\nIntensywność: REGE
- NERACJA\nStatus: OPCJONALNE / ALT\n\n## Coach notes\n45 min spokojnego Z
- 2\, kadencja 85–95\; bez sweet spotu.\nTempo i RPE: Rower Z2\, RPE 3\;
-  bez tempa biegowego. Wybierz tylko jedną opcję ALT.\nWarunki: Wykonaj
-  tylko przy świeżych nogach\; pełne wolne jest równorzędnym wyborem
- . Wybierz tylko jedną opcję z grupy alt-2026-07-22.\nPlan B: Przy zmę
- czeniu wybierz pełny odpoczynek.\nFueling: Normalny posiłek i nawodnie
- nie\; po treningu białko oraz węglowodany.\n\n---\n\n- Easy spin 45m 5
- 5-70% 85-95rpm
+DESCRIPTION:Wybierz jedną opcję:\nA: Rower Z2 45 min\, RPE 3\nB: Pełne
+  wolne\nNie wykonuj więcej niż jednej.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-07-23-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260723T070000
 DTEND;TZID=Europe/Oslo:20260723T081500
-SUMMARY:Średnio-długi easy + hill sprints
+SUMMARY:Easy 10 km + hill sprints
 CATEGORIES:Run
-DESCRIPTION:# Średnio-długi easy + hill sprints\nData: 2026-07-23\nFaza
- : Faza 1 - Oslo Marathon\nTydzień: Tydzień 8 do Oslo\nIntensywność:
-  SIŁA BIEGOWA\nStatus: OBOWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 2 km
-  5:30–6:05/km\, RPE 2–3 | 6 × 8 s sprężystego podbiegu\, nie maks
- ymalnie | 2 min pełnego marszu/truchtu | Schłodzenie: 1 km 5:35–6:15
- /km\, RPE 2–3\nTempo i RPE: Rozgrzewka: 2 km 5:30–6:05/km\, RPE 2–
- 3. Część główna: 7 km średnio-długiego easy 5:05–5:35/km\, RPE
-  3–4 + 6 × 8 s hill sprint techniczny\, nachylenie 4–6%\, RPE 8\, b
- ez targetu tempa. Przerwy: 2 min pełnego marszu/truchtu w dół\, targe
- t otwarty. Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3. Podbieg wykony
- wany na wysiłek — nie kontroluj tempa chwilowego. Garmin bez alarmu t
- empa na hill sprintach.\nWarunki: Hill sprints są dodatkiem nerwowo-mi
- ęśniowym\; pełna regeneracja\, bez celu tempa na stromym podbiegu.\nP
- lan B: Ból ≥3/10\, narastanie bólu lub zmiana kroku: przerwij bieg i
-  zastąp go odpoczynkiem lub lekkim rowerem.\nFueling: Normalny posiłek
-  i nawodnienie\; po treningu białko oraz węglowodany.\n\n---\n\n- Warm
- up 2km 5:30/km-6:05/km Pace\n- Medium long easy 7km 5:05/km-5:35/km Pace
- \n\nHill sprints 6x\n- Uphill fast relaxed 8s 8 RPE\n- Full walk-jog rec
- overy 2m open\n\n- Cooldown 1km 5:35/km-6:15/km Pace
+DESCRIPTION:Easy 10 km + hill sprints\nEasy 7 km @ 5:05–5:35/km\, RPE 3
+ –4\n6 × Podbieg 8 s\, nachylenie 4–6%\, RPE 8\nPowrót: 120 s truch
+ t w dół\nBez targetu tempa pod górę.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-07-24-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260724T000000
 DTEND;TZID=Europe/Oslo:20260724T003000
-SUMMARY:WOLNE przed long runem
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# WOLNE przed long runem\nData: 2026-07-24\nFaza: Faza 1 - Os
- lo Marathon\nTydzień: Tydzień 8 do Oslo\nIntensywność: WOLNE\nStatus
- : INFORMACJA\n\n## Coach notes\n\nPlan B: Przy zmęczeniu wybierz pełny
-  odpoczynek.\nFueling: Normalny posiłek i nawodnienie\; po treningu bia
- łko oraz węglowodany.\n\n---\n\nWOLNE przed long runem
+DESCRIPTION:WOLNE
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-07-25-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260725T070000
 DTEND;TZID=Europe/Oslo:20260725T081500
-SUMMARY:Long easy 12 km
+SUMMARY:Long 12 km
 CATEGORIES:Run
-DESCRIPTION:# Long easy 12 km\nData: 2026-07-25\nFaza: Faza 1 - Oslo Mara
- thon\nTydzień: Tydzień 7 do Oslo\nIntensywność: ŁATWY\nStatus: OBOW
- IĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/km\, RPE 2–3
-  | 12 km easy na pofałdowanej trasie\, równy wysiłek. | Schłodzenie:
-  1 km 5:35–6:15/km\, RPE 2–3\nTempo i RPE: Rozgrzewka: 1 km 5:30–6
- :05/km\, RPE 2–3. Część główna: 10 km easy 5:15–5:50/km\, RPE 3
- –4. Przerwy: nie dotyczy. Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–
- 3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu
- . Na pagórkach\, w upale i przy wietrze RPE ma pierwszeństwo przed tem
- pem.\n\nPlan B: Ból ≥3/10\, narastanie bólu lub zmiana kroku: przerw
- ij bieg i zastąp go odpoczynkiem lub lekkim rowerem.\nFueling: Normalny
-  posiłek i nawodnienie\; po treningu białko oraz węglowodany.\n\n---\
- n\n- Warmup 1km 5:30/km-6:05/km Pace\n- Long easy 10km 5:15/km-5:50/km P
- ace\n- Cooldown 1km 5:35/km-6:15/km Pace
+DESCRIPTION:Long 12 km\nLong easy 10 km @ 5:15–5:50/km\, RPE 3–4
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-07-26-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260726T070000
 DTEND;TZID=Europe/Oslo:20260726T081500
-SUMMARY:Recovery run
+SUMMARY:Recovery 5 km
 CATEGORIES:Run
-DESCRIPTION:# Recovery run\nData: 2026-07-26\nFaza: Faza 1 - Oslo Maratho
- n\nTydzień: Tydzień 7 do Oslo\nIntensywność: REGENERACJA\nStatus: OB
- OWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/km\, RPE 2–
- 3 | 5 km bardzo lekko. | Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3\n
- Tempo i RPE: Rozgrzewka: 1 km 5:30–6:05/km\, RPE 2–3. Część głó
- wna — Recovery: 3 km 5:40–6:20/km\, RPE 2–3. Przerwy: nie dotyczy.
-  Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3. Zakresy tempa dotyczą p
- łaskiego lub łagodnie pofałdowanego terenu. Na pagórkach\, w upale i
-  przy wietrze RPE ma pierwszeństwo przed tempem. Przy zmęczeniu nie pr
- zyspieszaj: pozostań w zakresie\, a RPE ma pierwszeństwo.\n\nPlan B: B
- ól ≥3/10\, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp
-  go odpoczynkiem lub lekkim rowerem.\nFueling: Normalny posiłek i nawod
- nienie\; po treningu białko oraz węglowodany.\n\n---\n\n- Warmup 1km 5
- :30/km-6:05/km Pace\n- Recovery 3km 5:40/km-6:20/km Pace\n- Cooldown 1km
-  5:35/km-6:15/km Pace
+DESCRIPTION:Recovery 5 km\nTempo: 5:40–6:20/km\nRPE: 2–3
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-07-27-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260727T000000
 DTEND;TZID=Europe/Oslo:20260727T003000
-SUMMARY:Regeneracja + opcjonalna siła techniczna
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# Regeneracja + opcjonalna siła techniczna\nData: 2026-07-27
- \nFaza: Faza 1 - Oslo Marathon\nTydzień: Tydzień 7 do Oslo\nIntensywno
- ść: WOLNE\nStatus: OPCJONALNE / ALT\n\n## Coach notes\n\nPlan B: Przy
-  zmęczeniu wybierz pełny odpoczynek.\nFueling: Normalny posiłek i naw
- odnienie\; po treningu białko oraz węglowodany.\n\n---\n\nRegeneracja
+DESCRIPTION:WOLNE
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-07-27-strength-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260727T183000
 DTEND;TZID=Europe/Oslo:20260727T184800
-SUMMARY:Siła techniczna — kontrola ekscentryczna
+SUMMARY:Siła — 18 min
 CATEGORIES:WeightTraining
-DESCRIPTION:# Siła techniczna — kontrola ekscentryczna\nData: 2026-07-
- 27\nFaza: Faza 1 - Oslo Marathon\nTydzień: Tydzień 7 do Oslo\nIntensyw
- ność: LEKKA\nStatus: OPCJONALNE / ALT\n\n## Coach notes\nTechnika: spl
- it squat do ławki\, wspięcia łydki\, hip hinge bez ciężaru\, side p
- lank\; 1–2 serie\, zostaw 4–5 powtórzeń w zapasie.\n\nWarunki: Bez
-  DOMS i bez pracy do upadku. Przerwij przy bólu >2/10.\nPlan B: Przy zm
- ęczeniu wybierz pełny odpoczynek.\nFueling: Normalny posiłek i nawodn
- ienie\; po treningu białko oraz węglowodany.\n\n---\n\n- Technika i st
- abilizacja 18m 2-4 RPE
+DESCRIPTION:Siła — 18 min\nSplit squat 1–2 serie\nWspięcia łydki 1
+ –2 serie\nHip hinge 1–2 serie\nSide plank 1–2 serie\nRPE: 2–4
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-07-28-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260728T070000
 DTEND;TZID=Europe/Oslo:20260728T081500
-SUMMARY:Długie podbiegi 6 × 60 s
+SUMMARY:Podbiegi 9 km
 CATEGORIES:Run
-DESCRIPTION:# Długie podbiegi 6 × 60 s\nData: 2026-07-28\nFaza: Faza 1
-  - Oslo Marathon\nTydzień: Tydzień 7 do Oslo\nIntensywność: PODBIEGI
- \nStatus: OBOWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 2.5 km 5:30–6:05
- /km\, RPE 2–3 | 6 × 60 s pod górę w kontrolowanym mocnym wysiłku |
-  Pełny trucht w dół 2–3 min | Schłodzenie: 2 km 5:35–6:15/km\, R
- PE 2–3\nTempo i RPE: Rozgrzewka: 2.5 km 5:30–6:05/km\, RPE 2–3. Cz
- ęść główna: 6 × 60 s pod górę\, nachylenie 4–7%\, RPE 7\; bez
-  targetu tempa. Przerwy: pełny trucht w dół 2.5 min\, target otwarty\
- , RPE 2–3. Schłodzenie: 2 km 5:35–6:15/km\, RPE 2–3. Podbieg wyko
- nywany na wysiłek — nie kontroluj tempa chwilowego.\nWarunki: Bez cel
- u tempa na podbiegu\; technika i równy wysiłek.\nPlan B: Ból ≥3/10\
- , narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczyn
- kiem lub lekkim rowerem.\nFueling: Normalny posiłek i nawodnienie\; po
-  treningu białko oraz węglowodany.\n\n---\n\n- Warmup 2.5km 5:30/km-6:
- 05/km Pace\n\nUphill effort 6x\n- Uphill 60s 7 RPE\n- Full jog-down reco
- very 150s open\n\n- Cooldown 2km 5:35/km-6:15/km Pace
+DESCRIPTION:Podbiegi 9 km\nWU: 2\,5 km @ 5:30–6:05/km\n6 × Podbieg 60
+  s\, nachylenie 4–7%\, RPE 7\nPowrót: 150 s trucht w dół\nCD: 2 km
+  @ 5:35–6:15/km\nBez targetu tempa pod górę.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-07-29-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260729T000000
 DTEND;TZID=Europe/Oslo:20260729T003000
-SUMMARY:WOLNE (alternatywa dla roweru)
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# WOLNE (alternatywa dla roweru)\nData: 2026-07-29\nFaza: Faz
- a 1 - Oslo Marathon\nTydzień: Tydzień 7 do Oslo\nIntensywność: WOLNE
- \nStatus: OPCJONALNE / ALT\n\n## Coach notes\n\nPlan B: Przy zmęczeniu
-  wybierz pełny odpoczynek.\nFueling: Normalny posiłek i nawodnienie\;
-  po treningu białko oraz węglowodany.\n\n---\n\nPełne wolne
+DESCRIPTION:Wybierz jedną opcję:\nA: Rower Z2 45 min\, RPE 3\nB: Pełne
+  wolne\nNie wykonuj więcej niż jednej.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-07-29-ride-alt@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260729T180000
 DTEND;TZID=Europe/Oslo:20260729T184500
-SUMMARY:ALT: rower Z2 albo pełne wolne
+SUMMARY:Rower Z2 — 45 min
 CATEGORIES:Ride
-DESCRIPTION:# ALT: rower Z2 albo pełne wolne\nData: 2026-07-29\nFaza: Fa
- za 1 - Oslo Marathon\nTydzień: Tydzień 7 do Oslo\nIntensywność: REGE
- NERACJA\nStatus: OPCJONALNE / ALT\n\n## Coach notes\n45 min spokojnego Z
- 2\, kadencja 85–95\; bez sweet spotu.\nTempo i RPE: Rower Z2\, RPE 3\;
-  bez tempa biegowego. Wybierz tylko jedną opcję ALT.\nWarunki: Wykonaj
-  tylko przy świeżych nogach\; pełne wolne jest równorzędnym wyborem
- . Wybierz tylko jedną opcję z grupy alt-2026-07-29.\nPlan B: Przy zmę
- czeniu wybierz pełny odpoczynek.\nFueling: Normalny posiłek i nawodnie
- nie\; po treningu białko oraz węglowodany.\n\n---\n\n- Easy spin 45m 5
- 5-70% 85-95rpm
+DESCRIPTION:Wybierz jedną opcję:\nA: Rower Z2 45 min\, RPE 3\nB: Pełne
+  wolne\nNie wykonuj więcej niż jednej.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-07-30-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260730T070000
 DTEND;TZID=Europe/Oslo:20260730T081500
-SUMMARY:Średnio-długi easy/steady
+SUMMARY:Średnio-długi 11 km
 CATEGORIES:Run
-DESCRIPTION:# Średnio-długi easy/steady\nData: 2026-07-30\nFaza: Faza 1
-  - Oslo Marathon\nTydzień: Tydzień 7 do Oslo\nIntensywność: UMIARKOW
- ANY\nStatus: OBOWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:0
- 5/km\, RPE 2–3 | Ostatnie 3 km steady\, bez wejścia na próg | Schło
- dzenie: 1 km 5:35–6:15/km\, RPE 2–3\nTempo i RPE: Rozgrzewka: 1 km 5
- :30–6:05/km\, RPE 2–3. Część główna: 6 km średnio-długiego ea
- sy 5:05–5:35/km\, RPE 3–4 + 3 km steady 4:40–4:55/km\, RPE 5–6.
-  Przerwy: nie dotyczy. Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3. Za
- kresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu. Na
-  pagórkach\, w upale i przy wietrze RPE ma pierwszeństwo przed tempem.
- \n\nPlan B: Ból ≥3/10\, narastanie bólu lub zmiana kroku: przerwij b
- ieg i zastąp go odpoczynkiem lub lekkim rowerem.\nFueling: Normalny pos
- iłek i nawodnienie\; po treningu białko oraz węglowodany.\n\n---\n\n-
-  Warmup 1km 5:30/km-6:05/km Pace\n- Medium long easy 6km 5:05/km-5:35/km
-  Pace\n- Steady 3km 4:40/km-4:55/km Pace\n- Cooldown 1km 5:35/km-6:15/km
-  Pace
+DESCRIPTION:Średnio-długi 11 km\nWU: 1 km @ 5:30–6:05/km\nEasy 6 km @
+  5:05–5:35/km\, RPE 3–4\nSteady 3 km @ 4:40–4:55/km\, RPE 5–6\nC
+ D: 1 km @ 5:35–6:15/km
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-07-31-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260731T000000
 DTEND;TZID=Europe/Oslo:20260731T003000
-SUMMARY:WOLNE przed long runem
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# WOLNE przed long runem\nData: 2026-07-31\nFaza: Faza 1 - Os
- lo Marathon\nTydzień: Tydzień 7 do Oslo\nIntensywność: WOLNE\nStatus
- : INFORMACJA\n\n## Coach notes\n\nPlan B: Przy zmęczeniu wybierz pełny
-  odpoczynek.\nFueling: Normalny posiłek i nawodnienie\; po treningu bia
- łko oraz węglowodany.\n\n---\n\nWOLNE przed long runem
+DESCRIPTION:WOLNE
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-01-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260801T070000
 DTEND;TZID=Europe/Oslo:20260801T081500
-SUMMARY:Long pofałdowany 14 km
+SUMMARY:Long 14 km
 CATEGORIES:Run
-DESCRIPTION:# Long pofałdowany 14 km\nData: 2026-08-01\nFaza: Faza 1 - O
- slo Marathon\nTydzień: Tydzień 6 do Oslo\nIntensywność: ŁATWY\nStat
- us: OBOWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/km\, RP
- E 2–3 | 14 km po pofałdowanej trasie\, wysiłek easy\; bez MP. | Sch
- łodzenie: 1 km 5:35–6:15/km\, RPE 2–3\nTempo i RPE: Rozgrzewka: 1 k
- m 5:30–6:05/km\, RPE 2–3. Część główna: 12 km easy 5:15–5:50/
- km na płaskich fragmentach\; na podbiegach według wysiłku\, RPE 3–4
- . Przerwy: nie dotyczy. Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3. Z
- akresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu. Na
-  pagórkach\, w upale i przy wietrze RPE ma pierwszeństwo przed tempem.
- \nWarunki: Kontroluj wysiłek na podbiegach\; tempo może spadać.\nPlan
-  B: Ból ≥3/10\, narastanie bólu lub zmiana kroku: przerwij bieg i za
- stąp go odpoczynkiem lub lekkim rowerem.\nFueling: Śniadanie 2–3 h p
- rzed. 40–60 g węgli/h\, płyny i sód według pogody\; nic nowego.\n\
- n---\n\n- Warmup 1km 5:30/km-6:05/km Pace\n- Long easy 12km 5:15/km-5:50
- /km Pace\n- Cooldown 1km 5:35/km-6:15/km Pace
+DESCRIPTION:Long 14 km\nLong easy 12 km @ 5:15–5:50/km\, RPE 3–4
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-02-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260802T070000
 DTEND;TZID=Europe/Oslo:20260802T081500
-SUMMARY:Recovery run
+SUMMARY:Recovery 5 km
 CATEGORIES:Run
-DESCRIPTION:# Recovery run\nData: 2026-08-02\nFaza: Faza 1 - Oslo Maratho
- n\nTydzień: Tydzień 6 do Oslo\nIntensywność: REGENERACJA\nStatus: OB
- OWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/km\, RPE 2–
- 3 | 5 km bardzo lekko. | Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3\n
- Tempo i RPE: Rozgrzewka: 1 km 5:30–6:05/km\, RPE 2–3. Część głó
- wna — Recovery: 3 km 5:40–6:20/km\, RPE 2–3. Przerwy: nie dotyczy.
-  Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3. Zakresy tempa dotyczą p
- łaskiego lub łagodnie pofałdowanego terenu. Na pagórkach\, w upale i
-  przy wietrze RPE ma pierwszeństwo przed tempem. Przy zmęczeniu nie pr
- zyspieszaj: pozostań w zakresie\, a RPE ma pierwszeństwo.\n\nPlan B: B
- ól ≥3/10\, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp
-  go odpoczynkiem lub lekkim rowerem.\nFueling: Normalny posiłek i nawod
- nienie\; po treningu białko oraz węglowodany.\n\n---\n\n- Warmup 1km 5
- :30/km-6:05/km Pace\n- Recovery 3km 5:40/km-6:20/km Pace\n- Cooldown 1km
-  5:35/km-6:15/km Pace
+DESCRIPTION:Recovery 5 km\nTempo: 5:40–6:20/km\nRPE: 2–3
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-03-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260803T000000
 DTEND;TZID=Europe/Oslo:20260803T003000
-SUMMARY:Regeneracja + opcjonalna siła techniczna
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# Regeneracja + opcjonalna siła techniczna\nData: 2026-08-03
- \nFaza: Faza 1 - Oslo Marathon\nTydzień: Tydzień 6 do Oslo\nIntensywno
- ść: WOLNE\nStatus: OPCJONALNE / ALT\n\n## Coach notes\n\nPlan B: Przy
-  zmęczeniu wybierz pełny odpoczynek.\nFueling: Normalny posiłek i naw
- odnienie\; po treningu białko oraz węglowodany.\n\n---\n\nRegeneracja
+DESCRIPTION:WOLNE
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-03-strength-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260803T183000
 DTEND;TZID=Europe/Oslo:20260803T185000
-SUMMARY:Siła techniczna — bez DOMS
+SUMMARY:Siła — 20 min
 CATEGORIES:WeightTraining
-DESCRIPTION:# Siła techniczna — bez DOMS\nData: 2026-08-03\nFaza: Faza
-  1 - Oslo Marathon\nTydzień: Tydzień 6 do Oslo\nIntensywność: LEKKA\
- nStatus: OPCJONALNE / ALT\n\n## Coach notes\nTechnika: split squat do ł
- awki\, wspięcia łydki\, hip hinge bez ciężaru\, side plank\; 1–2 s
- erie\, zostaw 4–5 powtórzeń w zapasie.\n\nWarunki: Bez DOMS i bez pr
- acy do upadku. Przerwij przy bólu >2/10.\nPlan B: Przy zmęczeniu wybie
- rz pełny odpoczynek.\nFueling: Normalny posiłek i nawodnienie\; po tre
- ningu białko oraz węglowodany.\n\n---\n\n- Technika i stabilizacja 20m
-  2-4 RPE
+DESCRIPTION:Siła — 20 min\nSplit squat 1–2 serie\nWspięcia łydki 1
+ –2 serie\nHip hinge 1–2 serie\nSide plank 1–2 serie\nRPE: 2–4
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-04-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260804T070000
 DTEND;TZID=Europe/Oslo:20260804T081500
-SUMMARY:Próg 4 × 1 km
+SUMMARY:Threshold 9 km
 CATEGORIES:Run
-DESCRIPTION:# Próg 4 × 1 km\nData: 2026-08-04\nFaza: Faza 1 - Oslo Mara
- thon\nTydzień: Tydzień 6 do Oslo\nIntensywność: PROGOWY\nStatus: OBO
- WIĄZKOWE\n\n## Coach notes\nRozgrzewka: 2 km 5:30–6:05/km\, RPE 2–3
-  | 4 × 1 km progowo | 2 min trucht | Schłodzenie: 2 km 5:35–6:15/km\
- , RPE 2–3\nTempo i RPE: Rozgrzewka: 2 km 5:30–6:05/km\, RPE 2–3. C
- zęść główna: 4 × 1 km 4:12–4:20/km\, RPE 7\, na płaskim. Przerw
- y: 2 min truchtu 5:40–6:20/km\, RPE 2–3. Schłodzenie: 2 km 5:35–6
- :15/km\, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofa
- łdowanego terenu. Na pagórkach\, w upale i przy wietrze RPE ma pierwsz
- eństwo przed tempem.\n\nPlan B: Ból ≥3/10\, narastanie bólu lub zmi
- ana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.\n
- Fueling: Normalny posiłek i nawodnienie\; po treningu białko oraz węg
- lowodany.\n\n---\n\n- Warmup 2km 5:30/km-6:05/km Pace\n\nThreshold 4x\n-
-  Threshold 1km 4:12/km-4:20/km Pace\n- Recovery 2m 5:40/km-6:20/km Pace\
- n\n- Cooldown 2km 5:35/km-6:15/km Pace
+DESCRIPTION:Threshold 9 km\nWU: 2 km @ 5:30–6:05/km\n4 × Próg 1 km @
+  4:12–4:20/km\, RPE 7\nPrzerwa: 2 min @ 5:40–6:20/km\nCD: 2 km @ 5:3
+ 5–6:15/km\nPlan B: Easy albo odpoczynek przy bólu lub wyraźnym zmęc
+ zeniu.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-05-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260805T000000
 DTEND;TZID=Europe/Oslo:20260805T003000
-SUMMARY:WOLNE (alternatywa dla roweru)
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# WOLNE (alternatywa dla roweru)\nData: 2026-08-05\nFaza: Faz
- a 1 - Oslo Marathon\nTydzień: Tydzień 6 do Oslo\nIntensywność: WOLNE
- \nStatus: OPCJONALNE / ALT\n\n## Coach notes\n\nPlan B: Przy zmęczeniu
-  wybierz pełny odpoczynek.\nFueling: Normalny posiłek i nawodnienie\;
-  po treningu białko oraz węglowodany.\n\n---\n\nPełne wolne
+DESCRIPTION:Wybierz jedną opcję:\nA: Rower Z2 40 min\, RPE 3\nB: Pełne
+  wolne\nNie wykonuj więcej niż jednej.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-05-ride-alt@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260805T180000
 DTEND;TZID=Europe/Oslo:20260805T184000
-SUMMARY:ALT: rower Z2 albo pełne wolne
+SUMMARY:Rower Z2 — 40 min
 CATEGORIES:Ride
-DESCRIPTION:# ALT: rower Z2 albo pełne wolne\nData: 2026-08-05\nFaza: Fa
- za 1 - Oslo Marathon\nTydzień: Tydzień 6 do Oslo\nIntensywność: REGE
- NERACJA\nStatus: OPCJONALNE / ALT\n\n## Coach notes\n40 min spokojnego Z
- 2\, kadencja 85–95\; bez sweet spotu.\nTempo i RPE: Rower Z2\, RPE 3\;
-  bez tempa biegowego. Wybierz tylko jedną opcję ALT.\nWarunki: Wykonaj
-  tylko przy świeżych nogach\; pełne wolne jest równorzędnym wyborem
- . Wybierz tylko jedną opcję z grupy alt-2026-08-05.\nPlan B: Przy zmę
- czeniu wybierz pełny odpoczynek.\nFueling: Normalny posiłek i nawodnie
- nie\; po treningu białko oraz węglowodany.\n\n---\n\n- Easy spin 40m 5
- 5-70% 85-95rpm
+DESCRIPTION:Wybierz jedną opcję:\nA: Rower Z2 40 min\, RPE 3\nB: Pełne
+  wolne\nNie wykonuj więcej niż jednej.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-06-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260806T070000
 DTEND;TZID=Europe/Oslo:20260806T081500
-SUMMARY:Średnio-długi easy
+SUMMARY:Średnio-długi 10 km
 CATEGORIES:Run
-DESCRIPTION:# Średnio-długi easy\nData: 2026-08-06\nFaza: Faza 1 - Oslo
-  Marathon\nTydzień: Tydzień 6 do Oslo\nIntensywność: ŁATWY\nStatus:
-  OBOWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/km\, RPE 2
- –3 | 10 km spokojnie. | Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3\
- nTempo i RPE: Rozgrzewka: 1 km 5:30–6:05/km\, RPE 2–3. Część gł
- ówna — Średnio-długi easy: 8 km 5:05–5:35/km\, RPE 3–4. Przerwy
- : nie dotyczy. Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3. Zakresy te
- mpa dotyczą płaskiego lub łagodnie pofałdowanego terenu. Na pagórka
- ch\, w upale i przy wietrze RPE ma pierwszeństwo przed tempem.\n\nPlan
-  B: Ból ≥3/10\, narastanie bólu lub zmiana kroku: przerwij bieg i za
- stąp go odpoczynkiem lub lekkim rowerem.\nFueling: Normalny posiłek i
-  nawodnienie\; po treningu białko oraz węglowodany.\n\n---\n\n- Warmup
-  1km 5:30/km-6:05/km Pace\n- Średnio-długi easy 8km 5:05/km-5:35/km Pa
- ce\n- Cooldown 1km 5:35/km-6:15/km Pace
+DESCRIPTION:Średnio-długi 10 km\nTempo: 5:05–5:35/km\nRPE: 3–4
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-07-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260807T000000
 DTEND;TZID=Europe/Oslo:20260807T003000
-SUMMARY:WOLNE przed long runem
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# WOLNE przed long runem\nData: 2026-08-07\nFaza: Faza 1 - Os
- lo Marathon\nTydzień: Tydzień 6 do Oslo\nIntensywność: WOLNE\nStatus
- : INFORMACJA\n\n## Coach notes\n\nPlan B: Przy zmęczeniu wybierz pełny
-  odpoczynek.\nFueling: Normalny posiłek i nawodnienie\; po treningu bia
- łko oraz węglowodany.\n\n---\n\nWOLNE przed long runem
+DESCRIPTION:WOLNE
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-08-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260808T070000
 DTEND;TZID=Europe/Oslo:20260808T081500
-SUMMARY:Long easy 12 km — cutback
+SUMMARY:Long 12 km
 CATEGORIES:Run
-DESCRIPTION:# Long easy 12 km — cutback\nData: 2026-08-08\nFaza: Faza 1
-  - Oslo Marathon\nTydzień: Tydzień 5 do Oslo\nIntensywność: ŁATWY\n
- Status: OBOWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/km\
- , RPE 2–3 | 12 km easy\, bez MP. | Schłodzenie: 1 km 5:35–6:15/km\,
-  RPE 2–3\nTempo i RPE: Rozgrzewka: 1 km 5:30–6:05/km\, RPE 2–3. Cz
- ęść główna: 10 km easy 5:15–5:50/km\, RPE 3–4. Przerwy: nie dot
- yczy. Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3. Zakresy tempa dotyc
- zą płaskiego lub łagodnie pofałdowanego terenu. Na pagórkach\, w up
- ale i przy wietrze RPE ma pierwszeństwo przed tempem.\n\nPlan B: Ból
-  ≥3/10\, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go
-  odpoczynkiem lub lekkim rowerem.\nFueling: Normalny posiłek i nawodnie
- nie\; po treningu białko oraz węglowodany.\n\n---\n\n- Warmup 1km 5:30
- /km-6:05/km Pace\n- Long easy 10km 5:15/km-5:50/km Pace\n- Cooldown 1km
-  5:35/km-6:15/km Pace
+DESCRIPTION:Long 12 km\nLong easy 10 km @ 5:15–5:50/km\, RPE 3–4
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-09-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260809T070000
 DTEND;TZID=Europe/Oslo:20260809T081500
-SUMMARY:Recovery run
+SUMMARY:Recovery 5 km
 CATEGORIES:Run
-DESCRIPTION:# Recovery run\nData: 2026-08-09\nFaza: Faza 1 - Oslo Maratho
- n\nTydzień: Tydzień 5 do Oslo\nIntensywność: REGENERACJA\nStatus: OB
- OWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/km\, RPE 2–
- 3 | 5 km bardzo lekko. | Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3\n
- Tempo i RPE: Rozgrzewka: 1 km 5:30–6:05/km\, RPE 2–3. Część głó
- wna — Recovery: 3 km 5:40–6:20/km\, RPE 2–3. Przerwy: nie dotyczy.
-  Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3. Zakresy tempa dotyczą p
- łaskiego lub łagodnie pofałdowanego terenu. Na pagórkach\, w upale i
-  przy wietrze RPE ma pierwszeństwo przed tempem. Przy zmęczeniu nie pr
- zyspieszaj: pozostań w zakresie\, a RPE ma pierwszeństwo.\n\nPlan B: B
- ól ≥3/10\, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp
-  go odpoczynkiem lub lekkim rowerem.\nFueling: Normalny posiłek i nawod
- nienie\; po treningu białko oraz węglowodany.\n\n---\n\n- Warmup 1km 5
- :30/km-6:05/km Pace\n- Recovery 3km 5:40/km-6:20/km Pace\n- Cooldown 1km
-  5:35/km-6:15/km Pace
+DESCRIPTION:Recovery 5 km\nTempo: 5:40–6:20/km\nRPE: 2–3
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-10-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260810T000000
 DTEND;TZID=Europe/Oslo:20260810T003000
-SUMMARY:Regeneracja + opcjonalna siła lekka
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# Regeneracja + opcjonalna siła lekka\nData: 2026-08-10\nFaz
- a: Faza 1 - Oslo Marathon\nTydzień: Tydzień 5 do Oslo\nIntensywność:
-  WOLNE\nStatus: OPCJONALNE / ALT\n\n## Coach notes\n\nPlan B: Przy zmęc
- zeniu wybierz pełny odpoczynek.\nFueling: Normalny posiłek i nawodnien
- ie\; po treningu białko oraz węglowodany.\n\n---\n\nRegeneracja
+DESCRIPTION:WOLNE
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-10-strength-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260810T183000
 DTEND;TZID=Europe/Oslo:20260810T185000
-SUMMARY:Siła podtrzymująca — lekka
+SUMMARY:Siła — 20 min
 CATEGORIES:WeightTraining
-DESCRIPTION:# Siła podtrzymująca — lekka\nData: 2026-08-10\nFaza: Faz
- a 1 - Oslo Marathon\nTydzień: Tydzień 5 do Oslo\nIntensywność: LEKKA
- \nStatus: OPCJONALNE / ALT\n\n## Coach notes\nTechnika: split squat do
-  ławki\, wspięcia łydki\, hip hinge bez ciężaru\, side plank\; 1–
- 2 serie\, zostaw 4–5 powtórzeń w zapasie.\n\nWarunki: Bez DOMS i bez
-  pracy do upadku. Przerwij przy bólu >2/10.\nPlan B: Przy zmęczeniu wy
- bierz pełny odpoczynek.\nFueling: Normalny posiłek i nawodnienie\; po
-  treningu białko oraz węglowodany.\n\n---\n\n- Technika i stabilizacja
-  20m 2-4 RPE
+DESCRIPTION:Siła — 20 min\nSplit squat 1–2 serie\nWspięcia łydki 1
+ –2 serie\nHip hinge 1–2 serie\nSide plank 1–2 serie\nRPE: 2–4
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-11-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260811T070000
 DTEND;TZID=Europe/Oslo:20260811T081500
-SUMMARY:Długie podbiegi 4 × 3 min
+SUMMARY:Podbiegi 10 km
 CATEGORIES:Run
-DESCRIPTION:# Długie podbiegi 4 × 3 min\nData: 2026-08-11\nFaza: Faza 1
-  - Oslo Marathon\nTydzień: Tydzień 5 do Oslo\nIntensywność: PODBIEGI
- \nStatus: OBOWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 2.5 km 5:30–6:05
- /km\, RPE 2–3 | 4 × 3 min pod górę równo\, bez finiszu | Pełny tr
- ucht w dół 3 min | Schłodzenie: 2 km 5:35–6:15/km\, RPE 2–3\nTemp
- o i RPE: Rozgrzewka: 2.5 km 5:30–6:05/km\, RPE 2–3. Część główn
- a: 4 × 3 min pod górę\, nachylenie 4–7%\, RPE 7\; bez targetu tempa
- . Przerwy: pełny trucht w dół 3 min\, target otwarty\, RPE 2–3. Sch
- łodzenie: 2 km 5:35–6:15/km\, RPE 2–3. Podbieg wykonywany na wysił
- ek — nie kontroluj tempa chwilowego.\nWarunki: Nie utrzymuj konkretneg
- o tempa na stromym podbiegu.\nPlan B: Ból ≥3/10\, narastanie bólu lu
- b zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim rower
- em.\nFueling: Normalny posiłek i nawodnienie\; po treningu białko oraz
-  węglowodany.\n\n---\n\n- Warmup 2.5km 5:30/km-6:05/km Pace\n\nUphill e
- ffort 4x\n- Uphill 180s 7 RPE\n- Full jog-down recovery 180s open\n\n- C
- ooldown 2km 5:35/km-6:15/km Pace
+DESCRIPTION:Podbiegi 10 km\nWU: 2\,5 km @ 5:30–6:05/km\n4 × Podbieg 18
+ 0 s\, nachylenie 4–7%\, RPE 7\nPowrót: 180 s trucht w dół\nCD: 2 km
+  @ 5:35–6:15/km\nBez targetu tempa pod górę.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-12-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260812T000000
 DTEND;TZID=Europe/Oslo:20260812T003000
-SUMMARY:WOLNE (alternatywa ALT)
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# WOLNE (alternatywa ALT)\nData: 2026-08-12\nFaza: Faza 1 - O
- slo Marathon\nTydzień: Tydzień 5 do Oslo\nIntensywność: WOLNE\nStatu
- s: OPCJONALNE / ALT\n\n## Coach notes\n\nPlan B: Przy zmęczeniu wybierz
-  pełny odpoczynek.\nFueling: Normalny posiłek i nawodnienie\; po treni
- ngu białko oraz węglowodany.\n\n---\n\nPełne wolne
+DESCRIPTION:Wybierz jedną opcję:\nA: Recovery 5 km @ 5:40–6:20/km\nB:
+  Rower Z2 45 min\, RPE 3\nC: Pełne wolne\nNie wykonuj więcej niż jedn
+ ej.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-12-run-alt@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260812T070000
 DTEND;TZID=Europe/Oslo:20260812T081500
-SUMMARY:ALT: recovery run
+SUMMARY:Recovery 5 km
 CATEGORIES:Run
-DESCRIPTION:# ALT: recovery run\nData: 2026-08-12\nFaza: Faza 1 - Oslo Ma
- rathon\nTydzień: Tydzień 5 do Oslo\nIntensywność: REGENERACJA\nStatu
- s: OPCJONALNE / ALT\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/km\,
-  RPE 2–3 | 5 km bardzo swobodnie\, bez dokładania kilometrów. | Sch
- łodzenie: 1 km 5:35–6:15/km\, RPE 2–3\nTempo i RPE: Rozgrzewka: 1 k
- m 5:30–6:05/km\, RPE 2–3. Część główna — Recovery: 3 km 5:40
- –6:20/km\, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 5:35–
- 6:15/km\, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pof
- ałdowanego terenu. Na pagórkach\, w upale i przy wietrze RPE ma pierws
- zeństwo przed tempem. Przy zmęczeniu nie przyspieszaj: pozostań w zak
- resie\, a RPE ma pierwszeństwo.\nWarunki: Dostępne dopiero od 10.08\;
-  wybierz albo ten bieg\, albo rower Z2\, albo wolne. Wybierz tylko jedn
- ą opcję z grupy alt-2026-08-12.\nPlan B: Ból ≥3/10\, narastanie bó
- lu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim
-  rowerem.\nFueling: Normalny posiłek i nawodnienie\; po treningu białk
- o oraz węglowodany.\n\n---\n\n- Warmup 1km 5:30/km-6:05/km Pace\n- Reco
- very 3km 5:40/km-6:20/km Pace\n- Cooldown 1km 5:35/km-6:15/km Pace
+DESCRIPTION:Wybierz jedną opcję:\nA: Recovery 5 km @ 5:40–6:20/km\nB:
+  Rower Z2 45 min\, RPE 3\nC: Pełne wolne\nNie wykonuj więcej niż jedn
+ ej.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-12-ride-alt@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260812T180000
 DTEND;TZID=Europe/Oslo:20260812T184500
-SUMMARY:ALT: rower Z2 albo pełne wolne
+SUMMARY:Rower Z2 — 45 min
 CATEGORIES:Ride
-DESCRIPTION:# ALT: rower Z2 albo pełne wolne\nData: 2026-08-12\nFaza: Fa
- za 1 - Oslo Marathon\nTydzień: Tydzień 5 do Oslo\nIntensywność: REGE
- NERACJA\nStatus: OPCJONALNE / ALT\n\n## Coach notes\n45 min spokojnego Z
- 2\, kadencja 85–95\; bez sweet spotu.\nTempo i RPE: Rower Z2\, RPE 3\;
-  bez tempa biegowego. Wybierz tylko jedną opcję ALT.\nWarunki: Wykonaj
-  tylko przy świeżych nogach\; pełne wolne jest równorzędnym wyborem
- . Wybierz tylko jedną opcję z grupy alt-2026-08-12.\nPlan B: Przy zmę
- czeniu wybierz pełny odpoczynek.\nFueling: Normalny posiłek i nawodnie
- nie\; po treningu białko oraz węglowodany.\n\n---\n\n- Easy spin 45m 5
- 5-70% 85-95rpm
+DESCRIPTION:Wybierz jedną opcję:\nA: Recovery 5 km @ 5:40–6:20/km\nB:
+  Rower Z2 45 min\, RPE 3\nC: Pełne wolne\nNie wykonuj więcej niż jedn
+ ej.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-13-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260813T070000
 DTEND;TZID=Europe/Oslo:20260813T081500
-SUMMARY:Średnio-długi easy/steady
+SUMMARY:Średnio-długi 11 km
 CATEGORIES:Run
-DESCRIPTION:# Średnio-długi easy/steady\nData: 2026-08-13\nFaza: Faza 1
-  - Oslo Marathon\nTydzień: Tydzień 5 do Oslo\nIntensywność: UMIARKOW
- ANY\nStatus: OBOWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:0
- 5/km\, RPE 2–3 | 3 km steady | Schłodzenie: 1 km 5:35–6:15/km\, RPE
-  2–3\nTempo i RPE: Rozgrzewka: 1 km 5:30–6:05/km\, RPE 2–3. Częś
- ć główna: 6 km średnio-długiego easy 5:05–5:35/km\, RPE 3–4 + 3
-  km steady 4:40–4:55/km\, RPE 5–6. Przerwy: nie dotyczy. Schłodzeni
- e: 1 km 5:35–6:15/km\, RPE 2–3. Zakresy tempa dotyczą płaskiego lu
- b łagodnie pofałdowanego terenu. Na pagórkach\, w upale i przy wietrz
- e RPE ma pierwszeństwo przed tempem.\n\nPlan B: Ból ≥3/10\, narastan
- ie bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub l
- ekkim rowerem.\nFueling: Normalny posiłek i nawodnienie\; po treningu b
- iałko oraz węglowodany.\n\n---\n\n- Warmup 1km 5:30/km-6:05/km Pace\n-
-  Medium long easy 6km 5:05/km-5:35/km Pace\n- Steady 3km 4:40/km-4:55/km
-  Pace\n- Cooldown 1km 5:35/km-6:15/km Pace
+DESCRIPTION:Średnio-długi 11 km\nWU: 1 km @ 5:30–6:05/km\nEasy 6 km @
+  5:05–5:35/km\, RPE 3–4\nSteady 3 km @ 4:40–4:55/km\, RPE 5–6\nC
+ D: 1 km @ 5:35–6:15/km
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-14-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260814T000000
 DTEND;TZID=Europe/Oslo:20260814T003000
-SUMMARY:WOLNE przed bramką 18–20 km
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# WOLNE przed bramką 18–20 km\nData: 2026-08-14\nFaza: Faz
- a 1 - Oslo Marathon\nTydzień: Tydzień 5 do Oslo\nIntensywność: WOLNE
- \nStatus: INFORMACJA\n\n## Coach notes\n\nPlan B: Przy zmęczeniu wybier
- z pełny odpoczynek.\nFueling: Normalny posiłek i nawodnienie\; po tren
- ingu białko oraz węglowodany.\n\n---\n\nWOLNE przed bramką 18–20 km
+DESCRIPTION:WOLNE
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-15-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260815T070000
 DTEND;TZID=Europe/Oslo:20260815T081500
-SUMMARY:BRAMKA A: long 18–20 km
+SUMMARY:Long 18–20 km
 CATEGORIES:Run
-DESCRIPTION:# BRAMKA A: long 18–20 km\nData: 2026-08-15\nFaza: Faza 1 -
-  Oslo Marathon\nTydzień: Tydzień 4 do Oslo\nIntensywność: MARATOŃSK
- I\nStatus: OBOWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/
- km\, RPE 2–3 w obu wariantach | 18 km easy. Dodaj do 20 km wyłącznie
-  po spełnieniu warunków\; opcjonalnie ostatnie 3 km przy wysiłku mara
- tońskim\, nie szybciej. | Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3
- \nTempo i RPE: Rozgrzewka: 1 km 5:30–6:05/km\, RPE 2–3 w obu wariant
- ach. Część główna — wariant 18 km: 16 km long easy 5:15–5:50/km
- \, RPE 3–4. Część główna — wariant 20 km tylko po spełnieniu b
- ramki: 15 km long easy 5:15–5:50/km + 3 km docelowego MP 3:30 4:55–5
- :02/km\, RPE maks. 6. Przerwy: nie dotyczy. Schłodzenie: 1 km 5:35–6:
- 15/km\, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofa
- łdowanego terenu. Na pagórkach\, w upale i przy wietrze RPE ma pierwsz
- eństwo przed tempem.\nWarunki: 20 km tylko przy bólu 0–2/10\, easy R
- PE ≤4 i braku pogorszenia następnego ranka. W innym przypadku 18 km e
- asy bez bloku docelowego MP.\nPlan B: 18 km easy bez MP. Przerwij wcześ
- niej przy narastającym bólu lub zmianie kroku.\nFueling: Śniadanie 2
- –3 h przed. 40–60 g węgli/h\, płyny i sód według pogody\; nic no
- wego.\n\n---\n\n- Warmup 1km 5:30/km-6:05/km Pace\n- Long easy 15km 5:15
- /km-5:50/km Pace\n- Conditional goal MP 3km 4:55/km-5:02/km Pace\n- Cool
- down 1km 5:35/km-6:15/km Pace
+DESCRIPTION:Long 18–20 km\nLong easy 15 km @ 5:15–5:50/km\, RPE 3–4
+ \nMP 3 km @ 4:55–5:02/km\, RPE ≤6\nPlan B: 18 km easy bez MP.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-16-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260816T070000
 DTEND;TZID=Europe/Oslo:20260816T081500
-SUMMARY:Recovery run
+SUMMARY:Recovery 4 km
 CATEGORIES:Run
-DESCRIPTION:# Recovery run\nData: 2026-08-16\nFaza: Faza 1 - Oslo Maratho
- n\nTydzień: Tydzień 4 do Oslo\nIntensywność: REGENERACJA\nStatus: OB
- OWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/km\, RPE 2–
- 3 | 4 km wyłącznie jeśli rano brak pogorszenia. | Schłodzenie: 1 km
-  5:35–6:15/km\, RPE 2–3\nTempo i RPE: Rozgrzewka: 1 km 5:30–6:05/k
- m\, RPE 2–3. Część główna — Recovery: 2 km 5:40–6:20/km\, RPE
-  2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 5:35–6:15/km\, RPE 2
- –3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego ter
- enu. Na pagórkach\, w upale i przy wietrze RPE ma pierwszeństwo przed
-  tempem. Przy zmęczeniu nie przyspieszaj: pozostań w zakresie\, a RPE
-  ma pierwszeństwo.\nWarunki: Jeśli rano ból/sztywność większe niż
-  przed longiem — pełne wolne.\nPlan B: Pełne wolne.\nFueling: Normal
- ny posiłek i nawodnienie\; po treningu białko oraz węglowodany.\n\n--
- -\n\n- Warmup 1km 5:30/km-6:05/km Pace\n- Recovery 2km 5:40/km-6:20/km P
- ace\n- Cooldown 1km 5:35/km-6:15/km Pace
+DESCRIPTION:Recovery 4 km\nTempo: 5:40–6:20/km\nRPE: 2–3
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-17-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260817T000000
 DTEND;TZID=Europe/Oslo:20260817T003000
-SUMMARY:Regeneracja + opcjonalna siła lekka
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# Regeneracja + opcjonalna siła lekka\nData: 2026-08-17\nFaz
- a: Faza 1 - Oslo Marathon\nTydzień: Tydzień 4 do Oslo\nIntensywność:
-  WOLNE\nStatus: OPCJONALNE / ALT\n\n## Coach notes\n\nPlan B: Przy zmęc
- zeniu wybierz pełny odpoczynek.\nFueling: Normalny posiłek i nawodnien
- ie\; po treningu białko oraz węglowodany.\n\n---\n\nRegeneracja
+DESCRIPTION:WOLNE
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-17-strength-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260817T183000
 DTEND;TZID=Europe/Oslo:20260817T184800
-SUMMARY:Siła podtrzymująca — bez ekscentrycznego zmęczenia
+SUMMARY:Siła — 18 min
 CATEGORIES:WeightTraining
-DESCRIPTION:# Siła podtrzymująca — bez ekscentrycznego zmęczenia\nDa
- ta: 2026-08-17\nFaza: Faza 1 - Oslo Marathon\nTydzień: Tydzień 4 do Os
- lo\nIntensywność: LEKKA\nStatus: OPCJONALNE / ALT\n\n## Coach notes\nT
- echnika: split squat do ławki\, wspięcia łydki\, hip hinge bez cięż
- aru\, side plank\; 1–2 serie\, zostaw 4–5 powtórzeń w zapasie.\n\n
- Warunki: Tylko jeśli po 15.08 nie ma DOMS ani pogorszenia\; w innym prz
- ypadku mobilność 10 min.\nPlan B: Przy zmęczeniu wybierz pełny odpoc
- zynek.\nFueling: Normalny posiłek i nawodnienie\; po treningu białko o
- raz węglowodany.\n\n---\n\n- Technika i stabilizacja 18m 2-4 RPE
+DESCRIPTION:Siła — 18 min\nSplit squat 1–2 serie\nWspięcia łydki 1
+ –2 serie\nHip hinge 1–2 serie\nSide plank 1–2 serie\nRPE: 2–4
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-18-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260818T070000
 DTEND;TZID=Europe/Oslo:20260818T081500
-SUMMARY:Próg 3 × 2 km
+SUMMARY:Threshold 9 km
 CATEGORIES:Run
-DESCRIPTION:# Próg 3 × 2 km\nData: 2026-08-18\nFaza: Faza 1 - Oslo Mara
- thon\nTydzień: Tydzień 4 do Oslo\nIntensywność: PROGOWY\nStatus: OBO
- WIĄZKOWE\n\n## Coach notes\nRozgrzewka: 1.5 km 5:30–6:05/km\, RPE 2
- –3 | 3 × 2 km progowo | 3 min trucht | Schłodzenie: 1\nTempo i RPE:
-  Rozgrzewka: 1.5 km 5:30–6:05/km\, RPE 2–3. Część główna: 3 ×
-  2 km 4:12–4:20/km\, RPE 7\, na płaskim. Przerwy: 3 min truchtu 5:40
- –6:20/km\, RPE 2–3. Schłodzenie: 1.5 km 5:35–6:15/km\, RPE 2–3.
-  Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu.
-  Na pagórkach\, w upale i przy wietrze RPE ma pierwszeństwo przed temp
- em.\n\nPlan B: Zamień na 7–8 km easy\, jeśli 15.08 pozostawiło zmę
- czenie lub ból.\nFueling: Normalny posiłek i nawodnienie\; po treningu
-  białko oraz węglowodany.\n\n---\n\n- Warmup 1.5km 5:30/km-6:05/km Pac
- e\n\nThreshold 3x\n- Threshold 2km 4:12/km-4:20/km Pace\n- Recovery 3m 5
- :40/km-6:20/km Pace\n\n- Cooldown 1.5km 5:35/km-6:15/km Pace
+DESCRIPTION:Threshold 9 km\nWU: 1\,5 km @ 5:30–6:05/km\n3 × Próg 2 km
+  @ 4:12–4:20/km\, RPE 7\nPrzerwa: 3 min @ 5:40–6:20/km\nCD: 1\,5 km
+  @ 5:35–6:15/km\nPlan B: Easy albo odpoczynek przy bólu lub wyraźnym
+  zmęczeniu.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-19-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260819T000000
 DTEND;TZID=Europe/Oslo:20260819T003000
-SUMMARY:WOLNE (alternatywa ALT)
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# WOLNE (alternatywa ALT)\nData: 2026-08-19\nFaza: Faza 1 - O
- slo Marathon\nTydzień: Tydzień 4 do Oslo\nIntensywność: WOLNE\nStatu
- s: OPCJONALNE / ALT\n\n## Coach notes\n\nPlan B: Przy zmęczeniu wybierz
-  pełny odpoczynek.\nFueling: Normalny posiłek i nawodnienie\; po treni
- ngu białko oraz węglowodany.\n\n---\n\nPełne wolne
+DESCRIPTION:Wybierz jedną opcję:\nA: Recovery 5 km @ 5:40–6:20/km\nB:
+  Rower Z2 45 min\, RPE 3\nC: Pełne wolne\nNie wykonuj więcej niż jedn
+ ej.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-19-run-alt@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260819T070000
 DTEND;TZID=Europe/Oslo:20260819T081500
-SUMMARY:ALT: recovery run
+SUMMARY:Recovery 5 km
 CATEGORIES:Run
-DESCRIPTION:# ALT: recovery run\nData: 2026-08-19\nFaza: Faza 1 - Oslo Ma
- rathon\nTydzień: Tydzień 4 do Oslo\nIntensywność: REGENERACJA\nStatu
- s: OPCJONALNE / ALT\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/km\,
-  RPE 2–3 | 5 km bardzo swobodnie\, bez dokładania kilometrów. | Sch
- łodzenie: 1 km 5:35–6:15/km\, RPE 2–3\nTempo i RPE: Rozgrzewka: 1 k
- m 5:30–6:05/km\, RPE 2–3. Część główna — Recovery: 3 km 5:40
- –6:20/km\, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 5:35–
- 6:15/km\, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pof
- ałdowanego terenu. Na pagórkach\, w upale i przy wietrze RPE ma pierws
- zeństwo przed tempem. Przy zmęczeniu nie przyspieszaj: pozostań w zak
- resie\, a RPE ma pierwszeństwo.\nWarunki: Dostępne dopiero od 10.08\;
-  wybierz albo ten bieg\, albo rower Z2\, albo wolne. Wybierz tylko jedn
- ą opcję z grupy alt-2026-08-19.\nPlan B: Ból ≥3/10\, narastanie bó
- lu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim
-  rowerem.\nFueling: Normalny posiłek i nawodnienie\; po treningu białk
- o oraz węglowodany.\n\n---\n\n- Warmup 1km 5:30/km-6:05/km Pace\n- Reco
- very 3km 5:40/km-6:20/km Pace\n- Cooldown 1km 5:35/km-6:15/km Pace
+DESCRIPTION:Wybierz jedną opcję:\nA: Recovery 5 km @ 5:40–6:20/km\nB:
+  Rower Z2 45 min\, RPE 3\nC: Pełne wolne\nNie wykonuj więcej niż jedn
+ ej.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-19-ride-alt@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260819T180000
 DTEND;TZID=Europe/Oslo:20260819T184500
-SUMMARY:ALT: rower Z2 albo pełne wolne
+SUMMARY:Rower Z2 — 45 min
 CATEGORIES:Ride
-DESCRIPTION:# ALT: rower Z2 albo pełne wolne\nData: 2026-08-19\nFaza: Fa
- za 1 - Oslo Marathon\nTydzień: Tydzień 4 do Oslo\nIntensywność: REGE
- NERACJA\nStatus: OPCJONALNE / ALT\n\n## Coach notes\n45 min spokojnego Z
- 2\, kadencja 85–95\; bez sweet spotu.\nTempo i RPE: Rower Z2\, RPE 3\;
-  bez tempa biegowego. Wybierz tylko jedną opcję ALT.\nWarunki: Wykonaj
-  tylko przy świeżych nogach\; pełne wolne jest równorzędnym wyborem
- . Wybierz tylko jedną opcję z grupy alt-2026-08-19.\nPlan B: Przy zmę
- czeniu wybierz pełny odpoczynek.\nFueling: Normalny posiłek i nawodnie
- nie\; po treningu białko oraz węglowodany.\n\n---\n\n- Easy spin 45m 5
- 5-70% 85-95rpm
+DESCRIPTION:Wybierz jedną opcję:\nA: Recovery 5 km @ 5:40–6:20/km\nB:
+  Rower Z2 45 min\, RPE 3\nC: Pełne wolne\nNie wykonuj więcej niż jedn
+ ej.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-20-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260820T070000
 DTEND;TZID=Europe/Oslo:20260820T081500
-SUMMARY:Średnio-długi easy
+SUMMARY:Średnio-długi 11 km
 CATEGORIES:Run
-DESCRIPTION:# Średnio-długi easy\nData: 2026-08-20\nFaza: Faza 1 - Oslo
-  Marathon\nTydzień: Tydzień 4 do Oslo\nIntensywność: ŁATWY\nStatus:
-  OBOWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/km\, RPE 2
- –3 | 11 km easy\, bez finiszu. | Schłodzenie: 1 km 5:35–6:15/km\, R
- PE 2–3\nTempo i RPE: Rozgrzewka: 1 km 5:30–6:05/km\, RPE 2–3. Czę
- ść główna — Średnio-długi easy: 9 km 5:05–5:35/km\, RPE 3–4.
-  Przerwy: nie dotyczy. Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3. Za
- kresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu. Na
-  pagórkach\, w upale i przy wietrze RPE ma pierwszeństwo przed tempem.
- \n\nPlan B: Ból ≥3/10\, narastanie bólu lub zmiana kroku: przerwij b
- ieg i zastąp go odpoczynkiem lub lekkim rowerem.\nFueling: Normalny pos
- iłek i nawodnienie\; po treningu białko oraz węglowodany.\n\n---\n\n-
-  Warmup 1km 5:30/km-6:05/km Pace\n- Średnio-długi easy 9km 5:05/km-5:3
- 5/km Pace\n- Cooldown 1km 5:35/km-6:15/km Pace
+DESCRIPTION:Średnio-długi 11 km\nTempo: 5:05–5:35/km\nRPE: 3–4
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-21-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260821T000000
 DTEND;TZID=Europe/Oslo:20260821T003000
-SUMMARY:WOLNE przed bramką 22–24 km
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# WOLNE przed bramką 22–24 km\nData: 2026-08-21\nFaza: Faz
- a 1 - Oslo Marathon\nTydzień: Tydzień 4 do Oslo\nIntensywność: WOLNE
- \nStatus: INFORMACJA\n\n## Coach notes\n\nPlan B: Przy zmęczeniu wybier
- z pełny odpoczynek.\nFueling: Normalny posiłek i nawodnienie\; po tren
- ingu białko oraz węglowodany.\n\n---\n\nWOLNE przed bramką 22–24 km
+DESCRIPTION:WOLNE
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-22-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260822T070000
 DTEND;TZID=Europe/Oslo:20260822T081500
-SUMMARY:BRAMKA A: long 22–24 km
+SUMMARY:Long 22–24 km
 CATEGORIES:Run
-DESCRIPTION:# BRAMKA A: long 22–24 km\nData: 2026-08-22\nFaza: Faza 1 -
-  Oslo Marathon\nTydzień: Tydzień 3 do Oslo\nIntensywność: UMIARKOWAN
- Y\nStatus: OBOWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/
- km\, RPE 2–3 w każdym wariancie | 22 km long easy. 24 km tylko po zal
- iczeniu 15.08. Opcjonalny blok 3 km steady\, bez zwiększania dystansu.
-  | Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3\nTempo i RPE: Rozgrzewk
- a: 1 km 5:30–6:05/km\, RPE 2–3 w każdym wariancie. Część główn
- a — wariant 22 km easy: 20 km long easy 5:15–5:50/km\, RPE 3–4. Cz
- ęść główna — wariant 22 km z blokiem: 17 km long easy 5:15–5:50
- /km + 3 km steady 4:40–4:55/km\, RPE 5–6. Część główna — wari
- ant 24 km po zaliczeniu 15.08: 19 km long easy 5:15–5:50/km + 3 km ste
- ady 4:40–4:55/km\, RPE 5–6. Przerwy: nie dotyczy. Schłodzenie: 1 km
-  5:35–6:15/km\, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łago
- dnie pofałdowanego terenu. Na pagórkach\, w upale i przy wietrze RPE m
- a pierwszeństwo przed tempem.\nWarunki: 24 km tylko po zaliczeniu 15.08
- : ból 0–2/10\, easy RPE ≤4\, brak pogorszenia następnego ranka. Be
- z zaliczenia: maks. 22 km.\nPlan B: 22 km long easy albo 19 km long easy
-  + jeden blok 3 km steady\; bez docelowego MP.\nFueling: Śniadanie 2–
- 3 h przed. 40–60 g węgli/h\, płyny i sód według pogody\; nic noweg
- o.\n\n---\n\n- Warmup 1km 5:30/km-6:05/km Pace\n- Long easy 19km 5:15/km
- -5:50/km Pace\n- Conditional steady 3km 4:40/km-4:55/km Pace\n- Cooldown
-  1km 5:35/km-6:15/km Pace
+DESCRIPTION:Long 22–24 km\nLong easy 19 km @ 5:15–5:50/km\, RPE 3–4
+ \nSteady 3 km @ 4:40–4:55/km\, RPE 5–6\nPlan B: Wybierz dolny dystan
+ s bez bloku jakościowego.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-23-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260823T070000
 DTEND;TZID=Europe/Oslo:20260823T081500
-SUMMARY:Recovery run
+SUMMARY:Recovery 5 km
 CATEGORIES:Run
-DESCRIPTION:# Recovery run\nData: 2026-08-23\nFaza: Faza 1 - Oslo Maratho
- n\nTydzień: Tydzień 3 do Oslo\nIntensywność: REGENERACJA\nStatus: OB
- OWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/km\, RPE 2–
- 3 | 5 km wyłącznie jeśli brak pogorszenia. | Schłodzenie: 1 km 5:35
- –6:15/km\, RPE 2–3\nTempo i RPE: Rozgrzewka: 1 km 5:30–6:05/km\, R
- PE 2–3. Część główna — Recovery: 3 km 5:40–6:20/km\, RPE 2–
- 3. Przerwy: nie dotyczy. Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3.
-  Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu.
-  Na pagórkach\, w upale i przy wietrze RPE ma pierwszeństwo przed temp
- em. Przy zmęczeniu nie przyspieszaj: pozostań w zakresie\, a RPE ma pi
- erwszeństwo.\n\nPlan B: Pełne wolne.\nFueling: Normalny posiłek i naw
- odnienie\; po treningu białko oraz węglowodany.\n\n---\n\n- Warmup 1km
-  5:30/km-6:05/km Pace\n- Recovery 3km 5:40/km-6:20/km Pace\n- Cooldown 1
- km 5:35/km-6:15/km Pace
+DESCRIPTION:Recovery 5 km\nTempo: 5:40–6:20/km\nRPE: 2–3
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-24-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260824T000000
 DTEND;TZID=Europe/Oslo:20260824T003000
-SUMMARY:Regeneracja + opcjonalna siła lekka
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# Regeneracja + opcjonalna siła lekka\nData: 2026-08-24\nFaz
- a: Faza 1 - Oslo Marathon\nTydzień: Tydzień 3 do Oslo\nIntensywność:
-  WOLNE\nStatus: OPCJONALNE / ALT\n\n## Coach notes\n\nPlan B: Przy zmęc
- zeniu wybierz pełny odpoczynek.\nFueling: Normalny posiłek i nawodnien
- ie\; po treningu białko oraz węglowodany.\n\n---\n\nRegeneracja
+DESCRIPTION:WOLNE
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-24-strength-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260824T183000
 DTEND;TZID=Europe/Oslo:20260824T184800
-SUMMARY:Siła podtrzymująca — lekka
+SUMMARY:Siła — 18 min
 CATEGORIES:WeightTraining
-DESCRIPTION:# Siła podtrzymująca — lekka\nData: 2026-08-24\nFaza: Faz
- a 1 - Oslo Marathon\nTydzień: Tydzień 3 do Oslo\nIntensywność: LEKKA
- \nStatus: OPCJONALNE / ALT\n\n## Coach notes\nTechnika: split squat do
-  ławki\, wspięcia łydki\, hip hinge bez ciężaru\, side plank\; 1–
- 2 serie\, zostaw 4–5 powtórzeń w zapasie.\n\nWarunki: Pomiń przy DO
- MS lub pogorszeniu po 22.08.\nPlan B: Przy zmęczeniu wybierz pełny odp
- oczynek.\nFueling: Normalny posiłek i nawodnienie\; po treningu białko
-  oraz węglowodany.\n\n---\n\n- Technika i stabilizacja 18m 2-4 RPE
+DESCRIPTION:Siła — 18 min\nSplit squat 1–2 serie\nWspięcia łydki 1
+ –2 serie\nHip hinge 1–2 serie\nSide plank 1–2 serie\nRPE: 2–4
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-25-run-1@coach-center.local
@@ -1411,196 +909,100 @@ DTSTART;TZID=Europe/Oslo:20260825T070000
 DTEND;TZID=Europe/Oslo:20260825T081500
 SUMMARY:Steady 6 km / warunkowo goal MP
 CATEGORIES:Run
-DESCRIPTION:# Steady 6 km / warunkowo goal MP\nData: 2026-08-25\nFaza: Fa
- za 1 - Oslo Marathon\nTydzień: Tydzień 3 do Oslo\nIntensywność: MARA
- TOŃSKI\nStatus: OBOWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 2 km 5:30
- –6:05/km\, RPE 2–3 | 6 km steady\; po zaliczeniu bramek opcjonalnie
-  6 km goal MP zamiast steady | Schłodzenie: 2 km 5:35–6:15/km\, RPE 2
- –3\nTempo i RPE: Rozgrzewka: 2 km 5:30–6:05/km\, RPE 2–3. Część
-  główna: 6 km steady 4:40–4:55/km\, RPE 5–6. Wariant warunkowy po
-  zaliczeniu obu bramek: 6 km docelowego MP 3:30 4:55–5:02/km\, RPE mak
- s. 6\, zamiast steady. Przerwy: nie dotyczy. Schłodzenie: 2 km 5:35–6
- :15/km\, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pofa
- łdowanego terenu. Na pagórkach\, w upale i przy wietrze RPE ma pierwsz
- eństwo przed tempem.\nWarunki: Goal MP 4:55–5:02/km wolno wykonać ty
- lko po zaliczeniu bramek 15.08 i 22.08\; ból 0–2/10\, RPE maks. 6 i b
- ez pogorszenia następnego ranka.\nPlan B: Ból ≥3/10\, narastanie bó
- lu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim
-  rowerem.\nFueling: Normalny posiłek i nawodnienie\; po treningu białk
- o oraz węglowodany.\n\n---\n\n- Warmup 2km 5:30/km-6:05/km Pace\n- Stea
- dy 6km 4:40/km-4:55/km Pace\n- Conditional goal MP instead 6km 4:55/km-5
- :02/km Pace\n- Cooldown 2km 5:35/km-6:15/km Pace
+DESCRIPTION:Steady 6 km / warunkowo goal MP\nWU: 2 km @ 5:30–6:05/km\nS
+ teady 6 km @ 4:40–4:55/km\, RPE 5–6\nMP 6 km @ 4:55–5:02/km\, RPE
+  ≤6\nCD: 2 km @ 5:35–6:15/km\nPlan B: Easy albo odpoczynek przy ból
+ u lub wyraźnym zmęczeniu.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-26-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260826T000000
 DTEND;TZID=Europe/Oslo:20260826T003000
-SUMMARY:WOLNE (alternatywa ALT)
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# WOLNE (alternatywa ALT)\nData: 2026-08-26\nFaza: Faza 1 - O
- slo Marathon\nTydzień: Tydzień 3 do Oslo\nIntensywność: WOLNE\nStatu
- s: OPCJONALNE / ALT\n\n## Coach notes\n\nPlan B: Przy zmęczeniu wybierz
-  pełny odpoczynek.\nFueling: Normalny posiłek i nawodnienie\; po treni
- ngu białko oraz węglowodany.\n\n---\n\nPełne wolne
+DESCRIPTION:Wybierz jedną opcję:\nA: Recovery 5 km @ 5:40–6:20/km\nB:
+  Rower Z2 40 min\, RPE 3\nC: Pełne wolne\nNie wykonuj więcej niż jedn
+ ej.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-26-run-alt@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260826T070000
 DTEND;TZID=Europe/Oslo:20260826T081500
-SUMMARY:ALT: recovery run
+SUMMARY:Recovery 5 km
 CATEGORIES:Run
-DESCRIPTION:# ALT: recovery run\nData: 2026-08-26\nFaza: Faza 1 - Oslo Ma
- rathon\nTydzień: Tydzień 3 do Oslo\nIntensywność: REGENERACJA\nStatu
- s: OPCJONALNE / ALT\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/km\,
-  RPE 2–3 | 5 km bardzo swobodnie\, bez dokładania kilometrów. | Sch
- łodzenie: 1 km 5:35–6:15/km\, RPE 2–3\nTempo i RPE: Rozgrzewka: 1 k
- m 5:30–6:05/km\, RPE 2–3. Część główna — Recovery: 3 km 5:40
- –6:20/km\, RPE 2–3. Przerwy: nie dotyczy. Schłodzenie: 1 km 5:35–
- 6:15/km\, RPE 2–3. Zakresy tempa dotyczą płaskiego lub łagodnie pof
- ałdowanego terenu. Na pagórkach\, w upale i przy wietrze RPE ma pierws
- zeństwo przed tempem. Przy zmęczeniu nie przyspieszaj: pozostań w zak
- resie\, a RPE ma pierwszeństwo.\nWarunki: Dostępne dopiero od 10.08\;
-  wybierz albo ten bieg\, albo rower Z2\, albo wolne. Wybierz tylko jedn
- ą opcję z grupy alt-2026-08-26.\nPlan B: Ból ≥3/10\, narastanie bó
- lu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub lekkim
-  rowerem.\nFueling: Normalny posiłek i nawodnienie\; po treningu białk
- o oraz węglowodany.\n\n---\n\n- Warmup 1km 5:30/km-6:05/km Pace\n- Reco
- very 3km 5:40/km-6:20/km Pace\n- Cooldown 1km 5:35/km-6:15/km Pace
+DESCRIPTION:Wybierz jedną opcję:\nA: Recovery 5 km @ 5:40–6:20/km\nB:
+  Rower Z2 40 min\, RPE 3\nC: Pełne wolne\nNie wykonuj więcej niż jedn
+ ej.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-26-ride-alt@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260826T180000
 DTEND;TZID=Europe/Oslo:20260826T184000
-SUMMARY:ALT: rower Z2 albo pełne wolne
+SUMMARY:Rower Z2 — 40 min
 CATEGORIES:Ride
-DESCRIPTION:# ALT: rower Z2 albo pełne wolne\nData: 2026-08-26\nFaza: Fa
- za 1 - Oslo Marathon\nTydzień: Tydzień 3 do Oslo\nIntensywność: REGE
- NERACJA\nStatus: OPCJONALNE / ALT\n\n## Coach notes\n40 min spokojnego Z
- 2\, kadencja 85–95\; bez sweet spotu.\nTempo i RPE: Rower Z2\, RPE 3\;
-  bez tempa biegowego. Wybierz tylko jedną opcję ALT.\nWarunki: Wykonaj
-  tylko przy świeżych nogach\; pełne wolne jest równorzędnym wyborem
- . Wybierz tylko jedną opcję z grupy alt-2026-08-26.\nPlan B: Przy zmę
- czeniu wybierz pełny odpoczynek.\nFueling: Normalny posiłek i nawodnie
- nie\; po treningu białko oraz węglowodany.\n\n---\n\n- Easy spin 40m 5
- 5-70% 85-95rpm
+DESCRIPTION:Wybierz jedną opcję:\nA: Recovery 5 km @ 5:40–6:20/km\nB:
+  Rower Z2 40 min\, RPE 3\nC: Pełne wolne\nNie wykonuj więcej niż jedn
+ ej.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-27-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260827T070000
 DTEND;TZID=Europe/Oslo:20260827T081500
-SUMMARY:Średnio-długi easy + hill sprints
+SUMMARY:Easy 10 km + hill sprints
 CATEGORIES:Run
-DESCRIPTION:# Średnio-długi easy + hill sprints\nData: 2026-08-27\nFaza
- : Faza 1 - Oslo Marathon\nTydzień: Tydzień 3 do Oslo\nIntensywność:
-  SIŁA BIEGOWA\nStatus: OBOWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 2 km
-  5:30–6:05/km\, RPE 2–3 | 6 × 10 s sprężyście pod górę\, nie m
- aksymalnie | 2 min pełnej regeneracji | Schłodzenie: 1 km 5:35–6:15/
- km\, RPE 2–3\nTempo i RPE: Rozgrzewka: 2 km 5:30–6:05/km\, RPE 2–3
- . Część główna: 7 km średnio-długiego easy 5:05–5:35/km\, RPE 3
- –4 + 6 × 10 s hill sprint techniczny\, nachylenie 4–6%\, RPE 8\, be
- z targetu tempa. Przerwy: 2 min pełnego marszu/truchtu w dół\, target
-  otwarty. Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3. Podbieg wykonyw
- any na wysiłek — nie kontroluj tempa chwilowego. Garmin bez alarmu te
- mpa na hill sprintach.\nWarunki: Bez celu tempa na podbiegu\; hill sprin
- ts nie są osobnym ciężkim bodźcem.\nPlan B: Ból ≥3/10\, narastani
- e bólu lub zmiana kroku: przerwij bieg i zastąp go odpoczynkiem lub le
- kkim rowerem.\nFueling: Normalny posiłek i nawodnienie\; po treningu bi
- ałko oraz węglowodany.\n\n---\n\n- Warmup 2km 5:30/km-6:05/km Pace\n-
-  Medium long easy 7km 5:05/km-5:35/km Pace\n\nHill sprints 6x\n- Uphill
-  fast relaxed 10s 8 RPE\n- Full walk-jog recovery 2m open\n\n- Cooldown
-  1km 5:35/km-6:15/km Pace
+DESCRIPTION:Easy 10 km + hill sprints\nEasy 7 km @ 5:05–5:35/km\, RPE 3
+ –4\n6 × Podbieg 10 s\, nachylenie 4–6%\, RPE 8\nPowrót: 120 s truc
+ ht w dół\nBez targetu tempa pod górę.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-28-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260828T000000
 DTEND;TZID=Europe/Oslo:20260828T003000
-SUMMARY:WOLNE przed long runem
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# WOLNE przed long runem\nData: 2026-08-28\nFaza: Faza 1 - Os
- lo Marathon\nTydzień: Tydzień 3 do Oslo\nIntensywność: WOLNE\nStatus
- : INFORMACJA\n\n## Coach notes\n\nPlan B: Przy zmęczeniu wybierz pełny
-  odpoczynek.\nFueling: Normalny posiłek i nawodnienie\; po treningu bia
- łko oraz węglowodany.\n\n---\n\nWOLNE przed long runem
+DESCRIPTION:WOLNE
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-29-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260829T070000
 DTEND;TZID=Europe/Oslo:20260829T081500
-SUMMARY:Long pofałdowany 16 km
+SUMMARY:Long 16 km
 CATEGORIES:Run
-DESCRIPTION:# Long pofałdowany 16 km\nData: 2026-08-29\nFaza: Faza 1 - O
- slo Marathon\nTydzień: Tydzień 2 do Oslo\nIntensywność: ŁATWY\nStat
- us: OBOWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/km\, RP
- E 2–3 | 16 km easy po pofałdowanej trasie\; bez szybkiego finiszu. |
-  Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3\nTempo i RPE: Rozgrzewka:
-  1 km 5:30–6:05/km\, RPE 2–3. Część główna: 14 km easy 5:15–5
- :50/km na płaskich fragmentach\; na podbiegach według wysiłku\, RPE 3
- –4. Przerwy: nie dotyczy. Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–
- 3. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego terenu
- . Na pagórkach\, w upale i przy wietrze RPE ma pierwszeństwo przed tem
- pem.\n\nPlan B: Ból ≥3/10\, narastanie bólu lub zmiana kroku: przerw
- ij bieg i zastąp go odpoczynkiem lub lekkim rowerem.\nFueling: Śniadan
- ie 2–3 h przed. 40–60 g węgli/h\, płyny i sód według pogody\; ni
- c nowego.\n\n---\n\n- Warmup 1km 5:30/km-6:05/km Pace\n- Long easy 14km
-  5:15/km-5:50/km Pace\n- Cooldown 1km 5:35/km-6:15/km Pace
+DESCRIPTION:Long 16 km\nLong easy 14 km @ 5:15–5:50/km\, RPE 3–4
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-30-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260830T070000
 DTEND;TZID=Europe/Oslo:20260830T081500
-SUMMARY:Recovery run
+SUMMARY:Recovery 5 km
 CATEGORIES:Run
-DESCRIPTION:# Recovery run\nData: 2026-08-30\nFaza: Faza 1 - Oslo Maratho
- n\nTydzień: Tydzień 2 do Oslo\nIntensywność: REGENERACJA\nStatus: OB
- OWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/km\, RPE 2–
- 3 | 5 km bardzo lekko. | Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3\n
- Tempo i RPE: Rozgrzewka: 1 km 5:30–6:05/km\, RPE 2–3. Część głó
- wna — Recovery: 3 km 5:40–6:20/km\, RPE 2–3. Przerwy: nie dotyczy.
-  Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3. Zakresy tempa dotyczą p
- łaskiego lub łagodnie pofałdowanego terenu. Na pagórkach\, w upale i
-  przy wietrze RPE ma pierwszeństwo przed tempem. Przy zmęczeniu nie pr
- zyspieszaj: pozostań w zakresie\, a RPE ma pierwszeństwo.\n\nPlan B: B
- ól ≥3/10\, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp
-  go odpoczynkiem lub lekkim rowerem.\nFueling: Normalny posiłek i nawod
- nienie\; po treningu białko oraz węglowodany.\n\n---\n\n- Warmup 1km 5
- :30/km-6:05/km Pace\n- Recovery 3km 5:40/km-6:20/km Pace\n- Cooldown 1km
-  5:35/km-6:15/km Pace
+DESCRIPTION:Recovery 5 km\nTempo: 5:40–6:20/km\nRPE: 2–3
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-31-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260831T000000
 DTEND;TZID=Europe/Oslo:20260831T003000
-SUMMARY:Regeneracja + opcjonalna aktywacja
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# Regeneracja + opcjonalna aktywacja\nData: 2026-08-31\nFaza:
-  Faza 1 - Oslo Marathon\nTydzień: Tydzień 2 do Oslo\nIntensywność: W
- OLNE\nStatus: OPCJONALNE / ALT\n\n## Coach notes\n\nPlan B: Przy zmęcze
- niu wybierz pełny odpoczynek.\nFueling: Normalny posiłek i nawodnienie
- \; po treningu białko oraz węglowodany.\n\n---\n\nRegeneracja
+DESCRIPTION:WOLNE
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-08-31-strength-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260831T183000
 DTEND;TZID=Europe/Oslo:20260831T184200
-SUMMARY:Mobilność + aktywacja
+SUMMARY:Siła — 12 min
 CATEGORIES:WeightTraining
-DESCRIPTION:# Mobilność + aktywacja\nData: 2026-08-31\nFaza: Faza 1 - O
- slo Marathon\nTydzień: Tydzień 2 do Oslo\nIntensywność: LEKKA\nStatu
- s: OPCJONALNE / ALT\n\n## Coach notes\nMobilność bioder/łydek\, dead
-  bug\, side plank\; bez obciążeń i bez DOMS.\n\nWarunki: Bez DOMS i b
- ez pracy do upadku. Przerwij przy bólu >2/10.\nPlan B: Przy zmęczeniu
-  wybierz pełny odpoczynek.\nFueling: Normalny posiłek i nawodnienie\;
-  po treningu białko oraz węglowodany.\n\n---\n\n- Mobility and activat
- ion 12m 2 RPE
+DESCRIPTION:Siła — 12 min\nMobilność bioder\nMost biodrowy\nDead bug
+ \nWspięcia łydki\nRPE: 2–4
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-09-01-run-1@coach-center.local
@@ -1609,25 +1011,10 @@ DTSTART;TZID=Europe/Oslo:20260901T070000
 DTEND;TZID=Europe/Oslo:20260901T081500
 SUMMARY:BRAMKA A: kalibracja tempa 3 × 2 km
 CATEGORIES:Run
-DESCRIPTION:# BRAMKA A: kalibracja tempa 3 × 2 km\nData: 2026-09-01\nFaz
- a: Faza 1 - Oslo Marathon\nTydzień: Tydzień 2 do Oslo\nIntensywność:
-  MARATOŃSKI\nStatus: OBOWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 2 km 5
- :30–6:05/km\, RPE 2–3 | 3 × 2 km w tempie odpowiadającym aktualnie
-  zaliczonej strategii | 500 m easy | Schłodzenie: 1 km 5:35–6:15/km\,
-  RPE 2–3\nTempo i RPE: Rozgrzewka: 2 km 5:30–6:05/km\, RPE 2–3. Cz
- ęść główna: 3 × 2 km — wariant A 4:55–5:02/km\, RPE maks. 6 wy
- łącznie po zaliczeniu bramek\; wariant B 5:16–5:20/km\; wariant C 5:
- 24–5:34/km. Przerwy: 500 m truchtu 5:40–6:20/km\, RPE 2–3. Schłod
- zenie: 1 km 5:35–6:15/km\, RPE 2–3. Wszystkie targety dotyczą płas
- kiego terenu.\nWarunki: Goal MP 4:55–5:02/km wykonuj wyłącznie po za
- liczeniu wcześniejszych bramek. Zapisz RPE\, ból i reakcję następneg
- o ranka do decyzji 02.09\; przy niespełnieniu warunków wybierz Plan B.
- \nPlan B: Ból ≥3/10\, narastanie bólu lub zmiana kroku: przerwij bie
- g i zastąp go odpoczynkiem lub lekkim rowerem.\nFueling: Normalny posi
- łek i nawodnienie\; po treningu białko oraz węglowodany.\n\n---\n\n-
-  Warmup 2km 5:30/km-6:05/km Pace\n\nConditional goal MP calibration 3x\n
- - Goal MP 2km 4:55/km-5:02/km Pace\n- Recovery 500m 5:40/km-6:20/km Pace
- \n\n- Cooldown 1km 5:35/km-6:15/km Pace
+DESCRIPTION:BRAMKA A: kalibracja tempa 3 × 2 km\nWU: 2 km @ 5:30–6:05/
+ km\n3 × MP 2 km @ 4:55–5:02/km\, RPE ≤6\nPrzerwa: 0\,5 km @ 5:40–
+ 6:20/km\nCD: 1 km @ 5:35–6:15/km\nPlan B: Easy albo odpoczynek przy b
+ ólu lub wyraźnym zmęczeniu.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-09-02-decision-1@coach-center.local
@@ -1636,251 +1023,122 @@ DTSTART;TZID=Europe/Oslo:20260902T000000
 DTEND;TZID=Europe/Oslo:20260902T003000
 SUMMARY:DECYZJA STARTOWA A / B / C
 CATEGORIES:NOTE
-DESCRIPTION:# DECYZJA STARTOWA A / B / C\nData: 2026-09-02\nFaza: Faza 1
-  - Oslo Marathon\nTydzień: Tydzień 2 do Oslo\nIntensywność: DECYZJA\
- nStatus: INFORMACJA\n\n## Coach notes\nWybierz strategię na podstawie t
- reningów 15.08\, 22.08 i 01.09.\n\nWarunki: Plan A pozostaje wyłączni
- e po zaliczeniu wszystkich trzech bramek bez bólu\, nadmiernego RPE ani
-  pogorszenia następnego ranka.\nPlan B: Przy zmęczeniu wybierz pełny
-  odpoczynek.\nFueling: Normalny posiłek i nawodnienie\; po treningu bia
- łko oraz węglowodany.\n\n---\n\nPlan A 3:30 | Plan B 3:42–3:45 | Pla
- n C 3:48–3:55
+DESCRIPTION:DECYZJA STARTOWA A / B / C
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-09-02-ride-alt@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260902T180000
 DTEND;TZID=Europe/Oslo:20260902T183000
-SUMMARY:ALT: rower Z2 albo pełne wolne
+SUMMARY:Rower Z2 — 30 min
 CATEGORIES:Ride
-DESCRIPTION:# ALT: rower Z2 albo pełne wolne\nData: 2026-09-02\nFaza: Fa
- za 1 - Oslo Marathon\nTydzień: Tydzień 2 do Oslo\nIntensywność: REGE
- NERACJA\nStatus: OPCJONALNE / ALT\n\n## Coach notes\n30 min spokojnego Z
- 2\, kadencja 85–95\; bez sweet spotu.\nTempo i RPE: Rower Z2\, RPE 3\;
-  bez tempa biegowego. Wybierz tylko jedną opcję ALT.\nWarunki: Wykonaj
-  tylko przy świeżych nogach\; pełne wolne jest równorzędnym wyborem
- . Wybierz tylko jedną opcję z grupy alt-2026-09-02.\nPlan B: Przy zmę
- czeniu wybierz pełny odpoczynek.\nFueling: Normalny posiłek i nawodnie
- nie\; po treningu białko oraz węglowodany.\n\n---\n\n- Easy spin 30m 5
- 5-70% 85-95rpm
+DESCRIPTION:Wybierz jedną opcję:\nA: Rower Z2 30 min\, RPE 3\nNie wykon
+ uj więcej niż jednej.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-09-03-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260903T070000
 DTEND;TZID=Europe/Oslo:20260903T081500
-SUMMARY:Easy + 4 rytmy
+SUMMARY:Easy 8 km + rytmy
 CATEGORIES:Run
-DESCRIPTION:# Easy + 4 rytmy\nData: 2026-09-03\nFaza: Faza 1 - Oslo Marat
- hon\nTydzień: Tydzień 2 do Oslo\nIntensywność: ŁATWY\nStatus: OBOWI
- ĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/km\, RPE 2–3 |
-  4 × 15 s rytmu | 90 s pełnego truchtu | Schłodzenie: 1 km 5:35–6:1
- 5/km\, RPE 2–3\nTempo i RPE: Rozgrzewka: 1 km 5:30–6:05/km\, RPE 2
- –3. Część główna: 6 km easy 5:10–5:45/km\, RPE 3–4 + 4 × 15
-  s rytmu technicznego\, RPE 7–8\, bez targetu tempa. Przerwy: 90 s pe
- łnego truchtu lub marszu\, target otwarty. Schłodzenie: 1 km 5:35–6:
- 15/km\, RPE 2–3. Rytmy wykonuj luźno i technicznie\; Garmin bez alarm
- u tempa. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego
-  terenu. Na pagórkach\, w upale i przy wietrze RPE ma pierwszeństwo pr
- zed tempem.\n\nPlan B: Ból ≥3/10\, narastanie bólu lub zmiana kroku:
-  przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.\nFueling: N
- ormalny posiłek i nawodnienie\; po treningu białko oraz węglowodany.\
- n\n---\n\n- Warmup 1km 5:30/km-6:05/km Pace\n- Easy 6km 5:10/km-5:45/km
-  Pace\n\nStrides 4x\n- Fast relaxed 15s 7-8 RPE\n- Full recovery 90s ope
- n\n\n- Cooldown 1km 5:35/km-6:15/km Pace
+DESCRIPTION:Easy 8 km + rytmy\nEasy 6 km @ 5:10–5:45/km\, RPE 3–4\n4
+  × Rytm 15 s\, RPE 7–8\nPrzerwa: 90 s easy
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-09-04-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260904T000000
 DTEND;TZID=Europe/Oslo:20260904T003000
-SUMMARY:WOLNE przed krótkim longiem
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# WOLNE przed krótkim longiem\nData: 2026-09-04\nFaza: Faza
-  1 - Oslo Marathon\nTydzień: Tydzień 2 do Oslo\nIntensywność: WOLNE\
- nStatus: INFORMACJA\n\n## Coach notes\n\nPlan B: Przy zmęczeniu wybierz
-  pełny odpoczynek.\nFueling: Normalny posiłek i nawodnienie\; po treni
- ngu białko oraz węglowodany.\n\n---\n\nWOLNE przed krótkim longiem
+DESCRIPTION:WOLNE
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-09-05-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260905T070000
 DTEND;TZID=Europe/Oslo:20260905T081500
-SUMMARY:Long easy taper 8 km
+SUMMARY:Long 8 km
 CATEGORIES:Run
-DESCRIPTION:# Long easy taper 8 km\nData: 2026-09-05\nFaza: Faza 1 - Oslo
-  Marathon\nTydzień: Tydzień 1 do Oslo\nIntensywność: ŁATWY\nStatus:
-  OBOWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/km\, RPE 2
- –3 | 8 km easy\, zakończ z niedosytem. | Schłodzenie: 1 km 5:35–6:
- 15/km\, RPE 2–3\nTempo i RPE: Rozgrzewka: 1 km 5:30–6:05/km\, RPE 2
- –3. Część główna: 6 km easy 5:15–5:50/km\, RPE 3–4. Przerwy:
-  nie dotyczy. Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3. Zakresy tem
- pa dotyczą płaskiego lub łagodnie pofałdowanego terenu. Na pagórkac
- h\, w upale i przy wietrze RPE ma pierwszeństwo przed tempem.\n\nPlan B
- : Ból ≥3/10\, narastanie bólu lub zmiana kroku: przerwij bieg i zast
- ąp go odpoczynkiem lub lekkim rowerem.\nFueling: Normalny posiłek i na
- wodnienie\; po treningu białko oraz węglowodany.\n\n---\n\n- Warmup 1k
- m 5:30/km-6:05/km Pace\n- Long easy 6km 5:15/km-5:50/km Pace\n- Cooldown
-  1km 5:35/km-6:15/km Pace
+DESCRIPTION:Long 8 km\nLong easy 6 km @ 5:15–5:50/km\, RPE 3–4
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-09-06-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260906T070000
 DTEND;TZID=Europe/Oslo:20260906T081500
-SUMMARY:Recovery run
+SUMMARY:Recovery 4 km
 CATEGORIES:Run
-DESCRIPTION:# Recovery run\nData: 2026-09-06\nFaza: Faza 1 - Oslo Maratho
- n\nTydzień: Tydzień 1 do Oslo\nIntensywność: REGENERACJA\nStatus: OB
- OWIĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/km\, RPE 2–
- 3 | 4 km bardzo lekko. | Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3\n
- Tempo i RPE: Rozgrzewka: 1 km 5:30–6:05/km\, RPE 2–3. Część głó
- wna — Recovery: 2 km 5:40–6:20/km\, RPE 2–3. Przerwy: nie dotyczy.
-  Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3. Zakresy tempa dotyczą p
- łaskiego lub łagodnie pofałdowanego terenu. Na pagórkach\, w upale i
-  przy wietrze RPE ma pierwszeństwo przed tempem. Przy zmęczeniu nie pr
- zyspieszaj: pozostań w zakresie\, a RPE ma pierwszeństwo.\n\nPlan B: P
- ełne wolne.\nFueling: Normalny posiłek i nawodnienie\; po treningu bia
- łko oraz węglowodany.\n\n---\n\n- Warmup 1km 5:30/km-6:05/km Pace\n- R
- ecovery 2km 5:40/km-6:20/km Pace\n- Cooldown 1km 5:35/km-6:15/km Pace
+DESCRIPTION:Recovery 4 km\nTempo: 5:40–6:20/km\nRPE: 2–3
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-09-07-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260907T000000
 DTEND;TZID=Europe/Oslo:20260907T003000
-SUMMARY:WOLNE — początek tygodnia startowego
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# WOLNE — początek tygodnia startowego\nData: 2026-09-07\n
- Faza: Faza 1 - Oslo Marathon\nTydzień: Tydzień 1 do Oslo\nIntensywnoś
- ć: WOLNE\nStatus: INFORMACJA\n\n## Coach notes\n\nPlan B: Przy zmęczen
- iu wybierz pełny odpoczynek.\nFueling: Normalny posiłek i nawodnienie\
- ; po treningu białko oraz węglowodany.\n\n---\n\nWOLNE — początek t
- ygodnia startowego
+DESCRIPTION:WOLNE
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-09-08-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260908T070000
 DTEND;TZID=Europe/Oslo:20260908T081500
-SUMMARY:Rozruch + rytmy
+SUMMARY:Easy 5 km + rytmy
 CATEGORIES:Run
-DESCRIPTION:# Rozruch + rytmy\nData: 2026-09-08\nFaza: Faza 1 - Oslo Mara
- thon\nTydzień: Tydzień 1 do Oslo\nIntensywność: ŁATWY\nStatus: OBOW
- IĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/km\, RPE 2–3
-  | 4 × 15 s rytmu | 90 s pełnego truchtu | Schłodzenie: 1 km 5:35–6
- :15/km\, RPE 2–3\nTempo i RPE: Rozgrzewka: 1 km 5:30–6:05/km\, RPE 2
- –3. Część główna: 3 km easy 5:10–5:45/km\, RPE 3–4 + 4 × 15
-  s rytmu technicznego\, RPE 7–8\, bez targetu tempa. Przerwy: 90 s pe
- łnego truchtu lub marszu\, target otwarty. Schłodzenie: 1 km 5:35–6:
- 15/km\, RPE 2–3. Rytmy wykonuj luźno i technicznie\; Garmin bez alarm
- u tempa. Zakresy tempa dotyczą płaskiego lub łagodnie pofałdowanego
-  terenu. Na pagórkach\, w upale i przy wietrze RPE ma pierwszeństwo pr
- zed tempem.\n\nPlan B: Ból ≥3/10\, narastanie bólu lub zmiana kroku:
-  przerwij bieg i zastąp go odpoczynkiem lub lekkim rowerem.\nFueling: N
- ormalny posiłek i nawodnienie\; po treningu białko oraz węglowodany.\
- n\n---\n\n- Warmup 1km 5:30/km-6:05/km Pace\n- Easy 3km 5:10/km-5:45/km
-  Pace\n\nStrides 4x\n- Fast relaxed 15s 7-8 RPE\n- Full recovery 90s ope
- n\n\n- Cooldown 1km 5:35/km-6:15/km Pace
+DESCRIPTION:Easy 5 km + rytmy\nEasy 3 km @ 5:10–5:45/km\, RPE 3–4\n4
+  × Rytm 15 s\, RPE 7–8\nPrzerwa: 90 s easy
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-09-09-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260909T000000
 DTEND;TZID=Europe/Oslo:20260909T003000
-SUMMARY:WOLNE (alternatywa dla roweru)
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# WOLNE (alternatywa dla roweru)\nData: 2026-09-09\nFaza: Faz
- a 1 - Oslo Marathon\nTydzień: Tydzień 1 do Oslo\nIntensywność: WOLNE
- \nStatus: OPCJONALNE / ALT\n\n## Coach notes\n\nPlan B: Przy zmęczeniu
-  wybierz pełny odpoczynek.\nFueling: Normalny posiłek i nawodnienie\;
-  po treningu białko oraz węglowodany.\n\n---\n\nPełne wolne
+DESCRIPTION:Wybierz jedną opcję:\nA: Rower Z2 25 min\, RPE 3\nB: Pełne
+  wolne\nNie wykonuj więcej niż jednej.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-09-09-ride-alt@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260909T180000
 DTEND;TZID=Europe/Oslo:20260909T182500
-SUMMARY:ALT: rower Z2 albo pełne wolne
+SUMMARY:Rower Z2 — 25 min
 CATEGORIES:Ride
-DESCRIPTION:# ALT: rower Z2 albo pełne wolne\nData: 2026-09-09\nFaza: Fa
- za 1 - Oslo Marathon\nTydzień: Tydzień 1 do Oslo\nIntensywność: REGE
- NERACJA\nStatus: OPCJONALNE / ALT\n\n## Coach notes\n25 min spokojnego Z
- 2\, kadencja 85–95\; bez sweet spotu.\nTempo i RPE: Rower Z2\, RPE 3\;
-  bez tempa biegowego. Wybierz tylko jedną opcję ALT.\nWarunki: Wykonaj
-  tylko przy świeżych nogach\; pełne wolne jest równorzędnym wyborem
- . Wybierz tylko jedną opcję z grupy alt-2026-09-09.\nPlan B: Przy zmę
- czeniu wybierz pełny odpoczynek.\nFueling: Normalny posiłek i nawodnie
- nie\; po treningu białko oraz węglowodany.\n\n---\n\n- Easy spin 25m 5
- 5-70% 85-95rpm
+DESCRIPTION:Wybierz jedną opcję:\nA: Rower Z2 25 min\, RPE 3\nB: Pełne
+  wolne\nNie wykonuj więcej niż jednej.
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-09-10-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260910T070000
 DTEND;TZID=Europe/Oslo:20260910T081500
-SUMMARY:Krótki rozruch
+SUMMARY:Easy 4 km
 CATEGORIES:Run
-DESCRIPTION:# Krótki rozruch\nData: 2026-09-10\nFaza: Faza 1 - Oslo Mara
- thon\nTydzień: Tydzień 1 do Oslo\nIntensywność: ŁATWY\nStatus: OBOW
- IĄZKOWE\n\n## Coach notes\nRozgrzewka: 1 km 5:30–6:05/km\, RPE 2–3
-  | 4 km easy + 3 × 10 s luźnego rytmu\, jeśli nogi chcą. | 90 s peł
- nego truchtu | Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3\nTempo i RP
- E: Rozgrzewka: 1 km 5:30–6:05/km\, RPE 2–3. Część główna: 2 km
-  easy 5:10–5:45/km\, RPE 3–4 + 3 × 10 s rytmu technicznego\, RPE 7
- –8\, bez targetu tempa. Przerwy: 90 s pełnego truchtu lub marszu\, ta
- rget otwarty. Schłodzenie: 1 km 5:35–6:15/km\, RPE 2–3. Rytmy wykon
- uj luźno i technicznie\; Garmin bez alarmu tempa. Zakresy tempa dotycz
- ą płaskiego lub łagodnie pofałdowanego terenu. Na pagórkach\, w upa
- le i przy wietrze RPE ma pierwszeństwo przed tempem.\n\nPlan B: Ból
-  ≥3/10\, narastanie bólu lub zmiana kroku: przerwij bieg i zastąp go
-  odpoczynkiem lub lekkim rowerem.\nFueling: Normalny posiłek i nawodnie
- nie\; po treningu białko oraz węglowodany.\n\n---\n\n- Warmup 1km 5:30
- /km-6:05/km Pace\n- Easy 2km 5:10/km-5:45/km Pace\n\nStrides 3x\n- Fast
-  relaxed 10s 7-8 RPE\n- Full recovery 90s open\n\n- Cooldown 1km 5:35/km
- -6:15/km Pace
+DESCRIPTION:Easy 4 km\nEasy 2 km @ 5:10–5:45/km\, RPE 3–4\n3 × Rytm
+  10 s\, RPE 7–8\nPrzerwa: 90 s easy
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-09-11-note-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260911T000000
 DTEND;TZID=Europe/Oslo:20260911T003000
-SUMMARY:WOLNE / logistyka
+SUMMARY:WOLNE
 CATEGORIES:NOTE
-DESCRIPTION:# WOLNE / logistyka\nData: 2026-09-11\nFaza: Faza 1 - Oslo Ma
- rathon\nTydzień: Tydzień 1 do Oslo\nIntensywność: WOLNE\nStatus: INF
- ORMACJA\n\n## Coach notes\n\nPlan B: Ogranicz chodzenie\, przygotuj sprz
- ęt i sen.\nFueling: Sprawdzone węglowodany\, płyny i sód\; bez nowyc
- h produktów.\n\n---\n\nWOLNE / logistyka
+DESCRIPTION:WOLNE
 END:VEVENT
 BEGIN:VEVENT
 UID:cc-v2-oslo-2026-2026-09-12-run-1@coach-center.local
 DTSTAMP:20260714T000000Z
 DTSTART;TZID=Europe/Oslo:20260912T070000
 DTEND;TZID=Europe/Oslo:20260912T103000
-SUMMARY:START: OSLO MARATHON
+SUMMARY:Oslo Marathon — 42\,195 km
 CATEGORIES:Run
-DESCRIPTION:# START: OSLO MARATHON\nData: 2026-09-12\nFaza: Faza 1 - Oslo
-  Marathon\nTydzień: Tydzień 0 do Oslo\nIntensywność: MARATOŃSKI\nSt
- atus: OBOWIĄZKOWE\n\n## Coach notes\nRozgrzewka przed startem: 10–15
-  min bardzo lekko\, 5:30–6:05/km\, RPE 2–3 | Strategia A 3:30 tylko
-  po wszystkich bramkach. B 3:42–3:45. C 3:48–3:55. Pierwsze 5 km spo
- kojnie\, wysiłek równy na podbiegach. | Marsz/trucht: 10–15 min mars
- zu lub truchtu\, target otwarty\, RPE 1–2\nTempo i RPE: Rozgrzewka: 10
- –15 min bardzo lekko\, 5:30–6:05/km\, RPE 2–3. Część główna:
-  Plan A 3:30 — 4:55–5:02/km\, RPE początkowo 5–6\, tylko po wszys
- tkich bramkach\; Plan B 5:16–5:20/km\; Plan C 5:24–5:34/km. Przerwy:
-  brak\; punkty żywieniowe pokonuj według sytuacji. Schłodzenie: 10–
- 15 min marszu lub truchtu\, target otwarty\, RPE 1–2. Tempo dotyczy p
- łaskich fragmentów\; na podbiegach utrzymuj wysiłek.\nWarunki: Plan A
-  3:30 tylko po zaliczeniu bramek 15.08\, 22.08 i 01.09 oraz decyzji 02.0
- 9. W przeciwnym razie B 3:42–3:45 lub C 3:48–3:55.\nPlan B: Przejdź
-  z A do B/C przy narastającym bólu\, RPE ponad plan albo pogorszeniu t
- echniki\; zdrowie ma pierwszeństwo.\nFueling: 60–75 g węgli/h\, pły
- ny i sód przećwiczone na longach\; pierwszy żel wcześnie\, nic noweg
- o.\n\n---\n\n- Race controlled start 5km 4:58/km-5:02/km Pace\n- Race st
- rategy block 32.195km 4:55/km-5:02/km Pace\n- Finish by feel 5km 5-8 RPE
+DESCRIPTION:Oslo Marathon — 42\,195 km\nTempo: 4:55–5:02/km\nRPE: 5
+ –7
 END:VEVENT
 BEGIN:VEVENT
 UID:opcoach-FA-2026-09-15-6-run@coach-center.local

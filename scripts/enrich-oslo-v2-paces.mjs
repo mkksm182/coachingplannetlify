@@ -301,6 +301,149 @@ function intensityForWorkout(workout) {
   return "ŁATWY";
 }
 
+function numberLabel(value) {
+  return String(value).replace(".", ",");
+}
+
+function distanceLabel(workout) {
+  if (workout.distanceRangeKm) return `${numberLabel(workout.distanceRangeKm[0])}–${numberLabel(workout.distanceRangeKm[1])} km`;
+  if (workout.distanceKm != null) return `${numberLabel(workout.distanceKm)} km`;
+  return workout.durationMinutes ? `${workout.durationMinutes} min` : "";
+}
+
+function shortWorkoutName(workout) {
+  const distance = distanceLabel(workout);
+  const type = workout.workoutType;
+  if (type === "REST") return /decyzja/i.test(workout.name) ? "Decyzja startowa A / B / C" : "WOLNE";
+  if (type === "RECOVERY") return `Recovery ${distance}`;
+  if (type === "THRESHOLD") return `Threshold ${distance}`;
+  if (type === "HILLS") return `Podbiegi ${distance}`;
+  if (type.startsWith("LONG_RUN")) return `Long ${distance}`;
+  if (type === "MEDIUM_LONG") return /hill sprints/i.test(workout.name) ? `Easy ${distance} + hill sprints` : `Średnio-długi ${distance}`;
+  if (/EASY_STRIDES|SHARPEN/.test(type)) return `Easy ${distance} + rytmy`;
+  if (type === "TAPER_EASY") return `Easy ${distance}`;
+  if (type === "STRENGTH") return `Siła — ${workout.durationMinutes} min`;
+  if (type === "ENDURANCE") return `Rower Z2 — ${workout.durationMinutes} min`;
+  if (type === "RACE") return "Oslo Marathon — 42,195 km";
+  return workout.name.length <= 45 ? workout.name : workout.name.slice(0, 42).trimEnd() + "…";
+}
+
+function shortStepLabel(stepItem) {
+  if (stepItem.kind === "warmup") return "Rozgrzewka";
+  if (stepItem.kind === "cooldown") return "Schłodzenie";
+  if (stepItem.kind === "recovery") return /dół/i.test(stepItem.label) ? "Powrót" : "Trucht";
+  if (stepItem.kind === "repeat") {
+    if (/threshold|próg/i.test(stepItem.label)) return "Próg";
+    if (/hill|podbie|uphill/i.test(stepItem.label)) return "Podbieg";
+    if (/rytm|strid/i.test(stepItem.label)) return "Rytm";
+    if (/maraton|MP|wariant A/i.test(stepItem.label)) return "MP";
+  }
+  if (/docelowe MP|plan A 3:30/i.test(stepItem.label)) return "MP";
+  if (/średnio-długi/i.test(stepItem.label)) return "Easy";
+  if (/long easy/i.test(stepItem.label)) return "Long easy";
+  return stepItem.label;
+}
+
+function stepDuration(stepItem) {
+  if (stepItem.distanceKm != null) return `${numberLabel(stepItem.distanceKm)} km`;
+  if (stepItem.durationMinutes != null) return `${numberLabel(stepItem.durationMinutes)} min`;
+  if (stepItem.durationSeconds != null) return `${numberLabel(stepItem.durationSeconds)} s`;
+  return "";
+}
+
+function compactStepLine(stepItem) {
+  const duration = stepDuration(stepItem);
+  const target = stepItem.targetPace ? ` @ ${stepItem.targetPace}` : "";
+  if (stepItem.kind === "warmup") return `WU: ${duration}${target}`;
+  if (stepItem.kind === "cooldown") return `CD: ${duration}${target || " easy"}`;
+  if (stepItem.kind === "recovery") {
+    const prefix = stepItem.label === "Powrót" ? "Powrót" : "Przerwa";
+    return `${prefix}: ${duration}${stepItem.label === "Powrót" ? " trucht w dół" : target || " easy"}`;
+  }
+  const repetitions = stepItem.repetitions ? `${stepItem.repetitions} × ` : "";
+  const effort = stepItem.effortBased
+    ? `${stepItem.grade ? `, nachylenie ${stepItem.grade}` : ""}${stepItem.rpe ? `, RPE ${stepItem.rpe}` : ""}`
+    : `${target}${stepItem.rpe && ["main", "conditional", "repeat"].includes(stepItem.kind) ? `, RPE ${stepItem.rpe}` : ""}`;
+  return `${repetitions}${stepItem.label} ${duration}${effort}`.trim();
+}
+
+function compactPlanB(workout) {
+  if (workout.workoutType === "LONG_RUN_GATE" && workout.date === "2026-08-15") return "18 km easy bez MP.";
+  if (workout.workoutType === "LONG_RUN_GATE") return "Wybierz dolny dystans bez bloku jakościowego.";
+  if (/THRESHOLD|MARATHON|RACE/.test(workout.workoutType)) return "Easy albo odpoczynek przy bólu lub wyraźnym zmęczeniu.";
+  return "";
+}
+
+function altDescription(workout, allWorkouts) {
+  const group = allWorkouts.filter(item => item.alternativeGroup === workout.alternativeGroup);
+  const options = [];
+  const run = group.find(item => item.sport === "Run");
+  const ride = group.find(item => item.sport === "Ride");
+  const rest = group.find(item => item.sport === "Note");
+  if (run) options.push(`${String.fromCharCode(65 + options.length)}: Recovery ${distanceLabel(run)} @ ${PACE.recovery}`);
+  if (ride) options.push(`${String.fromCharCode(65 + options.length)}: Rower Z2 ${ride.durationMinutes} min, RPE 3`);
+  if (rest) options.push(`${String.fromCharCode(65 + options.length)}: Pełne wolne`);
+  return ["Wybierz jedną opcję:", ...options, "Nie wykonuj więcej niż jednej."].join("\n");
+}
+
+function strengthDescription(workout) {
+  const activation = /mobilność|aktywacja/i.test(workout.name + " " + workout.mainSet);
+  const exercises = activation
+    ? ["Mobilność bioder", "Most biodrowy", "Dead bug", "Wspięcia łydki"]
+    : ["Split squat 1–2 serie", "Wspięcia łydki 1–2 serie", "Hip hinge 1–2 serie", "Side plank 1–2 serie"];
+  return [shortWorkoutName(workout), ...exercises, `RPE: ${workout.rpe}`].join("\n");
+}
+
+function compactDescriptionFor(workout, allWorkouts) {
+  if (workout.alternativeGroup) return altDescription(workout, allWorkouts);
+  if (workout.sport === "Strength") return strengthDescription(workout);
+  if (workout.sport === "Ride") return [shortWorkoutName(workout), "Z2", `RPE: ${workout.rpe || 3}`].join("\n");
+  if (workout.sport === "Note") return shortWorkoutName(workout);
+  if (workout.sport !== "Run") return shortWorkoutName(workout);
+
+  const steps = workout.structuredSteps || [];
+  const mainSteps = steps.filter(item => item.kind === "main");
+  const simple = steps.length === 3 && mainSteps.length === 1 && !workout.effortBased && !workout.workoutType.startsWith("LONG_RUN");
+  if (simple) return [shortWorkoutName(workout), `Tempo: ${mainSteps[0].targetPace}`, `RPE: ${mainSteps[0].rpe || workout.rpe}`].join("\n");
+
+  const compactSteps = workout.workoutType.startsWith("LONG_RUN") || workout.effortBased && workout.workoutType !== "HILLS"
+    ? steps.filter(item => !["warmup", "cooldown"].includes(item.kind))
+    : steps;
+  const lines = [shortWorkoutName(workout), ...compactSteps.map(compactStepLine)];
+  if (workout.workoutType === "HILLS" || /hill sprints/i.test(workout.name)) lines.push("Bez targetu tempa pod górę.");
+  const planB = compactPlanB(workout);
+  if (planB) lines.push(`Plan B: ${planB}`);
+  return lines.slice(0, 6).join("\n");
+}
+
+function builderDuration(stepItem) {
+  if (stepItem.distanceKm != null) return `${stepItem.distanceKm}km`;
+  if (stepItem.durationMinutes != null) return `${stepItem.durationMinutes}m`;
+  if (stepItem.durationSeconds != null) return `${stepItem.durationSeconds}s`;
+  return "open";
+}
+
+function builderStep(stepItem) {
+  const target = stepItem.targetPace ? paceTarget(stepItem.targetPace) : stepItem.targetType === "effort" ? `${stepItem.rpe} RPE` : "open";
+  return `- ${stepItem.label} ${builderDuration(stepItem)} ${target}`;
+}
+
+function compactBuilderText(workout) {
+  if (workout.sport === "Run" && workout.structuredSteps?.length) {
+    const lines = [];
+    for (const stepItem of workout.structuredSteps) {
+      if (stepItem.kind === "repeat" && stepItem.repetitions && !lines.some(line => line === `${stepItem.label} ${stepItem.repetitions}x`)) lines.push(`${stepItem.label} ${stepItem.repetitions}x`);
+      lines.push(builderStep(stepItem));
+    }
+    const planB = compactPlanB(workout);
+    if (planB && lines.length < 6) lines.push(`Plan B: ${planB}`);
+    return lines.slice(0, 6).join("\n");
+  }
+  if (workout.sport === "Strength") return workout.compactDescription.split("\n").slice(0, 6).map(line => `- ${line}`).join("\n");
+  if (workout.sport === "Ride") return `- Rower Z2 ${workout.durationMinutes}m ${workout.rpe || 3} RPE`;
+  return workout.compactDescription;
+}
+
 const source = JSON.parse(await fs.readFile(sourcePath, "utf8"));
 const alternativeInstruction = workout => `Wybierz tylko jedną opcję z grupy ${workout.alternativeGroup}.`;
 const normalizedConditions = workout => {
@@ -407,6 +550,18 @@ source.workouts = source.workouts.map(workout => {
     };
   }
   return { ...workout, paceDisplay: workout.paceDisplay || null };
+});
+
+source.workouts = source.workouts.map(workout => {
+  const structuredSteps = (workout.structuredSteps || []).map(item => ({ ...item, label: shortStepLabel(item) }));
+  const normalized = { ...workout, structuredSteps };
+  const compactDescription = compactDescriptionFor(normalized, source.workouts);
+  const withDescription = { ...normalized, compactTitle: shortWorkoutName(normalized), compactDescription };
+  return {
+    ...withDescription,
+    compactPlanB: compactPlanB(withDescription),
+    structuredWorkoutText: compactBuilderText(withDescription),
+  };
 });
 
 await fs.writeFile(sourcePath, `${JSON.stringify(source, null, 2)}\n`);

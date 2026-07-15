@@ -66,29 +66,31 @@ const headers = [
   "Data", "Dzień", "Tydzień", "Status", "Sport", "Trening", "Typ", "Km min", "Km max",
   "Czas min", "Intensywność", "Tempo — skrót", "Tempo i RPE — wszystkie bloki", "RPE", "Przewyższenie m",
   "Część główna", "Plan B", "Warunki", "Paliwo", "parentId", "external_id", "Structured workout", "Long",
+  "compactDescription",
 ];
-plan.getRange(`A1:W${source.workouts.length + 1}`).values = [
+plan.getRange(`A1:X${source.workouts.length + 1}`).values = [
   headers,
   ...source.workouts.map(item => [
     new Date(`${item.date}T12:00:00Z`), item.dayName, item.week,
     item.optional ? "OPCJONALNE / ALT" : item.required ? "OBOWIĄZKOWE" : "INFORMACJA",
-    item.sport, item.name, item.workoutType,
+    item.sport, item.compactTitle, item.workoutType,
     item.distanceRangeKm?.[0] ?? item.distanceKm ?? null,
     item.distanceRangeKm?.[1] ?? item.distanceKm ?? null,
     item.durationMinutes, item.intensity, item.paceSummary || item.pace, item.paceDisplay, item.rpe, item.elevationM,
     item.mainSet, item.planB, item.conditions, item.fuel, item.parentId, item.external_id, item.structuredWorkoutText, item.workoutType.startsWith("LONG") ? 1 : 0,
+    item.compactDescription,
   ]),
 ];
-plan.getRange("A1:W1").format = { fill: "#12304A", font: { bold: true, color: "#FFFFFF" }, wrapText: true };
+plan.getRange("A1:X1").format = { fill: "#12304A", font: { bold: true, color: "#FFFFFF" }, wrapText: true };
 plan.getRange(`A2:A${source.workouts.length + 1}`).format.numberFormat = "yyyy-mm-dd";
 plan.getRange(`H2:J${source.workouts.length + 1}`).format.numberFormat = "0.0";
 plan.getRange(`O2:O${source.workouts.length + 1}`).format.numberFormat = "0";
-plan.getRange(`A1:W${source.workouts.length + 1}`).format.borders = { preset: "inside", style: "thin", color: "#D9E2EA" };
-plan.getRange(`A2:W${source.workouts.length + 1}`).format.verticalAlignment = "top";
+plan.getRange(`A1:X${source.workouts.length + 1}`).format.borders = { preset: "inside", style: "thin", color: "#D9E2EA" };
+plan.getRange(`A2:X${source.workouts.length + 1}`).format.verticalAlignment = "top";
 plan.getRange(`M2:S${source.workouts.length + 1}`).format.wrapText = true;
 plan.getRange(`V2:V${source.workouts.length + 1}`).format.wrapText = true;
-plan.getRange(`A2:W${source.workouts.length + 1}`).conditionalFormats.add("containsText", { text: "OPCJONALNE / ALT", format: { fill: "#FFF3CD", font: { color: "#664D03" } } });
-plan.getRange(`A2:W${source.workouts.length + 1}`).conditionalFormats.add("containsText", { text: "BRAMKA", format: { fill: "#FCE8E6", font: { bold: true, color: "#A61B1B" } } });
+plan.getRange(`A2:X${source.workouts.length + 1}`).conditionalFormats.add("containsText", { text: "OPCJONALNE / ALT", format: { fill: "#FFF3CD", font: { color: "#664D03" } } });
+plan.getRange(`A2:X${source.workouts.length + 1}`).conditionalFormats.add("containsText", { text: "BRAMKA", format: { fill: "#FCE8E6", font: { bold: true, color: "#A61B1B" } } });
 plan.freezePanes.freezeRows(1);
 plan.getRange("A:A").format.columnWidth = 12;
 plan.getRange("B:B").format.columnWidth = 13;
@@ -101,6 +103,8 @@ plan.getRange("P:S").format.columnWidth = 42;
 plan.getRange("T:U").format.columnWidth = 38;
 plan.getRange("V:V").format.columnWidth = 55;
 plan.getRange("W:W").format.columnWidth = 10;
+plan.getRange("X:X").format.columnWidth = 55;
+plan.getRange(`X2:X${source.workouts.length + 1}`).format.wrapText = true;
 
 const weekStarts = ["2026-07-13", "2026-07-20", "2026-07-27", "2026-08-03", "2026-08-10", "2026-08-17", "2026-08-24", "2026-08-31", "2026-09-07"];
 weeks.getRange("A1:H1").merge();
@@ -151,6 +155,8 @@ for (const sheet of [plan, weeks, strategy]) {
 
 const check = await workbook.inspect({ kind: "table", range: "TYGODNIE I BRAMKI!A1:H12", include: "values,formulas", tableMaxRows: 15, tableMaxCols: 10 });
 console.log(check.ndjson);
+const compactCheck = await workbook.inspect({ kind: "table", range: "FAZA 1 - OSLO V2!U1:X8", include: "values,formulas", tableMaxRows: 8, tableMaxCols: 4 });
+console.log(compactCheck.ndjson);
 const errors = await workbook.inspect({ kind: "match", searchTerm: "#REF!|#DIV/0!|#VALUE!|#NAME\\?|#N/A", options: { useRegex: true, maxResults: 300 }, summary: "final formula error scan" });
 console.log(errors.ndjson);
 const blob = await SpreadsheetFile.exportXlsx(workbook);
