@@ -1,5 +1,5 @@
-const CACHE='op-coach-center-v10-oslo-pace-sessions';
-const FILES=['./','./index.html','./style.css','./app.js','./data/plan.js','./manifest.json','./assets/icon.svg'];
+const CACHE='op-coach-center-v11-adaptive-coach';
+const FILES=['./','./index.html','./style.css','./app.js','./adaptive-coach-engine.js','./intervals-autofill-engine.js','./data/plan.js','./data/structured_workouts.js','./manifest.json','./assets/icon.svg'];
 self.addEventListener('install',e=>{self.skipWaiting(); e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES).catch(()=>null)))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
 self.addEventListener('fetch',e=>{
