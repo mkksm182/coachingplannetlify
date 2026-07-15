@@ -46,14 +46,14 @@ test("każdy long run ma target tempa dla każdego segmentu biegowego", () => {
 });
 
 test("katalog i treningi zawierają zatwierdzone zakresy tempa", () => {
-  assert.equal(source.paceCatalog.threshold.pace, "4:58–5:05/km");
-  assert.equal(source.paceCatalog.tenKIntervals.pace, "4:43–4:50/km");
-  assert.equal(source.paceCatalog.recovery.pace, "6:15–6:45/km");
-  assert.equal(source.paceCatalog.goalMarathonPace330.pace, "4:58–5:03/km");
+  assert.equal(source.paceCatalog.threshold.pace, "4:12–4:20/km");
+  assert.equal(source.paceCatalog.tenKIntervals.pace, "3:58–4:05/km");
+  assert.equal(source.paceCatalog.recovery.pace, "5:40–6:20/km");
+  assert.equal(source.paceCatalog.goalMarathonPace330.pace, "4:55–5:02/km");
   assert.equal(source.paceCatalog.goalMarathonPace330.conditionalOnly, true);
-  for (const item of workouts.filter(workout => workout.workoutType === "THRESHOLD")) assert.match(item.paceDisplay, /4:58–5:05\/km/);
-  for (const item of workouts.filter(workout => workout.workoutType === "RECOVERY")) assert.match(item.paceDisplay, /6:15–6:45\/km/);
-  for (const item of workouts.filter(workout => workout.sport === "Run" && workout.paceDisplay.includes("4:58–5:03/km"))) assert.equal(item.goalPaceConditional, true, item.id);
+  for (const item of workouts.filter(workout => workout.workoutType === "THRESHOLD")) assert.match(item.paceDisplay, /4:12–4:20\/km/);
+  for (const item of workouts.filter(workout => workout.workoutType === "RECOVERY")) assert.match(item.paceDisplay, /5:40–6:20\/km/);
+  for (const item of workouts.filter(workout => workout.sport === "Run" && workout.paceDisplay.includes("4:55–5:02/km"))) assert.equal(item.goalPaceConditional, true, item.id);
 });
 
 test("podbiegi, hill sprints i rytmy nie mają targetu pace na szybkim odcinku", () => {
