@@ -42,4 +42,5 @@ test('moduł silnika jest ładowany przed aplikacją', () => {
 test('widoki adaptacyjne mają reguły mobilne', () => {
   assert.match(css, /@media \(max-width:720px\).*\.gate-grid/s);
   assert.match(css, /\.adaptive-history/);
+  assert.match(css, /\.form-grid>\*\{min-width:0\}/);
 });
