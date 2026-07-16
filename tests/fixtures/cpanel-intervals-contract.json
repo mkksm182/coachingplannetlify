@@ -1,0 +1,77 @@
+{
+  "activities": [
+    {
+      "id": "a-1",
+      "external_id": "garmin-1",
+      "paired_event_id": "e-1",
+      "start_date_local": "2026-07-16T07:30:00",
+      "start_date": "2026-07-16T05:30:00Z",
+      "name": "Easy run",
+      "type": "Run",
+      "distance": 10000,
+      "moving_time": 3000,
+      "elapsed_time": 3100,
+      "icu_training_load": 55,
+      "average_heartrate": 145,
+      "max_heartrate": 171,
+      "average_watts": 280,
+      "icu_weighted_avg_watts": 291,
+      "average_cadence": 176,
+      "total_elevation_gain": 123,
+      "calories": 720,
+      "average_speed": 3.333,
+      "average_pace": "5:00/km",
+      "url": "https://intervals.icu/activities/a-1"
+    },
+    {
+      "activityId": "a-2",
+      "externalId": "zwift-2",
+      "eventId": "e-2",
+      "startDateLocal": "2026-07-09T18:00:00",
+      "title": "Recovery ride",
+      "sport": "Ride",
+      "distance_km": 25.5,
+      "durationHours": 1.25,
+      "training_load": 32,
+      "avgHeartRate": 121,
+      "avgWatts": 165,
+      "normalizedWatts": 178,
+      "avgCadence": 91,
+      "elevationGain": 210,
+      "calorieCount": 510
+    }
+  ],
+  "events": [
+    {
+      "id": "e-1",
+      "external_id": "cc-v2-run-1",
+      "paired_activity_id": "a-1",
+      "start_date_local": "2026-07-16T07:30:00",
+      "start_date": "2026-07-16T05:30:00Z",
+      "type": "Run",
+      "category": "WORKOUT",
+      "name": "Easy 10 km",
+      "description": "Easy 10 km",
+      "icu_training_load": 50,
+      "moving_time": 3000,
+      "distance": 10000
+    },
+    {
+      "eventId": "e-2",
+      "externalId": "cc-v2-ride-1",
+      "activityId": "a-2",
+      "startDateLocal": "2026-07-09T18:00:00",
+      "sport": "Ride",
+      "eventCategory": "WORKOUT",
+      "title": "Ride Z2",
+      "notes": "Ride Z2 75 min",
+      "trainingLoad": 32,
+      "durationSeconds": 4500,
+      "distanceMeters": 25500
+    }
+  ],
+  "wellness": [
+    { "id": "2026-07-15", "sleep_secs": 28800, "restingHR": 48, "hrv": 61 },
+    { "id": "2026-07-16", "sleep_secs": 27000, "resting_hr": 49, "hrv_rmssd": 58 }
+  ]
+}

@@ -1,0 +1,8 @@
+node_modules
+dist/
+backups/
+work/
+*.inspect.ndjson
+cpanel/private/config.php
+coach-private/
+*.log
