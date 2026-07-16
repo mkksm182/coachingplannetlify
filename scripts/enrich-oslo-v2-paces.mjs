@@ -439,8 +439,44 @@ function compactBuilderText(workout) {
     if (planB && lines.length < 6) lines.push(`Plan B: ${planB}`);
     return lines.slice(0, 6).join("\n");
   }
-  if (workout.sport === "Strength") return workout.compactDescription.split("\n").slice(0, 6).map(line => `- ${line}`).join("\n");
-  if (workout.sport === "Ride") return `- Rower Z2 ${workout.durationMinutes}m ${workout.rpe || 3} RPE`;
+  return workout.compactDescription;
+}
+
+function shortTechnicalLabels(value) {
+  return String(value || "")
+    .replace(/Conditional goal MP calibration/g, "MP")
+    .replace(/Uphill fast relaxed/g, "Podbieg")
+    .replace(/Full jog-down recovery/g, "Powrót")
+    .replace(/Full walk-jog recovery/g, "Powrót")
+    .replace(/Uphill effort/g, "Podbieg")
+    .replace(/Hill sprints/g, "Podbieg")
+    .replace(/Fast relaxed/g, "Rytm")
+    .replace(/Full recovery/g, "Trucht")
+    .replace(/Strides/g, "Rytm")
+    .replace(/Threshold/g, "Próg")
+    .replace(/Recovery/g, "Trucht")
+    .replace(/Warmup/g, "Rozgrzewka")
+    .replace(/Cooldown/g, "Schłodzenie")
+    .replace(/Goal MP/g, "MP")
+    .replace(/Race controlled start/g, "Start")
+    .replace(/Race strategy block/g, "MP")
+    .replace(/Finish by feel/g, "Finisz")
+    .replace(/Uphill/g, "Podbieg");
+}
+
+function structuredWorkoutTextFor(workout) {
+  if (workout.sport === "Run" && (workout.workoutType === "RACE" || workout.structuredSteps?.some(item => item.kind === "repeat"))) {
+    // Preserve the blank-line-delimited repeat grammar required by the Intervals parser.
+    // Only labels are shortened; repetitions, recoveries and targets come from the
+    // technical profile generated above, never from compactDescription.
+    return shortTechnicalLabels(workout.structuredWorkoutText);
+  }
+  if (workout.sport === "Run") return compactBuilderText(workout);
+  if (workout.sport === "Ride") return `- Rower Z2 ${workout.durationMinutes}m 55-70% 85-95rpm`;
+  if (workout.sport === "Strength") {
+    const targetRpe = /mobilność|aktywacja/i.test(`${workout.name} ${workout.mainSet}`) ? "2" : String(workout.rpe || "2-4").replace("–", "-");
+    return `- Siła ${workout.durationMinutes}m ${targetRpe} RPE`;
+  }
   return workout.compactDescription;
 }
 
@@ -560,7 +596,7 @@ source.workouts = source.workouts.map(workout => {
   return {
     ...withDescription,
     compactPlanB: compactPlanB(withDescription),
-    structuredWorkoutText: compactBuilderText(withDescription),
+    structuredWorkoutText: structuredWorkoutTextFor(withDescription),
   };
 });
 

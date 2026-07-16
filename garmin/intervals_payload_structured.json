@@ -298,7 +298,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-07-15T18:00:00",
     "name": "Rower Z2 — 40 min",
-    "description": "- Rower Z2 40m 3 RPE",
+    "description": "- Rower Z2 40m 55-70% 85-95rpm",
     "external_id": "cc-v2-oslo-2026-2026-07-15-ride-alt",
     "type": "Ride"
   },
@@ -306,7 +306,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-07-16T07:00:00",
     "name": "Easy 7 km + rytmy",
-    "description": "- Rozgrzewka 1km 5:30/km-6:05/km Pace\n- Easy 5km 5:10/km-5:45/km Pace\nRytm 6x\n- Rytm 20s 7–8 RPE\n- Trucht 90s open\n- Schłodzenie 1km 5:35/km-6:15/km Pace",
+    "description": "- Rozgrzewka 1km 5:30/km-6:05/km Pace\n- Easy 5km 5:10/km-5:45/km Pace\n\nRytm 6x\n- Rytm 20s 7-8 RPE\n- Trucht 90s open\n\n- Schłodzenie 1km 5:35/km-6:15/km Pace",
     "external_id": "cc-v2-oslo-2026-2026-07-16-run-1",
     "type": "Run"
   },
@@ -314,7 +314,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-07-16T18:30:00",
     "name": "Siła — 12 min",
-    "description": "- Siła — 12 min\n- Split squat 1–2 serie\n- Wspięcia łydki 1–2 serie\n- Hip hinge 1–2 serie\n- Side plank 1–2 serie\n- RPE: 2–4",
+    "description": "- Siła 12m 2-4 RPE",
     "external_id": "cc-v2-oslo-2026-2026-07-16-strength-1",
     "type": "WeightTraining"
   },
@@ -352,7 +352,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-07-20T18:30:00",
     "name": "Siła — 15 min",
-    "description": "- Siła — 15 min\n- Split squat 1–2 serie\n- Wspięcia łydki 1–2 serie\n- Hip hinge 1–2 serie\n- Side plank 1–2 serie\n- RPE: 2–4",
+    "description": "- Siła 15m 2-4 RPE",
     "external_id": "cc-v2-oslo-2026-2026-07-20-strength-1",
     "type": "WeightTraining"
   },
@@ -360,7 +360,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-07-21T07:00:00",
     "name": "Threshold 8 km",
-    "description": "- Rozgrzewka 2km 5:30/km-6:05/km Pace\nPróg 3x\n- Próg 1km 4:12/km-4:20/km Pace\n- Trucht 2m 5:40/km-6:20/km Pace\n- Schłodzenie 2km 5:35/km-6:15/km Pace\nPlan B: Easy albo odpoczynek przy bólu lub wyraźnym zmęczeniu.",
+    "description": "- Rozgrzewka 2km 5:30/km-6:05/km Pace\n\nPróg 3x\n- Próg 1km 4:12/km-4:20/km Pace\n- Trucht 2m 5:40/km-6:20/km Pace\n\n- Schłodzenie 2km 5:35/km-6:15/km Pace",
     "external_id": "cc-v2-oslo-2026-2026-07-21-run-1",
     "type": "Run"
   },
@@ -375,7 +375,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-07-22T18:00:00",
     "name": "Rower Z2 — 45 min",
-    "description": "- Rower Z2 45m 3 RPE",
+    "description": "- Rower Z2 45m 55-70% 85-95rpm",
     "external_id": "cc-v2-oslo-2026-2026-07-22-ride-alt",
     "type": "Ride"
   },
@@ -383,7 +383,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-07-23T07:00:00",
     "name": "Easy 10 km + hill sprints",
-    "description": "- Rozgrzewka 2km 5:30/km-6:05/km Pace\n- Easy 7km 5:05/km-5:35/km Pace\nPodbieg 6x\n- Podbieg 8s 8 RPE\n- Powrót 120s open\n- Schłodzenie 1km 5:35/km-6:15/km Pace",
+    "description": "- Rozgrzewka 2km 5:30/km-6:05/km Pace\n- Medium long easy 7km 5:05/km-5:35/km Pace\n\nPodbieg 6x\n- Podbieg 8s 8 RPE\n- Powrót 2m open\n\n- Schłodzenie 1km 5:35/km-6:15/km Pace",
     "external_id": "cc-v2-oslo-2026-2026-07-23-run-1",
     "type": "Run"
   },
@@ -421,7 +421,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-07-27T18:30:00",
     "name": "Siła — 18 min",
-    "description": "- Siła — 18 min\n- Split squat 1–2 serie\n- Wspięcia łydki 1–2 serie\n- Hip hinge 1–2 serie\n- Side plank 1–2 serie\n- RPE: 2–4",
+    "description": "- Siła 18m 2-4 RPE",
     "external_id": "cc-v2-oslo-2026-2026-07-27-strength-1",
     "type": "WeightTraining"
   },
@@ -429,7 +429,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-07-28T07:00:00",
     "name": "Podbiegi 9 km",
-    "description": "- Rozgrzewka 2.5km 5:30/km-6:05/km Pace\nPodbieg 6x\n- Podbieg 60s 7 RPE\n- Powrót 150s open\n- Schłodzenie 2km 5:35/km-6:15/km Pace",
+    "description": "- Rozgrzewka 2.5km 5:30/km-6:05/km Pace\n\nPodbieg 6x\n- Podbieg 60s 7 RPE\n- Powrót 150s open\n\n- Schłodzenie 2km 5:35/km-6:15/km Pace",
     "external_id": "cc-v2-oslo-2026-2026-07-28-run-1",
     "type": "Run"
   },
@@ -444,7 +444,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-07-29T18:00:00",
     "name": "Rower Z2 — 45 min",
-    "description": "- Rower Z2 45m 3 RPE",
+    "description": "- Rower Z2 45m 55-70% 85-95rpm",
     "external_id": "cc-v2-oslo-2026-2026-07-29-ride-alt",
     "type": "Ride"
   },
@@ -490,7 +490,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-08-03T18:30:00",
     "name": "Siła — 20 min",
-    "description": "- Siła — 20 min\n- Split squat 1–2 serie\n- Wspięcia łydki 1–2 serie\n- Hip hinge 1–2 serie\n- Side plank 1–2 serie\n- RPE: 2–4",
+    "description": "- Siła 20m 2-4 RPE",
     "external_id": "cc-v2-oslo-2026-2026-08-03-strength-1",
     "type": "WeightTraining"
   },
@@ -498,7 +498,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-08-04T07:00:00",
     "name": "Threshold 9 km",
-    "description": "- Rozgrzewka 2km 5:30/km-6:05/km Pace\nPróg 4x\n- Próg 1km 4:12/km-4:20/km Pace\n- Trucht 2m 5:40/km-6:20/km Pace\n- Schłodzenie 2km 5:35/km-6:15/km Pace\nPlan B: Easy albo odpoczynek przy bólu lub wyraźnym zmęczeniu.",
+    "description": "- Rozgrzewka 2km 5:30/km-6:05/km Pace\n\nPróg 4x\n- Próg 1km 4:12/km-4:20/km Pace\n- Trucht 2m 5:40/km-6:20/km Pace\n\n- Schłodzenie 2km 5:35/km-6:15/km Pace",
     "external_id": "cc-v2-oslo-2026-2026-08-04-run-1",
     "type": "Run"
   },
@@ -513,7 +513,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-08-05T18:00:00",
     "name": "Rower Z2 — 40 min",
-    "description": "- Rower Z2 40m 3 RPE",
+    "description": "- Rower Z2 40m 55-70% 85-95rpm",
     "external_id": "cc-v2-oslo-2026-2026-08-05-ride-alt",
     "type": "Ride"
   },
@@ -559,7 +559,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-08-10T18:30:00",
     "name": "Siła — 20 min",
-    "description": "- Siła — 20 min\n- Split squat 1–2 serie\n- Wspięcia łydki 1–2 serie\n- Hip hinge 1–2 serie\n- Side plank 1–2 serie\n- RPE: 2–4",
+    "description": "- Siła 20m 2-4 RPE",
     "external_id": "cc-v2-oslo-2026-2026-08-10-strength-1",
     "type": "WeightTraining"
   },
@@ -567,7 +567,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-08-11T07:00:00",
     "name": "Podbiegi 10 km",
-    "description": "- Rozgrzewka 2.5km 5:30/km-6:05/km Pace\nPodbieg 4x\n- Podbieg 180s 7 RPE\n- Powrót 180s open\n- Schłodzenie 2km 5:35/km-6:15/km Pace",
+    "description": "- Rozgrzewka 2.5km 5:30/km-6:05/km Pace\n\nPodbieg 4x\n- Podbieg 180s 7 RPE\n- Powrót 180s open\n\n- Schłodzenie 2km 5:35/km-6:15/km Pace",
     "external_id": "cc-v2-oslo-2026-2026-08-11-run-1",
     "type": "Run"
   },
@@ -590,7 +590,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-08-12T18:00:00",
     "name": "Rower Z2 — 45 min",
-    "description": "- Rower Z2 45m 3 RPE",
+    "description": "- Rower Z2 45m 55-70% 85-95rpm",
     "external_id": "cc-v2-oslo-2026-2026-08-12-ride-alt",
     "type": "Ride"
   },
@@ -636,7 +636,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-08-17T18:30:00",
     "name": "Siła — 18 min",
-    "description": "- Siła — 18 min\n- Split squat 1–2 serie\n- Wspięcia łydki 1–2 serie\n- Hip hinge 1–2 serie\n- Side plank 1–2 serie\n- RPE: 2–4",
+    "description": "- Siła 18m 2-4 RPE",
     "external_id": "cc-v2-oslo-2026-2026-08-17-strength-1",
     "type": "WeightTraining"
   },
@@ -644,7 +644,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-08-18T07:00:00",
     "name": "Threshold 9 km",
-    "description": "- Rozgrzewka 1.5km 5:30/km-6:05/km Pace\nPróg 3x\n- Próg 2km 4:12/km-4:20/km Pace\n- Trucht 3m 5:40/km-6:20/km Pace\n- Schłodzenie 1.5km 5:35/km-6:15/km Pace\nPlan B: Easy albo odpoczynek przy bólu lub wyraźnym zmęczeniu.",
+    "description": "- Rozgrzewka 1.5km 5:30/km-6:05/km Pace\n\nPróg 3x\n- Próg 2km 4:12/km-4:20/km Pace\n- Trucht 3m 5:40/km-6:20/km Pace\n\n- Schłodzenie 1.5km 5:35/km-6:15/km Pace",
     "external_id": "cc-v2-oslo-2026-2026-08-18-run-1",
     "type": "Run"
   },
@@ -667,7 +667,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-08-19T18:00:00",
     "name": "Rower Z2 — 45 min",
-    "description": "- Rower Z2 45m 3 RPE",
+    "description": "- Rower Z2 45m 55-70% 85-95rpm",
     "external_id": "cc-v2-oslo-2026-2026-08-19-ride-alt",
     "type": "Ride"
   },
@@ -713,7 +713,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-08-24T18:30:00",
     "name": "Siła — 18 min",
-    "description": "- Siła — 18 min\n- Split squat 1–2 serie\n- Wspięcia łydki 1–2 serie\n- Hip hinge 1–2 serie\n- Side plank 1–2 serie\n- RPE: 2–4",
+    "description": "- Siła 18m 2-4 RPE",
     "external_id": "cc-v2-oslo-2026-2026-08-24-strength-1",
     "type": "WeightTraining"
   },
@@ -744,7 +744,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-08-26T18:00:00",
     "name": "Rower Z2 — 40 min",
-    "description": "- Rower Z2 40m 3 RPE",
+    "description": "- Rower Z2 40m 55-70% 85-95rpm",
     "external_id": "cc-v2-oslo-2026-2026-08-26-ride-alt",
     "type": "Ride"
   },
@@ -752,7 +752,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-08-27T07:00:00",
     "name": "Easy 10 km + hill sprints",
-    "description": "- Rozgrzewka 2km 5:30/km-6:05/km Pace\n- Easy 7km 5:05/km-5:35/km Pace\nPodbieg 6x\n- Podbieg 10s 8 RPE\n- Powrót 120s open\n- Schłodzenie 1km 5:35/km-6:15/km Pace",
+    "description": "- Rozgrzewka 2km 5:30/km-6:05/km Pace\n- Medium long easy 7km 5:05/km-5:35/km Pace\n\nPodbieg 6x\n- Podbieg 10s 8 RPE\n- Powrót 2m open\n\n- Schłodzenie 1km 5:35/km-6:15/km Pace",
     "external_id": "cc-v2-oslo-2026-2026-08-27-run-1",
     "type": "Run"
   },
@@ -790,7 +790,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-08-31T18:30:00",
     "name": "Siła — 12 min",
-    "description": "- Siła — 12 min\n- Mobilność bioder\n- Most biodrowy\n- Dead bug\n- Wspięcia łydki\n- RPE: 2–4",
+    "description": "- Siła 12m 2 RPE",
     "external_id": "cc-v2-oslo-2026-2026-08-31-strength-1",
     "type": "WeightTraining"
   },
@@ -798,7 +798,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-09-01T07:00:00",
     "name": "BRAMKA A: kalibracja tempa 3 × 2 km",
-    "description": "- Rozgrzewka 2km 5:30/km-6:05/km Pace\nMP 3x\n- MP 2km 4:55/km-5:02/km Pace\n- Trucht 0.5km 5:40/km-6:20/km Pace\n- Schłodzenie 1km 5:35/km-6:15/km Pace\nPlan B: Easy albo odpoczynek przy bólu lub wyraźnym zmęczeniu.",
+    "description": "- Rozgrzewka 2km 5:30/km-6:05/km Pace\n\nMP 3x\n- MP 2km 4:55/km-5:02/km Pace\n- Trucht 500m 5:40/km-6:20/km Pace\n\n- Schłodzenie 1km 5:35/km-6:15/km Pace",
     "external_id": "cc-v2-oslo-2026-2026-09-01-run-1",
     "type": "Run"
   },
@@ -813,7 +813,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-09-02T18:00:00",
     "name": "Rower Z2 — 30 min",
-    "description": "- Rower Z2 30m 3 RPE",
+    "description": "- Rower Z2 30m 55-70% 85-95rpm",
     "external_id": "cc-v2-oslo-2026-2026-09-02-ride-alt",
     "type": "Ride"
   },
@@ -821,7 +821,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-09-03T07:00:00",
     "name": "Easy 8 km + rytmy",
-    "description": "- Rozgrzewka 1km 5:30/km-6:05/km Pace\n- Easy 6km 5:10/km-5:45/km Pace\nRytm 4x\n- Rytm 15s 7–8 RPE\n- Trucht 90s open\n- Schłodzenie 1km 5:35/km-6:15/km Pace",
+    "description": "- Rozgrzewka 1km 5:30/km-6:05/km Pace\n- Easy 6km 5:10/km-5:45/km Pace\n\nRytm 4x\n- Rytm 15s 7-8 RPE\n- Trucht 90s open\n\n- Schłodzenie 1km 5:35/km-6:15/km Pace",
     "external_id": "cc-v2-oslo-2026-2026-09-03-run-1",
     "type": "Run"
   },
@@ -859,7 +859,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-09-08T07:00:00",
     "name": "Easy 5 km + rytmy",
-    "description": "- Rozgrzewka 1km 5:30/km-6:05/km Pace\n- Easy 3km 5:10/km-5:45/km Pace\nRytm 4x\n- Rytm 15s 7–8 RPE\n- Trucht 90s open\n- Schłodzenie 1km 5:35/km-6:15/km Pace",
+    "description": "- Rozgrzewka 1km 5:30/km-6:05/km Pace\n- Easy 3km 5:10/km-5:45/km Pace\n\nRytm 4x\n- Rytm 15s 7-8 RPE\n- Trucht 90s open\n\n- Schłodzenie 1km 5:35/km-6:15/km Pace",
     "external_id": "cc-v2-oslo-2026-2026-09-08-run-1",
     "type": "Run"
   },
@@ -874,7 +874,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-09-09T18:00:00",
     "name": "Rower Z2 — 25 min",
-    "description": "- Rower Z2 25m 3 RPE",
+    "description": "- Rower Z2 25m 55-70% 85-95rpm",
     "external_id": "cc-v2-oslo-2026-2026-09-09-ride-alt",
     "type": "Ride"
   },
@@ -882,7 +882,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-09-10T07:00:00",
     "name": "Easy 4 km",
-    "description": "- Rozgrzewka 1km 5:30/km-6:05/km Pace\n- Easy 2km 5:10/km-5:45/km Pace\nRytm 3x\n- Rytm 10s 7–8 RPE\n- Trucht 90s open\n- Schłodzenie 1km 5:35/km-6:15/km Pace",
+    "description": "- Rozgrzewka 1km 5:30/km-6:05/km Pace\n- Easy 2km 5:10/km-5:45/km Pace\n\nRytm 3x\n- Rytm 10s 7-8 RPE\n- Trucht 90s open\n\n- Schłodzenie 1km 5:35/km-6:15/km Pace",
     "external_id": "cc-v2-oslo-2026-2026-09-10-run-1",
     "type": "Run"
   },
@@ -897,7 +897,7 @@
     "category": "WORKOUT",
     "start_date_local": "2026-09-12T07:00:00",
     "name": "Oslo Marathon — 42,195 km",
-    "description": "- Rozgrzewka 12m 5:30/km-6:05/km Pace\n- MP 42.195km 4:55/km-5:02/km Pace\n- Schłodzenie 12m open\nPlan B: Easy albo odpoczynek przy bólu lub wyraźnym zmęczeniu.",
+    "description": "- Start 5km 4:58/km-5:02/km Pace\n- MP 32.195km 4:55/km-5:02/km Pace\n- Finisz 5km 5-8 RPE",
     "external_id": "cc-v2-oslo-2026-2026-09-12-run-1",
     "type": "Run"
   },
