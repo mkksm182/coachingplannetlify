@@ -76,7 +76,7 @@ test("plan zachowuje jeden rekord i jedną kartę na każdą sesję", () => {
   for (const item of workouts) {
     const generated = futurePlan.find(planItem => planItem.id === item.external_id);
     assert.ok(generated, item.external_id);
-    assert.equal(generated.discipline, item.name);
+    assert.equal(generated.discipline, item.compactTitle);
     assert.equal(generated.sport, item.sport);
     assert.equal(generated.parentId, item.parentId);
   }

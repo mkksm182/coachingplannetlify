@@ -128,26 +128,28 @@ test("taper kończy się startem 12.09, a decyzja A/B/C jest 02.09", () => {
   assert.match(race.conditions, /Plan A 3:30 tylko po zaliczeniu bramek/);
 });
 
-test("szczegóły treningu pokazują pełny Plan B i warunki", () => {
-  assert.match(appSource, /<b>Plan B \/ warunki<\/b><p>\$\{esc\(it\.modification\)\}<\/p>/);
+test("szczegóły treningu pokazują skrócony opis bez pełnych protokołów", () => {
+  assert.match(appSource, /compactHtml\(it,6,true\)/);
+  assert.doesNotMatch(appSource, /<b>Plan B \/ warunki<\/b>/);
+  assert.doesNotMatch(appSource, /<b>Żywienie<\/b>/);
 });
 
 test("structured workouty jakościowe mają rozgrzewkę, pracę, odpoczynek i schłodzenie", () => {
   const qualityTypes = new Set(["THRESHOLD", "HILLS", "MARATHON_PACE_GATE"]);
   for (const item of workouts.filter(item => qualityTypes.has(item.workoutType))) {
-    assert.match(item.structuredWorkoutText, /- Warmup/i, item.id);
+    assert.match(item.structuredWorkoutText, /- Rozgrzewka/i, item.id);
     assert.match(item.structuredWorkoutText, /\d+x/, item.id);
-    assert.match(item.structuredWorkoutText, /Recovery/i, item.id);
-    assert.match(item.structuredWorkoutText, /- Cooldown/i, item.id);
+    assert.match(item.structuredWorkoutText, /Trucht|Powrót/i, item.id);
+    assert.match(item.structuredWorkoutText, /- Schłodzenie/i, item.id);
   }
   const continuous = workouts.find(item => item.workoutType === "MARATHON_EFFORT");
-  assert.match(continuous.structuredWorkoutText, /- Warmup/i);
+  assert.match(continuous.structuredWorkoutText, /- Rozgrzewka/i);
   assert.match(continuous.structuredWorkoutText, /Steady 6km/i);
-  assert.match(continuous.structuredWorkoutText, /Conditional goal MP/i);
-  assert.match(continuous.structuredWorkoutText, /- Cooldown/i);
+  assert.match(continuous.structuredWorkoutText, /MP 6km/i);
+  assert.match(continuous.structuredWorkoutText, /- Schłodzenie/i);
   for (const item of workouts.filter(item => item.workoutType === "HILLS" || item.workoutType === "EASY_STRIDES")) {
     assert.doesNotMatch(item.structuredWorkoutText, /Uphill[^\n]*\d:\d{2}\/km/i, item.id);
-    assert.match(item.structuredWorkoutText, /Full/i, item.id);
+    assert.match(item.structuredWorkoutText, /Trucht|Powrót/i, item.id);
   }
   for (const event of structured.filter(item => item.dateISO >= "2026-07-15" && item.dateISO <= "2026-09-12" && item.category === "WORKOUT")) {
     assert.match(event.builderText, /^-/m, event.id);

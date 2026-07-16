@@ -52,13 +52,13 @@ function buildPlanItems(source, oldItems) {
     const plannedKm = workout.optional ? "" : workout.distanceRangeKm ? workout.distanceRangeKm.join("-") : workout.distanceKm ?? "";
     const plannedMinutes = workout.optional ? "" : workout.durationMinutes ?? "";
     const status = workout.optional ? "[OPCJONALNE/ALT] " : workout.required ? "" : "[INFORMACJA] ";
-    const description = `${status}${[workout.warmup, workout.mainSet, workout.recovery, workout.cooldown].filter(Boolean).join(" | ")}${workout.paceDisplay ? `\nTempo i RPE: ${workout.paceDisplay}` : ""}`;
+    const description = `${status}${workout.compactDescription}`;
     const item = {
       Data: excelSerial(dateISO),
       Dzień: workout.dayName,
       "Faza / tydzień": workout.week,
       "Priorytet tygodnia": workout.priority,
-      Dyscyplina: workout.name,
+      Dyscyplina: workout.compactTitle,
       "Szczegółowy opis treningu": description,
       Intensywność: workout.intensity,
       "Cel jednostki": workout.goal,
@@ -78,15 +78,20 @@ function buildPlanItems(source, oldItems) {
       external_id: workout.external_id,
       parentId: workout.parentId,
       week: workout.week,
-      discipline: workout.name,
+      discipline: workout.compactTitle,
       sport: workout.sport,
       description,
+      compactDescription: workout.compactDescription,
+      compactTitle: workout.compactTitle,
+      compactPlanB: workout.compactPlanB,
       intensity: workout.intensity,
       goal: workout.goal,
       breakfast: workout.fuel,
       lunch: "Po treningu: pełnowartościowy posiłek, białko, węglowodany i płyny.",
       dinner: workout.fuel,
       modification: [workout.planB, workout.conditions].filter(Boolean).join(" | "),
+      planB: workout.planB,
+      conditions: workout.conditions,
       plannedMinutes,
       plannedKm,
       pace: workout.pace,
@@ -110,26 +115,7 @@ function buildPlanItems(source, oldItems) {
 }
 
 function formatDescription(workout) {
-  const sections = [
-    `# ${workout.name}`,
-    `Data: ${workout.date}`,
-    `Faza: ${workout.phase}`,
-    `Tydzień: ${workout.week}`,
-    `Intensywność: ${workout.intensity}`,
-    `Status: ${workout.optional ? "OPCJONALNE / ALT" : workout.required ? "OBOWIĄZKOWE" : "INFORMACJA"}`,
-    "",
-    "## Coach notes",
-    [workout.warmup, workout.mainSet, workout.recovery, workout.cooldown].filter(Boolean).join(" | "),
-    workout.paceDisplay ? `Tempo i RPE: ${workout.paceDisplay}` : "",
-    workout.conditions ? `Warunki: ${workout.conditions}` : "",
-    `Plan B: ${workout.planB}`,
-    `Fueling: ${workout.fuel}`,
-    "",
-    "---",
-    "",
-    workout.structuredWorkoutText,
-  ];
-  return sections.filter((line, index) => line !== "" || sections[index - 1] !== "").join("\n").trim();
+  return workout.compactDescription || workout.name;
 }
 
 function sportType(sport) {
@@ -143,7 +129,7 @@ function buildStructured(source, oldStructured) {
     parentId: workout.parentId,
     dateISO: workout.date,
     time: workout.time,
-    title: workout.name,
+    title: workout.compactTitle,
     type: sportType(workout.sport),
     sport: workout.sport,
     category: workout.sport === "Note" ? "NOTE" : "WORKOUT",
@@ -157,6 +143,9 @@ function buildStructured(source, oldStructured) {
     pace: workout.pace,
     paceDisplay: workout.paceDisplay,
     paceSummary: workout.paceSummary,
+    compactTitle: workout.compactTitle,
+    compactDescription: workout.compactDescription,
+    compactPlanB: workout.compactPlanB,
     rpe: workout.rpe,
     effortBased: Boolean(workout.effortBased),
     goalPaceConditional: Boolean(workout.goalPaceConditional),
@@ -165,6 +154,7 @@ function buildStructured(source, oldStructured) {
     conditions: workout.conditions,
     planB: workout.planB,
     builderText: workout.structuredWorkoutText,
+    intervalsDescription: workout.structuredWorkoutText,
     description: formatDescription(workout),
     sourceDiscipline: workout.name,
     sourceDescription: workout.mainSet,
@@ -181,7 +171,7 @@ function payloadFromStructured(structured) {
       category: event.category || "WORKOUT",
       start_date_local: `${event.dateISO}T${event.time || "08:00"}:00`,
       name: event.title || "Trening",
-      description: event.description || "",
+      description: event.intervalsDescription || event.description || "",
       external_id: event.external_id || event.id,
     };
     if (item.category !== "NOTE") item.type = event.type || "Workout";
