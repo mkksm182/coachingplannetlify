@@ -35,7 +35,7 @@ test('Dashboard zawiera bramki 3:30 i historię pięciu ocen', () => {
 
 test('moduł silnika jest ładowany przed aplikacją', () => {
   const engineAt = html.indexOf('adaptive-coach-engine.js');
-  const appAt = html.indexOf('app.js?v=adaptive-coach-v1');
+  const appAt = html.indexOf('app.js?v=cpanel-v1');
   assert.ok(engineAt > 0 && engineAt < appAt);
 });
 

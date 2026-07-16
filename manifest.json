@@ -1,7 +1,8 @@
 {
   "name": "Oslo → Poznań Coach Center",
   "short_name": "Coach Center",
-  "start_url": "./index.html",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#07110f",
   "theme_color": "#07110f",

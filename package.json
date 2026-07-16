@@ -5,6 +5,10 @@
   "type": "module",
   "scripts": {
     "test": "node --test tests/*.test.mjs",
+    "build:cpanel": "node scripts/build-cpanel-package.mjs",
+    "lint:php": "node scripts/php-lint.mjs",
+    "test:php-contract": "node scripts/compare-netlify-php-fixture.mjs",
+    "test:cpanel-local": "node scripts/test-cpanel-php-server.mjs",
     "generate:oslo-v2": "node scripts/enrich-oslo-v2-paces.mjs && node scripts/generate-training-artifacts.mjs",
     "intervals:oslo-v2:dry-run": "node scripts/sync-oslo-v2-to-intervals.mjs"
   },
